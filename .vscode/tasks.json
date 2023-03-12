@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "type": "shell",
+            "label": "graph ai lib: build",
+            "command": "./gradlew build",
+        },
+        {
+            "type":"shell",
+            "label":"graph ai lib: run",
+            "command":"./gradlew run",
+        }
+    ]
+}
