@@ -1,0 +1,6 @@
+"question","query"
+"In which country was Alice born in?","SELECT name FROM Country WHERE out("capital").@rid IN (SELECT out("birthPlace").@rid FROM Person WHERE name = "Alice")"
+"Which classes have edges to the Person class?","SELECT expand(classes) FROM (SELECT classes FROM metadata:schema) WHERE out('contains').name = 'Person'"
+"Who is Bob's spouse?","SELECT name FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person WHERE name = 'Bob')"
+"Where does Diana's spouse work at?","SELECT name FROM Company WHERE @rid IN (SELECT out('employment').@rid FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person where name = "Diana"))"
+

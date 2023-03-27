@@ -24,7 +24,9 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation("com.google.guava:guava:31.1-jre")
 
-    implementation ("org.jetbrains.kotlinx:kotlin-deeplearning-api:0.5.1")
+    implementation ("org.jetbrains.kotlinx:kotlin-deeplearning-tensorflow:0.5.1")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-Beta")
 }
 
 tasks.named<Test>("test") {
