@@ -1,7 +1,7 @@
-package graphai.layers
+package dbassistant.layers
 
-import graphai.interfaces.IDBConnection
-import graphai.interfaces.ILayer
+import dbassistant.interfaces.IDBConnection
+import dbassistant.interfaces.ILayer
 
 class DataCollection(
     val db: IDBConnection

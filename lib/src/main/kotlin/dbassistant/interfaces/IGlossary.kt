@@ -1,6 +1,8 @@
-package graphai.interfaces
+package dbassistant.interfaces
 
-interface IGlossary {
+import java.io.Serializable
+
+interface IGlossary : Serializable {
     val maxId:Int
     fun getClassFromKeyword(token: String) : String?
     fun indexOf(token: String) : Int

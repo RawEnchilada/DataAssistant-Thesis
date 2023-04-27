@@ -1,4 +1,4 @@
-package graphai.interfaces
+package dbassistant.interfaces
 
 interface ILayer{
 
