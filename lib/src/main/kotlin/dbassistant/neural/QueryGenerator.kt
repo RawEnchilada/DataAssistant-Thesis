@@ -92,15 +92,15 @@ class QueryGenerator (
             val prompt = input.normalizedTokens.toFloatArray()
             val inData = (lastN + prompt)
             
-            Logging.println("Evaluating input, memory: ${tokenizer.decode(lastNTokens)}  prompt: ${tokenizer.decode(input)}")
+            //Logging.println("Evaluating input, memory: ${tokenizer.decode(lastNTokens)}  prompt: ${tokenizer.decode(input)}")
 
             lastToken = model.predict(inData)
             outData.add(lastToken)
             
-            Logging.println("Evaluation complete, result token:${lastToken},  decoded: ${wordMap.decode(lastToken)}")
+            //Logging.println("Evaluation complete, result token:${lastToken},  decoded: ${wordMap.decode(lastToken)}")
         }
 
-        Logging.println("Used WordMap: $wordMap")
+        //Logging.println("Used WordMap: $wordMap")
 
         return Tokens(outData.toTypedArray(),input.wordMap)
     }

@@ -38,7 +38,7 @@ class QueryDatasetLoader(
         val outputs = MutableList(0) { 0f }
         val emptyTokenId = wordMap.encodeToken("_")
 
-        Logging.println("Processing training data:")
+        //Logging.println("Processing training data:")
 
         dataSource.forEachLine { line ->
             wordMap.clearArguments()
@@ -51,19 +51,19 @@ class QueryDatasetLoader(
             for(i in 0 until fullQueryTokens.tokens.size){
                 val subQueryTokens = fullQueryTokens.slice(0,i)
                 val input = subQueryTokens.lastN(wordMap.memorySize,emptyTokenId).append(promptTokens)
-                Logging.println("input: $input")
+                //Logging.println("input: $input")
                 val output = fullQueryTokens.tokens[i]
-                Logging.println("output: $output")
+                //Logging.println("output: $output")
                 if(output == 0)break
 
                 val inputArray = input.normalizedTokens.toFloatArray()
                 inputs.add(inputArray)
                 outputs.add(output.toFloat())
-                Logging.println("---------------------")
+                //Logging.println("---------------------")
             }
 
         }
-        Logging.println("Used WordMap: $wordMap")
+        //Logging.println("Used WordMap: $wordMap")
 
         return TrainingData(inputs.toTypedArray(),outputs.toFloatArray())
     }

@@ -33,6 +33,7 @@ class DBAssistantTest {
                 ai.trainOn(trainingDataPath)
                 ai.saveModel(modelPath)
             }
+            Logging.println("DBAssistantTest initialized. Used wordMap:\n${ai.wordMap.toString()}")
         }
 
     }
@@ -41,14 +42,20 @@ class DBAssistantTest {
     //"Who works at BadCompany?";"SELECT name FROM Person WHERE out('employment').name = 'BadCompany'"
     @Test
     fun WhoWorksAtBadCompany(){
+        Logging.println("WhoWorksAtBadCompany - Test")
+        Logging.println("    Expecting: SELECT name FROM Person WHERE out('employment').name = 'BadCompany'")
         val query = ai.semanticLayer.pass("Who works at BadCompany?")
+        Logging.println("    Got: $query")
         assertEquals("SELECT name FROM Person WHERE out('employment').name = 'BadCompany'",query)
     }
     
     //"Who is Alice's spouse?";"SELECT name FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person WHERE name = 'Alice')"
     @Test
     fun WhoIsAlicesSpouse(){
+        Logging.println("WhoIsAlicesSpouse - Test")
+        Logging.println("    Expecting: SELECT name FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person WHERE name = 'Alice')")
         val query = ai.semanticLayer.pass("Who is Alice's spouse?")
+        Logging.println("    Got: $query")
         assertEquals("SELECT name FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person WHERE name = 'Alice')",query)
     }
 

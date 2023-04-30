@@ -22,7 +22,7 @@ class DBAssistant (
 ) {
     
     
-    private var wordMap = WordMap(glossary,maxPromptSize,memorySize,0,maxArgumentCount,maxWordCount)
+    var wordMap = WordMap(glossary,maxPromptSize,memorySize,0,maxArgumentCount,maxWordCount)
     private val queryGenerator = QueryGenerator(wordMap)
     val semanticLayer = Semantics(wordMap,queryGenerator)
     val dataCollectionLayer = DataCollection(db)
