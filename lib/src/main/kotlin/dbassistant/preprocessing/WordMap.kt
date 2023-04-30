@@ -65,6 +65,12 @@ class WordMap(
         get() = arguments.count { i -> i != "" }
 
 
+    /**
+     * Flag deciding if the model can learn new words.
+     */
+    private var inTraining = false
+
+
     init{
         val defaultCommonWords = listOf(
             "_",
@@ -82,7 +88,7 @@ class WordMap(
      * Clear the argument cache. Should be used before each prompt.
      */
     fun clearArguments(){
-        arguments.replaceAll { i -> "" }
+        arguments.replaceAll { _ -> "" }
     }
 
     /**
@@ -117,6 +123,19 @@ class WordMap(
         }
     }
 
+    /**
+     * Allows the model to learn new words
+     */
+    fun startTraining(){
+        inTraining = true
+    }
+
+    /**
+     * Disables learning new words
+     */
+    fun endTraining(){
+        inTraining = false
+    }
 
     /**
      * @return [Boolean] - true if the supplied id references a class from the database
@@ -159,13 +178,19 @@ class WordMap(
                 return i
             }
         }
-        knownWords[firstEmpty] = word
-        return firstEmpty
+        return if(inTraining){
+            knownWords[firstEmpty] = word
+            firstEmpty
+        }
+        else{
+            maxWordCount
+        }
     }
     
     
     override fun toString():String{
         var text = "\n----|--------\n"
+        text += "${System.identityHashCode(this)}\n"
         for(i in 0 until knownWords.size){
             val offset = i+1+maxArgumentCount
             val fill = (4-log10(offset.toFloat())).toInt()

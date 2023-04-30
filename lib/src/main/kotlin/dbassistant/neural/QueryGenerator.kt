@@ -10,7 +10,7 @@ import org.jetbrains.kotlinx.dl.api.core.*
 import org.jetbrains.kotlinx.dl.api.core.layer.core.*
 import org.jetbrains.kotlinx.dl.api.core.loss.Losses
 import org.jetbrains.kotlinx.dl.api.core.metric.Metrics
-import org.jetbrains.kotlinx.dl.api.core.optimizer.Adam
+import org.jetbrains.kotlinx.dl.api.core.optimizer.Momentum
 import java.io.File
 
 class QueryGenerator (
@@ -20,13 +20,13 @@ class QueryGenerator (
     private lateinit var model: Sequential
     private val tokenizer = Tokenizer(wordMap)
 
-    private val optimizer = Adam()
+    private val optimizer = Momentum()
     private val loss = Losses.SOFT_MAX_CROSS_ENTROPY_WITH_LOGITS
     private val metric = Metrics.ACCURACY
 
 
     fun train(dataSource: File, trainingPlotPath:String = ""){
-
+        wordMap.startTraining()
         val data = QueryDatasetLoader(wordMap).load(dataSource)
         val dataset = QueryDataset.create(data)
 
@@ -54,6 +54,7 @@ class QueryGenerator (
         if(trainingPlotPath != ""){
             HistoryChart(history).save(trainingPlotPath)
         }
+        wordMap.endTraining()
     }
 
     fun saveModel(modelFilePath:String){
@@ -99,6 +100,7 @@ class QueryGenerator (
             Logging.println("Evaluation complete, result token:${lastToken},  decoded: ${wordMap.decode(lastToken)}")
         }
 
+        Logging.println("Used WordMap: $wordMap")
 
         return Tokens(outData.toTypedArray(),input.wordMap)
     }

@@ -14,25 +14,29 @@ import kotlin.test.assertEquals
 
 class DBAssistantTest {
 
-    private val config:DBConfig = DBConfig("remote:localhost","peopledb","root","root")
-    private val db: Orient = Orient(config)
-    private val glossary:Glossary = Glossary(db)
-    private val ai: DBAssistant = DBAssistant(db,glossary,50,10,10,300)
+    companion object{
+        private val config:DBConfig = DBConfig("remote:localhost","peopledb","root","root")
+        private val db: Orient = Orient(config)
+        private val glossary:Glossary = Glossary(db)
+        private val ai: DBAssistant = DBAssistant(db,glossary,50,10,10,300)
 
-    private val currentDir = Paths.get("").toAbsolutePath().toString()
-    private val modelPath = currentDir+"/model"
-    private val trainingDataPath = currentDir+"/model/training_data.csv"
+        private val currentDir = Paths.get("").toAbsolutePath().toString()
+        private val modelPath = currentDir+"/model"
+        private val trainingDataPath = currentDir+"/model/training_data.csv"
 
-    init{
-        val model = File(modelPath+"/layers")
-        if(model.exists()){
-            ai.loadModel(modelPath)
+        init{
+            val model = File(modelPath+"/layers")
+            if(model.exists()){
+                ai.loadModel(modelPath)
+            }
+            else{
+                ai.trainOn(trainingDataPath)
+                ai.saveModel(modelPath)
+            }
         }
-        else{
-            ai.trainOn(trainingDataPath)
-            ai.saveModel(modelPath)
-        }
+
     }
+
 
     //"Who works at BadCompany?";"SELECT name FROM Person WHERE out('employment').name = 'BadCompany'"
     @Test
