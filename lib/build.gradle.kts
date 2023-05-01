@@ -2,6 +2,9 @@ plugins {
     // Apply the org.jetbrains.kotlin.jvm Plug.in to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.8.10"
 
+    // Apply JaCoCo plugin to measure test coverage.
+    jacoco
+
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
 }
@@ -20,8 +23,6 @@ dependencies {
 
     testImplementation("com.orientechnologies:orientdb-client:3.2.17")
 
-    //testImplementation("org.jacoco:jacoco:0.8.10")
-
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api("org.apache.commons:commons-math3:3.6.1")
 
@@ -39,4 +40,11 @@ dependencies {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+tasks.jacocoTestReport {
+    dependsOn(tasks.test) // tests are required to run before generating the report
 }
