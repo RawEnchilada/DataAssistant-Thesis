@@ -12,10 +12,17 @@ import kotlin.math.log10
 
 /**
  * A conversion class responsible for classifying input tokens and assigning id's to each of them
+ * Encoding order:
+ *  - endToken
+ *  - arguments
+ *  - learnt words
+ *  - glossary
  */
 class WordMap(
+    /**
+     * A dictionary containing the node names from the database
+     */
     private val glossary: IGlossary,
-
     /**
      * Maximum count of accepted tokens by the model
      */
@@ -24,12 +31,6 @@ class WordMap(
      * How many last tokens are included in the input layer from the output of the model
      */
     val memorySize:Int = 25,
-
-
-    /**
-     * Id of the end token responsible for closing a series of tokens
-     */
-    val endTokenId:Int = 0,
     /**
      * Amount of arguments the model can handle
      */
@@ -39,6 +40,10 @@ class WordMap(
      */
     val maxWordCount:Int = 500
 ) : Serializable{
+    /**
+     * Id of the end token responsible for closing a series of tokens
+     */
+    val endTokenId:Int = 0
     /**
      * Amount of references to data in the database
      */
@@ -235,7 +240,6 @@ class WordMap(
                         glossary,
                         maxPromptSize,
                         memorySize,
-                        endTokenId,
                         maxArgumentCount,
                         maxWordCount
                     ).apply {

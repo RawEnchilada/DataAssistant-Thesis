@@ -1,4 +1,4 @@
-package dbassistant.db
+package dbassistanttest.db
 
 import dbassistant.interfaces.IDBConnection
 import dbassistant.interfaces.IGlossary

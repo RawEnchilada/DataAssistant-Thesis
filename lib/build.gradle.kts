@@ -20,6 +20,8 @@ dependencies {
 
     testImplementation("com.orientechnologies:orientdb-client:3.2.17")
 
+    //testImplementation("org.jacoco:jacoco:0.8.10")
+
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api("org.apache.commons:commons-math3:3.6.1")
 
