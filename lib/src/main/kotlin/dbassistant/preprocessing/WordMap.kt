@@ -1,12 +1,11 @@
 package dbassistant.preprocessing
 
-import dbassistant.interfaces.IGlossary
+import dbassistant.interfaces.Glossary
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
 import java.io.Serializable
-import java.util.*
 import kotlin.math.log10
 
 
@@ -22,20 +21,21 @@ class WordMap(
     /**
      * A dictionary containing the node names from the database
      */
-    private val glossary: IGlossary,
-    /**
+    val glossary: Glossary,
+
+        /**
      * Maximum count of accepted tokens by the model
      */
     val maxPromptSize:Int = 100,
-    /**
+        /**
      * How many last tokens are included in the input layer from the output of the model
      */
     val memorySize:Int = 25,
-    /**
+        /**
      * Amount of arguments the model can handle
      */
     val maxArgumentCount:Int = 10,
-    /**
+        /**
      * Amount of words the model can learn
      */
     val maxWordCount:Int = 500
@@ -44,6 +44,7 @@ class WordMap(
      * Id of the end token responsible for closing a series of tokens
      */
     val endTokenId:Int = 0
+
     /**
      * Amount of references to data in the database
      */
@@ -51,7 +52,7 @@ class WordMap(
     /**
      * The highest possible id in the wordmap (not included)
      */
-    val maxId:Int
+    val maxOverallId:Int
         get() = 1+maxArgumentCount+maxWordCount+glossaryKeyCount
 
     /**
@@ -120,11 +121,12 @@ class WordMap(
      * @return [Int] - The assigned id
      */
     fun encodeToken(token:String):Int{
-        return if(glossary.getClassFromKeyword(token) != null){
-            1+maxArgumentCount + maxWordCount + glossary.indexOf(token)
+        val glossaryId = glossary.getIdOfWord(token)
+        return if(glossaryId != -1){
+            1+maxArgumentCount + maxWordCount + glossaryId
         }
         else{
-            1+maxArgumentCount + addWord(token.lowercase(Locale.getDefault()))
+            1+maxArgumentCount + addWord(token)
         }
     }
 
@@ -143,30 +145,26 @@ class WordMap(
     }
 
     /**
-     * @return [Boolean] - true if the supplied id references a class from the database
-     */
-    fun isKnownClass(id: Int):Boolean{
-        return (id > (maxArgumentCount+maxWordCount))
-    }
-
-    /**
      * Decodes an id back into the word it's been assigned to.
      * @return [String] - The word
      */
     fun decode(id:Int):String{
-        return if(id == 0){
-            "\n"
+        if(id == 0){
+            return "\n"
         }
-        else if(id < maxArgumentCount){
-            arguments[id-1]
+        else if(id < 1+maxArgumentCount){
+            return arguments[id-1]
         }
-        else if(id < maxWordCount){
-            knownWords[id-maxArgumentCount-1]
+        else if(id < 1+maxArgumentCount+maxWordCount){
+            return knownWords[id-maxArgumentCount-1]
         }
         else{
-            glossary.getClassFromId(id - maxWordCount - maxArgumentCount - 1)
+            val word = glossary.getWordById(id-maxWordCount-maxArgumentCount-1)
+            if(word != null){
+                return word
+            }
         }
-        //TODO handle too large id
+        throw IndexOutOfBoundsException()
     }
 
     /**
@@ -194,13 +192,26 @@ class WordMap(
     
     
     override fun toString():String{
-        var text = "\n----|--------\n"
-        text += "${System.identityHashCode(this)}\n"
+        var text = "Wordmap instance id: ${System.identityHashCode(this)}\n"
+        text += "----|--------\n"
         for(i in 0 until knownWords.size){
-            val offset = i+1+maxArgumentCount
-            val fill = (4-log10(offset.toFloat())).toInt()
+            val offset = 1+maxArgumentCount+i
+            val fill = (4-log10(offset.toFloat()+1)).toInt()
             text += (" ".repeat(fill) + offset)
             text += "|${knownWords[i]}\n"
+        }
+        text += "----|--------\n"
+        return text
+    }
+
+    fun printArguments():String{
+        var text = "Wordmap instance id: ${System.identityHashCode(this)}\n"
+        text += "----|--------\n"
+        for(i in 0 until arguments.size){
+            val offset = 1+i
+            val fill = (4-log10(offset.toFloat()+1)).toInt()
+            text += (" ".repeat(fill) + offset)
+            text += "|${arguments[i]}\n"
         }
         text += "----|--------\n"
         return text
@@ -214,7 +225,7 @@ class WordMap(
             out.writeObject(maxArgumentCount)
             out.writeObject(maxWordCount)
             out.writeObject(glossaryKeyCount)
-            out.writeObject(maxId)
+            out.writeObject(maxOverallId)
             out.writeObject(storedArgumentCount)
             out.writeObject(arguments)
             out.writeObject(knownWords)
@@ -235,7 +246,7 @@ class WordMap(
                 val storedArgumentCount = input.readObject() as Int
                 val arguments = input.readObject() as MutableList<String>
                 val knownWords = input.readObject() as MutableList<String>
-                val glossary = input.readObject() as IGlossary
+                val glossary = input.readObject() as Glossary
                 return WordMap(
                         glossary,
                         maxPromptSize,

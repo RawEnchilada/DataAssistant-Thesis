@@ -19,7 +19,6 @@ class Semantics(
         val tokens = tokenizer.encode(input)
 
         val output = ai.evaluate(tokens)
-        Logging.println("    Output tokens: $output")
 
         val query = tokenizer.decode(output)
         return query

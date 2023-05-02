@@ -1,7 +1,8 @@
 package dbassistant
 
 import dbassistant.interfaces.IDBConnection
-import dbassistant.interfaces.IGlossary
+import dbassistant.interfaces.Glossary
+import dbassistant.interfaces.IGlossaryFactory
 import dbassistant.layers.DataCollection
 import dbassistant.layers.Semantics
 import dbassistant.neural.QueryGenerator
@@ -10,11 +11,11 @@ import java.io.File
 
 class DBAssistant (
         private val db: IDBConnection,
-        private val glossary: IGlossary,
+        private val glossaryFactory: IGlossaryFactory,
         /** Maximum count of accepted tokens by the model */
         maxPromptSize:Int,
         /** How many last tokens are included in the input layer from the output of the model */
-        memorySize:Int,    
+        memorySize:Int,
         /** Amount of arguments the model can handle */
         maxArgumentCount:Int,
         /** Amount of words the model can learn */
@@ -22,7 +23,7 @@ class DBAssistant (
 ) {
     
     
-    var wordMap = WordMap(glossary,maxPromptSize,memorySize,maxArgumentCount,maxWordCount)
+    var wordMap = WordMap(glossaryFactory.build(),maxPromptSize,memorySize,maxArgumentCount,maxWordCount)
     private val queryGenerator = QueryGenerator(wordMap)
     val semanticLayer = Semantics(wordMap,queryGenerator)
     val dataCollectionLayer = DataCollection(db)

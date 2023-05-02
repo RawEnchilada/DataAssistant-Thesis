@@ -2,7 +2,7 @@ package unittests
 
 import dbassistant.preprocessing.WordMap
 import org.junit.jupiter.api.BeforeEach
-import unittests.mock.MockGlossary
+import unittests.mock.MockGlossaryFactory
 import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -14,15 +14,15 @@ class WordMapTests {
     private val maxPromptSize = 10
     private val memorySize = 5
     
-    private val glossary = MockGlossary()
-    private var wordmap: WordMap = WordMap(glossary,maxPromptSize,memorySize,maxArgumentCount,maxWordCount)
+    private val glossaryFactory = MockGlossaryFactory()
+    private var wordmap: WordMap = WordMap(glossaryFactory.build(),maxPromptSize,memorySize,maxArgumentCount,maxWordCount)
     
     private val tmpFolderPath get() = "/tmp/dbassistant-unittest"
     private val wordmapFilePath get() = "$tmpFolderPath/word.map"
     
     @BeforeEach
     fun initWordMap(){
-        wordmap = WordMap(glossary,maxPromptSize,memorySize,maxArgumentCount,maxWordCount)
+        wordmap = WordMap(glossaryFactory.build(),maxPromptSize,memorySize,maxArgumentCount,maxWordCount)
         wordmap.startTraining() // allow learning
     }
     
@@ -65,16 +65,16 @@ class WordMapTests {
     
     @Test
     fun encodeGlossaryTokenTest(){
-        val token = wordmap.encodeToken(glossary.getExampleKey())
-        val expected = 1+maxArgumentCount+maxWordCount
+        val token = wordmap.encodeToken(glossaryFactory.getExampleKey())
+        val expected = 1+maxArgumentCount+maxWordCount+1
         assertEquals(expected,token)
     }
     
     @Test
     fun decodeGlossaryTokenTest(){
-        val token = wordmap.encodeToken(glossary.getExampleKey())
+        val token = wordmap.encodeToken(glossaryFactory.getExampleKey())
         val decoded = wordmap.decode(token)
-        assertEquals(glossary.getExampleValue(),decoded)
+        assertEquals(glossaryFactory.getExampleKey(),decoded)
     }
     
     @Test

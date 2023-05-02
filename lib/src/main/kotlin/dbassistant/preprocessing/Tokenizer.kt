@@ -6,7 +6,7 @@ data class Tokens(
 ){
     val normalizedTokens:Array<Float>
     get() {
-        val maxFloat = wordMap.maxId.toFloat()
+        val maxFloat = wordMap.maxOverallId.toFloat()
         return tokens.map{
             t -> t.toFloat() / maxFloat
         }.toTypedArray()
@@ -73,7 +73,7 @@ class Tokenizer(
             val token = prompt[index]
             val id = wordMap.encodeToken(token)
             tokens[index*2] = (id)
-            if(wordMap.isKnownClass(id)){
+            if(wordMap.glossary.isKey(id)){
                 val aid = wordMap.encodeArgument(token)
                 tokens[index*2+1] = aid
             }

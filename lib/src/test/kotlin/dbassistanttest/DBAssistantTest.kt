@@ -6,7 +6,7 @@ package dbassistanttest
 import dbassistant.DBAssistant
 import dbassistant.analysis.Logging
 import dbassistanttest.db.DBConfig
-import dbassistanttest.db.Glossary
+import dbassistanttest.db.GlossaryFactory
 import dbassistanttest.db.Orient
 import java.io.File
 import java.nio.file.Paths
@@ -18,8 +18,8 @@ class DBAssistantTest {
     companion object{
         private val config:DBConfig = DBConfig("remote:localhost","peopledb","root","root")
         private val db: Orient = Orient(config)
-        private val glossary:Glossary = Glossary(db)
-        private val ai: DBAssistant = DBAssistant(db,glossary,50,10,10,300)
+        private val glossaryFactory: GlossaryFactory = GlossaryFactory(db)
+        private val ai: DBAssistant = DBAssistant(db,glossaryFactory,50,10,10,300)
 
         private val currentDir = Paths.get("").toAbsolutePath().toString()
         private val modelPath = currentDir+"/model"
@@ -43,6 +43,7 @@ class DBAssistantTest {
     //"Who works at BadCompany?";"SELECT name FROM Person WHERE out('employment').name = 'BadCompany'"
     @Test
     fun WhoWorksAtBadCompany(){
+        Logging.println()
         Logging.println("WhoWorksAtBadCompany - Test")
         Logging.println("    Expecting: SELECT name FROM Person WHERE out('employment').name = 'BadCompany'")
         val query = ai.semanticLayer.pass("Who works at BadCompany?")
@@ -53,6 +54,7 @@ class DBAssistantTest {
     //"Who is Alice's spouse?";"SELECT name FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person WHERE name = 'Alice')"
     @Test
     fun WhoIsAlicesSpouse(){
+        Logging.println()
         Logging.println("WhoIsAlicesSpouse - Test")
         Logging.println("    Expecting: SELECT name FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person WHERE name = 'Alice')")
         val query = ai.semanticLayer.pass("Who is Alice's spouse?")

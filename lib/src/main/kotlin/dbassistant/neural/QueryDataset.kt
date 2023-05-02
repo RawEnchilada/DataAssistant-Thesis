@@ -64,7 +64,7 @@ class QueryDatasetLoader(
 
         }
         //Logging.println("Used WordMap: $wordMap")
-
+        Logging.println("Generated ${outputs.size} rows of training data.")
         return TrainingData(inputs.toTypedArray(),outputs.toFloatArray())
     }
 }

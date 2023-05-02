@@ -11,6 +11,19 @@ object Logging {
     var writeLogs:Boolean = true
     private var file: File? = null
     
+
+    fun println(){
+        if(!writeLogs)return
+        if(file == null){
+            file = File(path)
+            if(file!!.exists()){
+                file!!.delete()
+            }
+            file!!.createNewFile()
+        }
+        file!!.appendText("\n")
+    }
+
     fun println(text:String){
         if(!writeLogs)return
         if(file == null){
