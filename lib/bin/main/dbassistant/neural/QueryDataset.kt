@@ -27,7 +27,7 @@ object QueryDataset{
 class QueryDatasetLoader(
     private val promptSize: Int,
     private val memorySize: Int,
-    private val tokenizer: Tokenizer
+    private val  tokenizer: Tokenizer
 ){
 
     /**
@@ -38,7 +38,7 @@ class QueryDatasetLoader(
 
         val inputs = MutableList(0) { FloatArray(0) }
         val outputs = MutableList(0) { 0f }
-        val emptyTokenId = EmptyTokenHandler(-1).emptyToken+1
+        val emptyTokenId = EmptyTokenHandler(-1).emptyToken
         val promptPreparationLayer = PromptPreparationLayer(promptSize)
 
         //Logging.println("Processing training data:")
@@ -46,10 +46,10 @@ class QueryDatasetLoader(
         dataSource.forEachLine { line ->
             tokenizer.resetState()
             val (prompt, fullQuery) = line.split(";")
-            val cargo = LayerCargo(prompt)
+            var cargo = LayerCargo(prompt)
             val preparedPrompt = promptPreparationLayer.pass(cargo).take() as List<String>
             val promptTokens = tokenizer.encode(preparedPrompt)
-            if(promptTokens.tokens.size > promptSize)throw Exception("Prompt size is larger than the input layer of the model! :${promptTokens.tokens.size}")
+            if(promptTokens.tokens.size > promptSize)throw Exception("Prompt size is larger than the input layer of the model!")
             val preparedQuery = promptPreparationLayer.pass(cargo.put(fullQuery)).take() as List<String>
             val fullQueryTokens = tokenizer.encode(preparedQuery)
 
@@ -57,9 +57,9 @@ class QueryDatasetLoader(
             for(i in 0 until fullQueryTokens.tokens.size){
                 val subQueryTokens = fullQueryTokens.slice(0,i)
                 val input = subQueryTokens.lastN(memorySize,emptyTokenId).append(promptTokens)
-                Logging.println("input: $input")
+                //Logging.println("input: $input")
                 val output = fullQueryTokens.tokens[i]
-                Logging.println("output: $output")
+                //Logging.println("output: $output")
                 if(output == 0)break
 
                 val inputArray = input.normalizeTokens(tokenizer.maxId).toFloatArray()

@@ -1,15 +1,17 @@
 {
-	"version": "2.0.0",
-	"tasks": [
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
         {
+            "label": "Run UnitTests",
             "type": "shell",
-            "label": "graph ai lib: build",
-            "command": "./gradlew build",
+            "command": "./gradlew test --tests \"unittests.**\""
         },
         {
-            "type":"shell",
-            "label":"graph ai lib: run",
-            "command":"./gradlew run",
+            "label": "Run EvaluationTests",
+            "type": "shell",
+            "command": "./gradlew test --tests \"evaluationtests.**\""
         }
     ]
 }

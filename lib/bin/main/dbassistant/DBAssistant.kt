@@ -1,6 +1,8 @@
 package dbassistant
 
 import dbassistant.interfaces.ILayer
+import dbassistant.layers.DataCollectionLayer
+import dbassistant.layers.TokenizationLayer
 import dbassistant.layers.LayerCargo
 import dbassistant.neural.QueryGenerator
 import java.io.File
