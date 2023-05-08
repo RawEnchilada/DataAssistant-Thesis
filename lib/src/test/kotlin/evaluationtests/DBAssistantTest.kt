@@ -17,6 +17,7 @@ import java.io.File
 import java.nio.file.Paths
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import org.jetbrains.kotlinx.dl.api.core.optimizer.SGD
 
 class DBAssistantTest {
 
@@ -26,12 +27,16 @@ class DBAssistantTest {
 
         private const val promptSize = 50
         private const val memorySize = 10
-        private const val argumentsSize = 10
-        private const val wordSize = 300
+        private const val argumentsSize = 5
+        private const val wordSize = 150
 
 
         private val tokenizer = Tokenizer(GlossaryHandlerFactory(db),promptSize, argumentsSize, wordSize)
-        private val queryGenerator = QueryGenerator(promptSize, memorySize, tokenizer)
+        private val queryGenerator = QueryGenerator(
+            promptSize, memorySize, tokenizer,
+            SGD(),
+            arrayOf(158,295,199)
+        )
         private val ai: DBAssistant = DBAssistant(
             queryGenerator,
             arrayOf(
@@ -57,6 +62,7 @@ class DBAssistantTest {
                 //ai.trainOn(trainingDataPath)
                 //ai.saveModel(modelPath)
             }
+            //ai.analyseModel(trainingDataPath)
             ai.trainOn(trainingDataPath)
             //Logging.println("DBAssistantTest initialized. Used wordMap:\n${ai.wordMap.toString()}")
         }
@@ -84,6 +90,17 @@ class DBAssistantTest {
         val query = ai.evaluate("Who is Alice's spouse?")
         Logging.println("    Got: $query")
         assertEquals("SELECT name FROM Person WHERE @rid IN (SELECT in('spouse').@rid FROM Person WHERE name = 'Alice')",query)
+    }
+
+    //"Where does Alice work at?";"SELECT out('employment').name FROM Person WHERE name = 'Alice'"
+    @Test
+    fun WhereDoesAliceWorkAt(){
+        Logging.println()
+        Logging.println("WhereDoesAliceWorkAt - Test")
+        Logging.println("    Expecting: SELECT out('employment').name FROM Person WHERE name = 'Alice'")
+        val query = ai.evaluate("Where does Alice work at?")
+        Logging.println("    Got: $query")
+        assertEquals("SELECT out('employment').name FROM Person WHERE name = 'Alice'",query)
     }
 
 }

@@ -38,7 +38,7 @@ class QueryDatasetLoader(
 
         val inputs = MutableList(0) { FloatArray(0) }
         val outputs = MutableList(0) { 0f }
-        val emptyTokenId = EmptyTokenHandler(-1).emptyToken+1
+        val emptyTokenId = tokenizer.handlerOffset(tokenizer.emptyTokenHandler)
         val promptPreparationLayer = PromptPreparationLayer(promptSize)
 
         //Logging.println("Processing training data:")
@@ -57,9 +57,9 @@ class QueryDatasetLoader(
             for(i in 0 until fullQueryTokens.tokens.size){
                 val subQueryTokens = fullQueryTokens.slice(0,i)
                 val input = subQueryTokens.lastN(memorySize,emptyTokenId).append(promptTokens)
-                Logging.println("input: $input")
+                //Logging.println("input: $input")
                 val output = fullQueryTokens.tokens[i]
-                Logging.println("output: $output")
+                //Logging.println("output: $output")
                 if(output == 0)break
 
                 val inputArray = input.normalizeTokens(tokenizer.maxId).toFloatArray()

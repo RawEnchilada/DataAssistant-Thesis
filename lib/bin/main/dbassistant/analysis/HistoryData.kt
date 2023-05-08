@@ -15,17 +15,24 @@ import java.awt.Font
 import java.io.File
 
 
-class HistoryChart(
+class HistoryData(
     private val trainingHistory: TrainingHistory
 ){
 
+
+    val accuracies = trainingHistory.epochHistory.map { it.metricValues[0] }
+    val losses = trainingHistory.epochHistory.map { it.lossValue }
+    val epochs = trainingHistory.epochHistory.map { it.epochIndex }
+
+    val reachedAccuracy = accuracies.last()
+    val reachedLoss = losses.last()
+
     fun save(path:String) {
-        val epochs = trainingHistory.epochHistory.map { it.epochIndex }
 
         // create the loss trace
         val lossTrace = Trace {
             x.set(epochs)
-            y.set(trainingHistory.epochHistory.map { it.lossValue })
+            y.set(losses)
             name = "Loss"
         }
 
@@ -41,7 +48,7 @@ class HistoryChart(
         // create the batch loss trace
         val batchLossTrace = Trace {
             x.set(batches)
-            y.set(trainingHistory.batchHistory.map { it.lossValue })
+            y.set(losses)
             name = "Batch Loss"
         }
 
@@ -53,7 +60,7 @@ class HistoryChart(
         // create the accuracy trace
         val accuracyTrace = Trace {
             x.set(epochs)
-            y.set(trainingHistory.epochHistory.map { it.metricValues[0] })
+            y.set(accuracies)
             name = "Accuracy"
         }
 

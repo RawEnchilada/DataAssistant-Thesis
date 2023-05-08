@@ -1,4 +1,4 @@
-package dbassistanttest.db
+package evaluationtests.db
 
 data class DBConfig (
     val url:String,

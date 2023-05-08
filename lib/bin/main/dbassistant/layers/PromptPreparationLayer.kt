@@ -22,10 +22,7 @@ class PromptPreparationLayer(
         }
         spaced = spaced.replace(Regex(" +")," ")
         val symbols = spaced.split(" ").toMutableList()
-        
-        for(index in symbols.size until promptSize){
-            symbols.add("_")
-        }
+        symbols.add("[END]")
         
         cargo.put(symbols.toList())
         return cargo

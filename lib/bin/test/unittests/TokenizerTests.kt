@@ -16,6 +16,7 @@ class TokenizerTests {
 
     private val maxArgumentCount = 5
     private val maxGenericTokenCount = 100
+    private val promptSize = 2
 
     private val mockGHFactory = MockGlossaryHandlerFactory()
 
@@ -25,6 +26,7 @@ class TokenizerTests {
     fun initTokenizer(){
         tokenizer = Tokenizer(
             mockGHFactory,
+            promptSize,
             maxArgumentCount,
             maxGenericTokenCount
         )
@@ -33,7 +35,8 @@ class TokenizerTests {
     @Test
     fun encodeEndTokenTest(){
         val token = tokenizer!!.encode(listOf("[END]"))
-        val expected = TokenSeries(arrayOf(tokenizer!!.endTokenHandler.endToken))
+        val emptyId = tokenizer!!.handlerOffset(tokenizer!!.emptyTokenHandler)
+        val expected = TokenSeries(arrayOf(tokenizer!!.endTokenHandler.endToken,emptyId))
         assertEquals(expected, token)
     }
 
@@ -49,7 +52,7 @@ class TokenizerTests {
     fun encodeEmptyTokenTest(){
         val token = tokenizer!!.encode(listOf("_"))
         val emptyId = tokenizer!!.handlerOffset(tokenizer!!.emptyTokenHandler)
-        val expected = TokenSeries(arrayOf(emptyId))
+        val expected = TokenSeries(arrayOf(emptyId,emptyId))
         assertEquals(expected, token)
     }
 
@@ -82,7 +85,8 @@ class TokenizerTests {
     fun encodeGenericTokenTest(){
         val token = tokenizer!!.encode(listOf("generic"))
         val tokenId = tokenizer!!.handlerOffset(tokenizer!!.genericTokenHandler)
-        val expected = TokenSeries(arrayOf(tokenId))
+        val emptyId = tokenizer!!.handlerOffset(tokenizer!!.emptyTokenHandler)
+        val expected = TokenSeries(arrayOf(tokenId,emptyId))
         assertEquals(expected,token)
     }
 
@@ -98,7 +102,8 @@ class TokenizerTests {
     fun encodeClassTokenTest(){
         val token = tokenizer!!.encode(listOf(mockGHFactory.getExampleClass()))
         val classId = tokenizer!!.handlerOffset(tokenizer!!.glossaryTokenHandler)
-        val expected = TokenSeries(arrayOf(classId))
+        val emptyId = tokenizer!!.handlerOffset(tokenizer!!.emptyTokenHandler)
+        val expected = TokenSeries(arrayOf(classId,emptyId))
         assertEquals(expected,token)
     }
 

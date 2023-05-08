@@ -28,6 +28,14 @@ object Logging {
         appendln("[${currentDate}] Warning : $text")
     }
 
+    fun disable(){
+        writeLogs = false
+    }
+
+    fun enable(){
+        writeLogs = true
+    }
+
 
 
     private fun appendln(text: String){

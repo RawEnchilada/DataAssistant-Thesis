@@ -27,7 +27,7 @@ object QueryDataset{
 class QueryDatasetLoader(
     private val promptSize: Int,
     private val memorySize: Int,
-    private val  tokenizer: Tokenizer
+    private val tokenizer: Tokenizer
 ){
 
     /**
@@ -38,7 +38,7 @@ class QueryDatasetLoader(
 
         val inputs = MutableList(0) { FloatArray(0) }
         val outputs = MutableList(0) { 0f }
-        val emptyTokenId = EmptyTokenHandler(-1).emptyToken
+        val emptyTokenId = tokenizer.handlerOffset(tokenizer.emptyTokenHandler)
         val promptPreparationLayer = PromptPreparationLayer(promptSize)
 
         //Logging.println("Processing training data:")
@@ -46,10 +46,10 @@ class QueryDatasetLoader(
         dataSource.forEachLine { line ->
             tokenizer.resetState()
             val (prompt, fullQuery) = line.split(";")
-            var cargo = LayerCargo(prompt)
+            val cargo = LayerCargo(prompt)
             val preparedPrompt = promptPreparationLayer.pass(cargo).take() as List<String>
             val promptTokens = tokenizer.encode(preparedPrompt)
-            if(promptTokens.tokens.size > promptSize)throw Exception("Prompt size is larger than the input layer of the model!")
+            if(promptTokens.tokens.size > promptSize)throw Exception("Prompt size is larger than the input layer of the model! :${promptTokens.tokens.size}")
             val preparedQuery = promptPreparationLayer.pass(cargo.put(fullQuery)).take() as List<String>
             val fullQueryTokens = tokenizer.encode(preparedQuery)
 

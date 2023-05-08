@@ -1,6 +1,6 @@
 package dbassistant.neural
 
-import dbassistant.analysis.HistoryChart
+import dbassistant.analysis.HistoryData
 import dbassistant.analysis.Logging
 import dbassistant.analysis.TrainingCallback
 import dbassistant.tokenhandlers.EmptyTokenHandler
@@ -10,44 +10,120 @@ import dbassistant.tokens.Tokenizer
 import org.jetbrains.kotlinx.dl.api.core.*
 import org.jetbrains.kotlinx.dl.api.core.layer.core.*
 import org.jetbrains.kotlinx.dl.api.core.layer.paramCount
+import org.jetbrains.kotlinx.dl.api.core.layer.Layer
 import org.jetbrains.kotlinx.dl.api.core.loss.Losses
 import org.jetbrains.kotlinx.dl.api.core.metric.Metrics
 import org.jetbrains.kotlinx.dl.api.core.optimizer.Momentum
 import org.jetbrains.kotlinx.dl.api.core.optimizer.SGD
+import org.jetbrains.kotlinx.dl.api.core.history.TrainingHistory
+import org.jetbrains.kotlinx.dl.api.core.optimizer.Optimizer
 import java.io.File
+import kotlin.random.Random
 
 class QueryGenerator (
     private val promptSize: Int,
     private val memorySize: Int,
-    private val tokenizer: Tokenizer
+    private var tokenizer: Tokenizer,
+    private var optimizer: Optimizer = SGD(),
+    private var hiddenLayerSizes: Array<Int> = arrayOf(
+        (memorySize+promptSize+tokenizer.maxId)/2,
+        (memorySize+promptSize+tokenizer.maxId)/2
+    )
 ){
 
     private lateinit var model: Sequential
 
-    private val optimizer = SGD()
     private val loss = Losses.SOFT_MAX_CROSS_ENTROPY_WITH_LOGITS
-    private val metric = Metrics.ACCURACY
+    private var metric = Metrics.ACCURACY
 
     private val epochs = 1000
     private val batchSize = 100
 
+    private val inputLayerSize = (memorySize+promptSize)
+    private val outputLayerSize = tokenizer.maxId
 
-    fun train(dataSource: File, trainingPlotPath:String = ""){
+    
+
+
+    fun analyzeModel(dataSource:File){
+
+        train(dataSource)
+
+        val minNodeCount = tokenizer.genericTokenHandler.learnedTokens.count { w->w!="" }
+        val maxNodeCount = (tokenizer.maxId*2)
+
+        var bestLoss = Double.MAX_VALUE
+        var bestAccuracy = 0.0
+        var bestLayers:String = ""
+        var bestOptimizer:String = "SGD"
+
+        val maxTries = 100
+
+        Logging.println("Starting $maxTries training sessions to optimize layer sizes...")
+
+        for(i in 0 until maxTries){
+            tokenizer = tokenizer.copyUntrained()
+
+            val layerCount = Random.nextInt(1,4)
+            val layers = mutableListOf<Int>()
+
+            var layersDescription = "["
+            for(n in 0 until layerCount){
+                val size = Random.nextInt(minNodeCount,maxNodeCount)
+                layers.add(size)
+                layersDescription += "$size,"
+            }
+            hiddenLayerSizes = layers.toTypedArray()
+            layersDescription = "${layersDescription.dropLast(1)}]"
+
+            var optimizerName = "Momentum"
+            if(Random.nextBoolean()){
+                optimizer = Momentum()
+            }
+            else{
+                optimizer = SGD()
+                optimizerName = "SGD"
+            }
+
+
+            Logging.disable()
+            val history = HistoryData(train(dataSource))
+            Logging.enable()
+
+            val accuracy = history.reachedAccuracy
+            val loss = history.reachedLoss
+
+            Logging.println("    - [${i.toDouble()/maxTries.toDouble()}%] : $optimizerName | $layersDescription | Accuracy: $accuracy | Loss: $loss")
+
+            if(loss < bestLoss){
+                bestLoss = loss
+                bestAccuracy = accuracy
+                bestLayers = layersDescription
+                bestOptimizer = optimizerName
+            }
+
+        }
+        Logging.println("Best configuration in this session: $bestOptimizer | $bestLayers | Accuracy: $bestAccuracy | Loss: $bestLoss")
+
+    }
+
+
+    fun train(dataSource: File): TrainingHistory{
 
         val data = QueryDatasetLoader(promptSize, memorySize, tokenizer).load(dataSource)
         val dataset = QueryDataset.create(data)
 
-        val inputNodeCount = memorySize+promptSize
-        val outputNodeCount = tokenizer.maxId
-        val hiddenNodeCount = (inputNodeCount+outputNodeCount)/2
-
         Logging.println("Creating new model...")
 
+        val hiddenLayers = mutableListOf<Dense>()
+        for(size in hiddenLayerSizes){
+            hiddenLayers.add(Dense(size))
+        }
+
         model = Sequential.of(
-            Input(inputNodeCount.toLong()),
-            Dense(hiddenNodeCount),
-            Dense(hiddenNodeCount),
-            Dense(outputNodeCount)
+            Input(inputLayerSize.toLong()),
+            *(hiddenLayers.toTypedArray()),
+            Dense(outputLayerSize)
         )
 
         Logging.println("Compiling model...")
@@ -67,14 +143,10 @@ class QueryGenerator (
             listOf(TrainingCallback())
         )
         
-        Logging.println("Saving metrics...")
-
-        if(trainingPlotPath != ""){
-            HistoryChart(history).save(trainingPlotPath)
-        }
         endTraining()
 
         Logging.println("Model initialization finished:\n${toString()}")
+        return history
     }
 
     fun saveModel(modelFilePath:String){
@@ -105,12 +177,12 @@ class QueryGenerator (
         }
         Logging.println("    Evaluating tokens: $input...")
 
-        val emptyTokenId = EmptyTokenHandler(-1).emptyToken
+        val emptyTokenId = tokenizer.handlerOffset(tokenizer.emptyTokenHandler)
         val outData = mutableListOf<Int>()
 
-        val endToken = EndTokenHandler(-1).endToken
+        val endToken = tokenizer.handlerOffset(tokenizer.endTokenHandler)
         var lastToken = -1
-        while(lastToken != endToken && outData.size < 100){
+        do{
             val output = TokenSeries(outData.toTypedArray())
             val lastNTokens = output.lastN(memorySize,emptyTokenId)
             val lastN = lastNTokens.tokens.map{
@@ -125,7 +197,7 @@ class QueryGenerator (
             outData.add(lastToken)
             
             //Logging.println("Evaluation complete, result token:${lastToken},  decoded: ${wordMap.decode(lastToken)}")
-        }
+        }while(lastToken != endToken && outData.size < 100)
         //Logging.println("Used WordMap: $wordMap")
         val result = TokenSeries(outData.toTypedArray())
 

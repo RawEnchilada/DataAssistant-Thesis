@@ -1,10 +1,10 @@
 package dbassistant
 
 import dbassistant.interfaces.ILayer
-import dbassistant.layers.DataCollectionLayer
-import dbassistant.layers.TokenizationLayer
 import dbassistant.layers.LayerCargo
 import dbassistant.neural.QueryGenerator
+import dbassistant.analysis.Logging
+import dbassistant.analysis.HistoryData
 import java.io.File
 
 class DBAssistant (
@@ -34,7 +34,12 @@ class DBAssistant (
 
     fun trainOn(path:String){
         val datasetFile = File(path)
-        queryGenerator.train(datasetFile,"logs/plot.html")
+        val history = queryGenerator.train(datasetFile)
+
+        Logging.println("Saving metrics...")
+
+        HistoryData(history).save("logs/plot.html")
+
     }
 
 }

@@ -12,8 +12,11 @@ class GenericTokenHandler(
 ) : ITokenHandler{
     
     private val words = MutableList(maxGenericTokenCount){""}
+
+    val learnedTokens get() = words.toList()
     
     override val size: Int get() = words.size
+
 
     override var mutable: Boolean = true
 

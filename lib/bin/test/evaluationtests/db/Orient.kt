@@ -1,4 +1,4 @@
-package dbassistanttest.db
+package evaluationtests.db
 
 
 import com.beust.klaxon.Klaxon

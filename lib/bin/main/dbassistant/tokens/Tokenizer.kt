@@ -15,9 +15,10 @@ import java.io.Serializable
  * Class responsible for preparing the input prompt for the model
  */
 class Tokenizer(
-        glossaryHandlerFactory: IGlossaryHandlerFactory,
-        maxArgumentCount:Int,
-        maxGenericTokenCount:Int
+        private val glossaryHandlerFactory: IGlossaryHandlerFactory,
+        private val promptSize:Int,
+        private val maxArgumentCount:Int,
+        private val maxGenericTokenCount:Int
 ) : Serializable{
 
     val endTokenHandler = EndTokenHandler(0)
@@ -64,6 +65,9 @@ class Tokenizer(
             }
         }
         //Possible exception: generated tokens are longer than the input words
+        for(index in tokens.size until promptSize){
+            tokens.add(handlerOffset(emptyTokenHandler))
+        }
 
         return TokenSeries(tokens.toTypedArray())
     }
@@ -114,6 +118,15 @@ class Tokenizer(
         return handlers.takeWhile { it != handler }.sumOf { it.size }
     }
 
+
+    fun copyUntrained():Tokenizer{
+        return Tokenizer(
+            glossaryHandlerFactory,
+            promptSize,
+            maxArgumentCount,
+            maxGenericTokenCount
+        )
+    }
 }
 
 
