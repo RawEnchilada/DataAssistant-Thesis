@@ -1,0 +1,2 @@
+class ArgumentHandlerIsFullException(Exception):
+    pass

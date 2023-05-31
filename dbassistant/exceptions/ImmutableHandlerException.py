@@ -1,0 +1,2 @@
+class ImmutableHandlerException(Exception):
+    pass

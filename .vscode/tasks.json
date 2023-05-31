@@ -1,17 +1,30 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run UnitTests",
+            "label": "Run TensorBoard",
             "type": "shell",
-            "command": "./gradlew test --tests \"unittests.**\""
+            "command": "tensorboard --logdir=logs/tensorboard",
         },
         {
-            "label": "Run EvaluationTests",
+            "label": "Clear TensorBoard Logs",
             "type": "shell",
-            "command": "./gradlew test --tests \"evaluationtests.**\""
+            "command": "rm -rf logs/tensorboard/train/*",
+        },
+        {
+            "label":"Run Neo4j",
+            "type": "shell",
+            "command": "neo4j console"
+        },
+        {
+            "label": "Run Apollo Server",
+            "type": "shell",
+            "command": "cd apollo; npm run start",
+        },
+        {
+            "label":"Run Flask GUI",
+            "type": "shell",
+            "command": "cd example/gui;python3 app.py"
         }
     ]
 }
