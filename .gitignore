@@ -14,7 +14,7 @@
 **/dist
 
 model/training_data_converted.csv
-model/**.layers
+model/**.layer
 model/model.h5
 logs/tensorboard/*
 logs/*

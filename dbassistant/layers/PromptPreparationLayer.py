@@ -15,7 +15,7 @@ class PromptPreparationLayer(ILayer):
         special_character = re.compile(r'[^A-z0-9 _@]')
 
         spaced = ""
-        for char in input_string.replace("\"", ""):
+        for char in input_string:
             if special_character.match(char):
                 spaced += " " + char + " "
             else:

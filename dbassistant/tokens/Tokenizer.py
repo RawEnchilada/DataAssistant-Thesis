@@ -20,13 +20,14 @@ class Tokenizer:
         self.maxArgumentCount = maxArgumentCount
         self.maxGenericTokenCount = maxGenericTokenCount
         
+        #encode order by priority
         self.endTokenHandler = EndTokenHandler(0)
         self.emptyTokenHandler = EmptyTokenHandler(1)
         self.glossaryTokenHandler = glossaryHandlerFactory.build(2)
         self.genericTokenHandler = GenericTokenHandler(3, maxGenericTokenCount)
         self.argumentTokenHandler = ArgumentTokenHandler(10, maxArgumentCount)
         
-        self.handlers = [
+        self.handlers = [ # decode order
             self.endTokenHandler,
             self.emptyTokenHandler,
             self.argumentTokenHandler,
@@ -37,6 +38,10 @@ class Tokenizer:
     @property
     def maxSize(self):
         return sum(h.size for h in self.handlers)
+    
+    @property
+    def labelCount(self):
+        return self.maxSize - self.glossaryTokenHandler.keyCount
     
     @property
     def utilizedSize(self):

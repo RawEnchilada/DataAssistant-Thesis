@@ -13,7 +13,7 @@ class QueryDatasetCreator:
         self.tokenizer = tokenizer
 
     def load(self, data_source_path, converted_path):
-        output_size = self.tokenizer.maxSize
+        output_size = self.tokenizer.labelCount
         inputs = []
         outputs = []
         empty_token_id = self.tokenizer.handlerOffset(self.tokenizer.emptyTokenHandler)

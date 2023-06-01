@@ -1,407 +1,407 @@
-"What faculties are there?";"faculties{name}"
-"What departments are there?";"departments{name}"
-"What degrees are there?";"degrees{name}"
-"Which specializations are there?";"specializations{name}"
-"What specializations are there?";"specializations{name}"
-"What rooms are there?";"rooms{name}"
-"What courses are there?";"courses{name}"
-"What buildings are there?";"buildings{name}"
-"What are the departments of the faculty of Electrical Engineering and Informatics?";"faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
-"What are the departments of the faculty of Mechanical Engineering?";"faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
-"What are the departments of the faculty of Economic and Social Sciences?";"faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
-"What are the departments of the faculty of Natural Sciences?";"faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
-"What is Alice's neptun code?";"people(where:{name:\"Alice\"}){neptun}"
-"What is Bob's neptun code?";"people(where:{name:\"Bob\"}){neptun}"
-"What is Charlie's neptun code?";"people(where:{name:\"Charlie\"}){neptun}"
-"What is David's neptun code?";"people(where:{name:\"David\"}){neptun}"
-"What is Eve's neptun code?";"people(where:{name:\"Eve\"}){neptun}"
-"What is Frank's neptun code?";"people(where:{name:\"Frank\"}){neptun}"
-"What is Grace's neptun code?";"people(where:{name:\"Grace\"}){neptun}"
-"What is Heidi's neptun code?";"people(where:{name:\"Heidi\"}){neptun}"
-"What is Ivan's neptun code?";"people(where:{name:\"Ivan\"}){neptun}"
-"What is Judy's neptun code?";"people(where:{name:\"Judy\"}){neptun}"
-"What is Alice's email address?";"people(where:{name:\"Alice\"}){email}"
-"What is Bob's email address?";"people(where:{name:\"Bob\"}){email}"
-"What is Charlie's email address?";"people(where:{name:\"Charlie\"}){email}"
-"What is David's email address?";"people(where:{name:\"David\"}){email}"
-"What is Eve's email address?";"people(where:{name:\"Eve\"}){email}"
-"What is Frank's email address?";"people(where:{name:\"Frank\"}){email}"
-"What is Grace's email address?";"people(where:{name:\"Grace\"}){email}"
-"What is Heidi's email address?";"people(where:{name:\"Heidi\"}){email}"
-"What is Ivan's email address?";"people(where:{name:\"Ivan\"}){email}"
-"What is Judy's email address?";"people(where:{name:\"Judy\"}){email}"
-"When is Alice's birthday?";"people(where:{name:\"Alice\"}){birthday}"
-"When is Bob's birthday?";"people(where:{name:\"Bob\"}){birthday}"
-"When is Charlie's birthday?";"people(where:{name:\"Charlie\"}){birthday}"
-"When is David's birthday?";"people(where:{name:\"David\"}){birthday}"
-"When is Eve's birthday?";"people(where:{name:\"Eve\"}){birthday}"
-"When is Frank's birthday?";"people(where:{name:\"Frank\"}){birthday}"
-"When is Grace's birthday?";"people(where:{name:\"Grace\"}){birthday}"
-"When is Heidi's birthday?";"people(where:{name:\"Heidi\"}){birthday}"
-"When is Ivan's birthday?";"people(where:{name:\"Ivan\"}){birthday}"
-"When is Judy's birthday?";"people(where:{name:\"Judy\"}){birthday}"
-"What is Alice studying?";"people(where:{name:\"Alice\"}){studies{name}}"
-"What is Bob studying?";"people(where:{name:\"Bob\"}){studies{name}}"
-"What is Charlie studying?";"people(where:{name:\"Charlie\"}){studies{name}}"
-"What is David studying?";"people(where:{name:\"David\"}){studies{name}}"
-"What is Eve studying?";"people(where:{name:\"Eve\"}){studies{name}}"
-"What is Frank studying?";"people(where:{name:\"Frank\"}){studies{name}}"
-"What is Grace studying?";"people(where:{name:\"Grace\"}){studies{name}}"
-"What is Heidi studying?";"people(where:{name:\"Heidi\"}){studies{name}}"
-"What is Ivan studying?";"people(where:{name:\"Ivan\"}){studies{name}}"
-"What is Judy studying?";"people(where:{name:\"Judy\"}){studies{name}}"
-"What is Alice's degree?";"people(where:{name:\"Alice\"}){studies{name}}"
-"What is Bob's degree?";"people(where:{name:\"Bob\"}){studies{name}}"
-"What is Charlie's degree?";"people(where:{name:\"Charlie\"}){studies{name}}"
-"What is David's degree?";"people(where:{name:\"David\"}){studies{name}}"
-"What is Eve's degree?";"people(where:{name:\"Eve\"}){studies{name}}"
-"What is Frank's degree?";"people(where:{name:\"Frank\"}){studies{name}}"
-"What is Grace's degree?";"people(where:{name:\"Grace\"}){studies{name}}"
-"What is Heidi's degree?";"people(where:{name:\"Heidi\"}){studies{name}}"
-"What is Ivan's degree?";"people(where:{name:\"Ivan\"}){studies{name}}"
-"What is Judy's degree?";"people(where:{name:\"Judy\"}){studies{name}}"
-"What is Alice's specialization?";"people(where:{name:\"Alice\"}){specializesIn{name}}"
-"What is Bob's specialization?";"people(where:{name:\"Bob\"}){specializesIn{name}}"
-"What is Charlie's specialization?";"people(where:{name:\"Charlie\"}){specializesIn{name}}"
-"What is David's specialization?";"people(where:{name:\"David\"}){specializesIn{name}}"
-"What is Eve's specialization?";"people(where:{name:\"Eve\"}){specializesIn{name}}"
-"What is Frank's specialization?";"people(where:{name:\"Frank\"}){specializesIn{name}}"
-"What is Grace's specialization?";"people(where:{name:\"Grace\"}){specializesIn{name}}"
-"What is Heidi's specialization?";"people(where:{name:\"Heidi\"}){specializesIn{name}}"
-"What is Ivan's specialization?";"people(where:{name:\"Ivan\"}){specializesIn{name}}"
-"What is Judy's specialization?";"people(where:{name:\"Judy\"}){specializesIn{name}}"
-"What does Alice specialize in?";"people(where:{name:\"Alice\"}){specializesIn{name}}"
-"What does Bob specialize in?";"people(where:{name:\"Bob\"}){specializesIn{name}}"
-"What does Charlie specialize in?";"people(where:{name:\"Charlie\"}){specializesIn{name}}"
-"What does David specialize in?";"people(where:{name:\"David\"}){specializesIn{name}}"
-"What does Eve specialize in?";"people(where:{name:\"Eve\"}){specializesIn{name}}"
-"What does Frank specialize in?";"people(where:{name:\"Frank\"}){specializesIn{name}}"
-"What does Grace specialize in?";"people(where:{name:\"Grace\"}){specializesIn{name}}"
-"What does Heidi specialize in?";"people(where:{name:\"Heidi\"}){specializesIn{name}}"
-"What does Ivan specialize in?";"people(where:{name:\"Ivan\"}){specializesIn{name}}"
-"What does Judy specialize in?";"people(where:{name:\"Judy\"}){specializesIn{name}}"
-"What specializations are available for the degree of Computer Engineering?";"degrees(where:{name:\"Computer Engineering\"}){hasSpecialization{name}}"
-"What specializations are available for the degree of Electrical Engineering?";"degrees(where:{name:\"Electrical Engineering\"}){hasSpecialization{name}}"
-"What specializations are available for the degree of Mechanical Engineering?";"degrees(where:{name:\"Mechanical Engineering\"}){hasSpecialization{name}}"
-"What specializations are available for the degree of Economics and Management?";"degrees(where:{name:\"Economics and Management\"}){hasSpecialization{name}}"
-"What specializations are available for the degree of Mathematics?";"degrees(where:{name:\"Mathematics\"}){hasSpecialization{name}}"
-"What degrees are available at the faculty of Electrical Engineering and Informatics?";"faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDegree{name}}"
-"What degrees are available at the faculty of Mechanical Engineering?";"faculties(where:{name:\"Mechanical Engineering\"}){hasDegree{name}}"
-"What degrees are available at the faculty of Economic and Social Sciences?";"faculties(where:{name:\"Economic and Social Sciences\"}){hasDegree{name}}"
-"What degrees are available at the faculty of Natural Sciences?";"faculties(where:{name:\"Natural Sciences\"}){hasDegree{name}}"
-"Which departments are there at the faculty of Electrical Engineering and Informatics?";"faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
-"Which departments are there at the faculty of Mechanical Engineering?";"faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
-"Which departments are there at the faculty of Economic and Social Sciences?";"faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
-"Which departments are there at the faculty of Natural Sciences?";"faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
-"What departments are there at the faculty of Electrical Engineering and Informatics?";"faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
-"What departments are there at the faculty of Mechanical Engineering?";"faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
-"What departments are there at the faculty of Economic and Social Sciences?";"faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
-"What departments are there at the faculty of Natural Sciences?";"faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
-"What departments are available at the faculty of Electrical Engineering and Informatics?";"faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
-"What departments are available at the faculty of Mechanical Engineering?";"faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
-"What departments are available at the faculty of Economic and Social Sciences?";"faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
-"What departments are available at the faculty of Natural Sciences?";"faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
-"What departments does the faculty of Electrical Engineering and Informatics have?";"faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
-"What departments does the faculty of Mechanical Engineering have?";"faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
-"What departments does the faculty of Economic and Social Sciences have?";"faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
-"What departments does the faculty of Natural Sciences have?";"faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
-"Which specializations are available at the department of Control Engineering and Information Technology?";"departments(where:{name:\"Control Engineering and Information Technology\"}){hasSpecialization{name}}"
-"Which specializations are available at the department of Measurement and Information Systems?";"departments(where:{name:\"Measurement and Information Systems\"}){hasSpecialization{name}}"
-"Which specializations are available at the department of Automation and Applied Informatics?";"departments(where:{name:\"Automation and Applied Informatics\"}){hasSpecialization{name}}"
-"Which specializations are available at the department of Materials Science and Engineering?";"departments(where:{name:\"Materials Science and Engineering\"}){hasSpecialization{name}}"
-"Which specializations are available at the department of Economics and Management?";"departments(where:{name:\"Economics and Management\"}){hasSpecialization{name}}"
-"Which specializations are available at the department of Humanities and Social Sciences?";"departments(where:{name:\"Humanities and Social Sciences\"}){hasSpecialization{name}}"
-"Which specializations are available at the department of Mathematics?";"departments(where:{name:\"Mathematics\"}){hasSpecialization{name}}"
-"What specializations are there at the department of Control Engineering and Information Technology?";"departments(where:{name:\"Control Engineering and Information Technology\"}){hasSpecialization{name}}"
-"What specializations are there at the department of Measurement and Information Systems?";"departments(where:{name:\"Measurement and Information Systems\"}){hasSpecialization{name}}"
-"What specializations are there at the department of Automation and Applied Informatics?";"departments(where:{name:\"Automation and Applied Informatics\"}){hasSpecialization{name}}"
-"What specializations are there at the department of Materials Science and Engineering?";"departments(where:{name:\"Materials Science and Engineering\"}){hasSpecialization{name}}"
-"What specializations are there at the department of Economics and Management?";"departments(where:{name:\"Economics and Management\"}){hasSpecialization{name}}"
-"What specializations are there at the department of Humanities and Social Sciences?";"departments(where:{name:\"Humanities and Social Sciences\"}){hasSpecialization{name}}"
-"What specializations are there at the department of Mathematics?";"departments(where:{name:\"Mathematics\"}){hasSpecialization{name}}"
-"What specializations does the department of Control Engineering and Information Technology have?";"departments(where:{name:\"Control Engineering and Information Technology\"}){hasSpecialization{name}}"
-"What specializations does department of Measurement and Information Systems have?";"departments(where:{name:\"Measurement and Information Systems\"}){hasSpecialization{name}}"
-"What specializations does the department of Automation and Applied Informatics have?";"departments(where:{name:\"Automation and Applied Informatics\"}){hasSpecialization{name}}"
-"What specializations does the department of Materials Science and Engineering have?";"departments(where:{name:\"Materials Science and Engineering\"}){hasSpecialization{name}}"
-"What specializations does the department of Economics and Management have?";"departments(where:{name:\"Economics and Management\"}){hasSpecialization{name}}"
-"What specializations does the department of Humanities and Social Sciences have?";"departments(where:{name:\"Humanities and Social Sciences\"}){hasSpecialization{name}}"
-"What specializations does the department of Mathematics have?";"departments(where:{name:\"Mathematics\"}){hasSpecialization{name}}"
-"Which building is room IB025 in?";"rooms(where:{name:\"IB025\"}){isIn{name}}"
-"Which building is room IB026 in?";"rooms(where:{name:\"IB026\"}){isIn{name}}"
-"Which building is room IB027 in?";"rooms(where:{name:\"IB027\"}){isIn{name}}"
-"Which building is room IB028 in?";"rooms(where:{name:\"IB028\"}){isIn{name}}"
-"Which building is room IL101 in?";"rooms(where:{name:\"IL101\"}){isIn{name}}"
-"In which building is room IL202?";"rooms(where:{name:\"IL202\"}){isIn{name}}"
-"In which building is room IL203?";"rooms(where:{name:\"IL203\"}){isIn{name}}"
-"In which building is room IL301?";"rooms(where:{name:\"IL301\"}){isIn{name}}"
-"In which building is room IL302?";"rooms(where:{name:\"IL302\"}){isIn{name}}"
-"In which building is room IL303?";"rooms(where:{name:\"IL303\"}){isIn{name}}"
-"Where is room K101?";"rooms(where:{name:\"K101\"}){isIn{name}}"
-"Where is room K102?";"rooms(where:{name:\"K102\"}){isIn{name}}"
-"Where is room K103?";"rooms(where:{name:\"K103\"}){isIn{name}}"
-"Where is room K201?";"rooms(where:{name:\"K201\"}){isIn{name}}"
-"Where is room K202?";"rooms(where:{name:\"K202\"}){isIn{name}}"
-"Where is K101?";"rooms(where:{name:\"K101\"}){isIn{name}}"
-"Where is K102?";"rooms(where:{name:\"K102\"}){isIn{name}}"
-"Where is K103?";"rooms(where:{name:\"K103\"}){isIn{name}}"
-"Where is K201?";"rooms(where:{name:\"K201\"}){isIn{name}}"
-"Where is K202?";"rooms(where:{name:\"K202\"}){isIn{name}}"
-"In what building is K203?";"rooms(where:{name:\"K203\"}){isIn{name}}"
-"In what building is F101?";"rooms(where:{name:\"F101\"}){isIn{name}}"
-"In what building is F103?";"rooms(where:{name:\"F103\"}){isIn{name}}"
-"In what building is F201?";"rooms(where:{name:\"F201\"}){isIn{name}}"
-"In what building is F202?";"rooms(where:{name:\"F202\"}){isIn{name}}"
-"What building is F102 in?";"rooms(where:{name:\"F102\"}){isIn{name}}"
-"What building is F103 in?";"rooms(where:{name:\"F103\"}){isIn{name}}"
-"What building is F201 in?";"rooms(where:{name:\"F201\"}){isIn{name}}"
-"What building is F202 in?";"rooms(where:{name:\"F202\"}){isIn{name}}"
-"What building is F203 in?";"rooms(where:{name:\"F203\"}){isIn{name}}"
-"What are the prerequisites of Introduction to C++?";"courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
-"What are the prerequisites of Algorithm Theory?";"courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
-"What are the prerequisites of Finance?";"courses(where:{name:\"Finance\"}){prerequisites{name}}"
-"What are the prerequisites of Software Testing?";"courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
-"What are the prerequisites of Electrical Power Engineering?";"courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
-"What are the prerequisites of Networks and Services?";"courses(where:{name:\"Networks and Services\"}){prerequisites{name}}"
-"What courses do i need to take Introduction to C++?";"courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
-"What courses do i need to take Algorithm Theory?";"courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
-"What courses do i need to take Finance?";"courses(where:{name:\"Finance\"}){prerequisites{name}}"
-"What courses do i need to take Software Testing?";"courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
-"What courses do i need to take Electrical Power Engineering?";"courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
-"What courses do i need to take Networks and Services?";"courses(where:{name:\"Networks and Services\"}){prerequisites{name}}"
-"What prerequisites does Introduction to C++ have?";"courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
-"What prerequisites does Algorithm Theory have?";"courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
-"What prerequisites does Finance have?";"courses(where:{name:\"Finance\"}){prerequisites{name}}"
-"What prerequisites does Software Testing have?";"courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
-"What prerequisites does Electrical Power Engineering have?";"courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
-"What prerequisites does Networks and Services have?";"courses(where:{name:\"Networks and Services\"}){prerequisites{name}}"
-"What do i need to take Introduction to C++?";"courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
-"What do i need to take Algorithm Theory?";"courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
-"What do i need to take Finance?";"courses(where:{name:\"Finance\"}){prerequisites{name}}"
-"What do i need to take Software Testing?";"courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
-"What do i need to take Electrical Power Engineering?";"courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
-"What courses are there in the first semester?";"courses(where:{semester:1}){name}"
-"What courses are there in the second semester?";"courses(where:{semester:2}){name}"
-"What courses are there in the third semester?";"courses(where:{semester:3}){name}"
-"What courses are there in the fourth semester?";"courses(where:{semester:4}){name}"
-"What courses are there in the fifth semester?";"courses(where:{semester:5}){name}"
-"What courses are there in semester 1?";"courses(where:{semester:1}){name}"
-"What courses are there in semester 2?";"courses(where:{semester:2}){name}"
-"What courses are there in semester 3?";"courses(where:{semester:3}){name}"
-"What courses are there in semester 4?";"courses(where:{semester:4}){name}"
-"What courses are there in semester 5?";"courses(where:{semester:5}){name}"
-"What is the code of Introduction to Programming?";"courses(where:{name:\"Introduction to Programming\"}){code}"
-"What is the code of Introduction to C++?";"courses(where:{name:\"Introduction to C++\"}){code}"
-"What is the code of Algorithm Theory?";"courses(where:{name:\"Algorithm Theory\"}){code}"
-"What is the code of Data Structures?";"courses(where:{name:\"Data Structures\"}){code}"
-"What is the code of Software Engineering?";"courses(where:{name:\"Software Engineering\"}){code}"
-"What is the code of Software Testing?";"courses(where:{name:\"Software Testing\"}){code}"
-"What is the code of Software Project Management?";"courses(where:{name:\"Software Project Management\"}){code}"
-"What is the code of Physics?";"courses(where:{name:\"Physics\"}){code}"
-"What is the code of Chemistry?";"courses(where:{name:\"Chemistry\"}){code}"
-"What is the code of Mathematics?";"courses(where:{name:\"Mathematics\"}){code}"
-"What is the code of Introduction to Economics?";"courses(where:{name:\"Introduction to Economics\"}){code}"
-"What is the code of Management Basics?";"courses(where:{name:\"Management Basics\"}){code}"
-"What is the code of Marketing?";"courses(where:{name:\"Marketing\"}){code}"
-"What is the code of Accounting?";"courses(where:{name:\"Accounting\"}){code}"
-"How many credits is Introduction to Programming?";"courses(where:{name:\"Introduction to Programming\"}){credit}"
-"How many credits is Introduction to C++?";"courses(where:{name:\"Introduction to C++\"}){credit}"
-"How many credits is Algorithm Theory?";"courses(where:{name:\"Algorithm Theory\"}){credit}"
-"How many credits is Data Structures?";"courses(where:{name:\"Data Structures\"}){credit}"
-"How many credits is Software Engineering?";"courses(where:{name:\"Software Engineering\"}){credit}"
-"How many credits is Software Testing?";"courses(where:{name:\"Software Testing\"}){credit}"
-"How many credits is Software Project Management?";"courses(where:{name:\"Software Project Management\"}){credit}"
-"How many credits is Physics?";"courses(where:{name:\"Physics\"}){credit}"
-"How many credits is Chemistry?";"courses(where:{name:\"Chemistry\"}){credit}"
-"How many credits is Mathematics?";"courses(where:{name:\"Mathematics\"}){credit}"
-"How many credits is Introduction to Economics?";"courses(where:{name:\"Introduction to Economics\"}){credit}"
-"How many credits is Management Basics?";"courses(where:{name:\"Management Basics\"}){credit}"
-"How many credits is Marketing?";"courses(where:{name:\"Marketing\"}){credit}"
-"How many credits is Accounting?";"courses(where:{name:\"Accounting\"}){credit}"
-"What is the description of Introduction to Programming?";"courses(where:{name:\"Introduction to Programming\"}){description}"
-"What is the description of Introduction to C++?";"courses(where:{name:\"Introduction to C++\"}){description}"
-"What is the description of Algorithm Theory?";"courses(where:{name:\"Algorithm Theory\"}){description}"
-"What is the description of Data Structures?";"courses(where:{name:\"Data Structures\"}){description}"
-"What is the description of Software Engineering?";"courses(where:{name:\"Software Engineering\"}){description}"
-"What is the description of Software Testing?";"courses(where:{name:\"Software Testing\"}){description}"
-"What is the description of Software Project Management?";"courses(where:{name:\"Software Project Management\"}){description}"
-"What is the description of Physics?";"courses(where:{name:\"Physics\"}){description}"
-"What is the description of Chemistry?";"courses(where:{name:\"Chemistry\"}){description}"
-"What is the description of Mathematics?";"courses(where:{name:\"Mathematics\"}){description}"
-"What is the description of Introduction to Economics?";"courses(where:{name:\"Introduction to Economics\"}){description}"
-"What is the description of Management Basics?";"courses(where:{name:\"Management Basics\"}){description}"
-"What is the description of Marketing?";"courses(where:{name:\"Marketing\"}){description}"
-"What is the description of Accounting?";"courses(where:{name:\"Accounting\"}){description}"
-"What is the language of Introduction to Programming?";"courses(where:{name:\"Introduction to Programming\"}){language}"
-"What is the language of Introduction to C++?";"courses(where:{name:\"Introduction to C++\"}){language}"
-"What is the language of Algorithm Theory?";"courses(where:{name:\"Algorithm Theory\"}){language}"
-"What is the language of Data Structures?";"courses(where:{name:\"Data Structures\"}){language}"
-"What is the language of Software Engineering?";"courses(where:{name:\"Software Engineering\"}){language}"
-"What is the language of Software Testing?";"courses(where:{name:\"Software Testing\"}){language}"
-"What is the language of Software Project Management?";"courses(where:{name:\"Software Project Management\"}){language}"
-"What is the language of Physics?";"courses(where:{name:\"Physics\"}){language}"
-"What is the language of Chemistry?";"courses(where:{name:\"Chemistry\"}){language}"
-"What is the language of Mathematics?";"courses(where:{name:\"Mathematics\"}){language}"
-"Which courses are in English?";"courses(where:{language:\"English\"}){name}"
-"Which courses are in Hungarian?";"courses(where:{language:\"Hungarian\"}){name}"
-"Which courses are in German?";"courses(where:{language:\"German\"}){name}"
-"Which courses are in French?";"courses(where:{language:\"French\"}){name}"
-"Which language is Marketing taught in?";"courses(where:{name:\"Marketing\"}){language}"
-"Which language is Accounting taught in?";"courses(where:{name:\"Accounting\"}){language}"
-"Which language is Management Basics taught in?";"courses(where:{name:\"Management Basics\"}){language}"
-"Which language is Introduction to Economics taught in?";"courses(where:{name:\"Introduction to Economics\"}){language}"
-"Which language is Mathematics taught in?";"courses(where:{name:\"Mathematics\"}){language}"
-"Which language is Chemistry taught in?";"courses(where:{name:\"Chemistry\"}){language}"
-"Which language is Physics taught in?";"courses(where:{name:\"Physics\"}){language}"
-"Which language is Software Project Management taught in?";"courses(where:{name:\"Software Project Management\"}){language}"
-"Which language is Software Testing taught in?";"courses(where:{name:\"Software Testing\"}){language}"
-"When is the lecture of Mathematics?";"lessons(where:{name:\"Mathematics\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Mathematics?";"lessons(where:{name:\"Mathematics\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Introduction to Economics?";"lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Introduction to Economics?";"lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Management Basics?";"lessons(where:{name:\"Management Basics\", type:\"lecture\"}){day, start, end}"
-"When is the lecture of Marketing?";"lessons(where:{name:\"Marketing\", type:\"lecture\"}){day, start, end}"
-"When is the lecture of Accounting?";"lessons(where:{name:\"Accounting\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Accounting?";"lessons(where:{name:\"Accounting\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Finance?";"lessons(where:{name:\"Finance\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Finance?";"lessons(where:{name:\"Finance\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Sociology?";"lessons(where:{name:\"Sociology\", type:\"lecture\"}){day, start, end}"
-"When is the lecture of Fluid Mechanics?";"lessons(where:{name:\"Fluid Mechanics\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Fluid Mechanics?";"lessons(where:{name:\"Fluid Mechanics\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Thermodynamics?";"lessons(where:{name:\"Thermodynamics\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Thermodynamics?";"lessons(where:{name:\"Thermodynamics\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Mechanics?";"lessons(where:{name:\"Mechanics\", type:\"lecture\"}){day, start, end}"
-"When is the lecture of Materials Science?";"lessons(where:{name:\"Materials Science\", type:\"lecture\"}){day, start, end}"
-"When is the laboratory of Materials Science?";"lessons(where:{name:\"Materials Science\", type:\"laboratory\"}){day, start, end}"
-"When is the lecture of Electrical Engineering?";"lessons(where:{name:\"Electrical Engineering\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Electrical Engineering?";"lessons(where:{name:\"Electrical Engineering\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Electronics?";"lessons(where:{name:\"Electronics\", type:\"lecture\"}){day, start, end}"
-"When is the lecture of Electrical Power Engineering?";"lessons(where:{name:\"Electrical Power Engineering\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Electrical Power Engineering?";"lessons(where:{name:\"Electrical Power Engineering\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Automation and Control Engineering?";"lessons(where:{name:\"Automation and Control Engineering\", type:\"lecture\"}){day, start, end}"
-"When is the lecture of Mechatronics?";"lessons(where:{name:\"Mechatronics\", type:\"lecture\"}){day, start, end}"
-"When is the practice of Mechatronics?";"lessons(where:{name:\"Mechatronics\", type:\"practice\"}){day, start, end}"
-"When is the lecture of Networks and Services?";"lessons(where:{name:\"Networks and Services\", type:\"lecture\"}){day, start, end}"
-"When is the laboratory of Networks and Services?";"lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){day, start, end}"
-"When is the lecture of Computing Theory?";"lessons(where:{name:\"Computing Theory\", type:\"lecture\"}){day, start, end}"
-"How often is the lecture of Mathematics?";"lessons(where:{name:\"Mathematics\", type:\"lecture\"}){recurring}"
-"How often is the practice of Mathematics?";"lessons(where:{name:\"Mathematics\", type:\"practice\"}){recurring}"
-"How often is the lecture of Introduction to Economics?";"lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){recurring}"
-"How often is the practice of Introduction to Economics?";"lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){recurring}"
-"How often is the lecture of Management Basics?";"lessons(where:{name:\"Management Basics\", type:\"lecture\"}){recurring}"
-"How often is the lecture of Marketing?";"lessons(where:{name:\"Marketing\", type:\"lecture\"}){recurring}"
-"How often is the laboratory of Networks and Services?";"lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){recurring}"
-"When does the lecture of Mathematics start?";"lessons(where:{name:\"Mathematics\", type:\"lecture\"}){start}"
-"When does the practice of Mathematics start?";"lessons(where:{name:\"Mathematics\", type:\"practice\"}){start}"
-"When does the lecture of Introduction to Economics start?";"lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){start}"
-"When does the practice of Introduction to Economics start?";"lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){start}"
-"When does the lecture of Management Basics start?";"lessons(where:{name:\"Management Basics\", type:\"lecture\"}){start}"
-"When does the lecture of Marketing start?";"lessons(where:{name:\"Marketing\", type:\"lecture\"}){start}"
-"When does the laboratory of Networks and Services start?";"lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){start}"
-"When does the lecture of Mathematics end?";"lessons(where:{name:\"Mathematics\", type:\"lecture\"}){end}"
-"When does the practice of Mathematics end?";"lessons(where:{name:\"Mathematics\", type:\"practice\"}){end}"
-"When does the lecture of Introduction to Economics end?";"lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){end}"
-"When does the practice of Introduction to Economics end?";"lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){end}"
-"When does the lecture of Management Basics end?";"lessons(where:{name:\"Management Basics\", type:\"lecture\"}){end}"
-"When does the lecture of Marketing recurr?";"lessons(where:{name:\"Marketing\", type:\"lecture\"}){recurring}"
-"When does the laboratory of Networks and Services recurr?";"lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){recurring}"
-"When does the lecture of Mathematics recurr?";"lessons(where:{name:\"Mathematics\", type:\"lecture\"}){recurring}"
-"When does the practice of Mathematics recurr?";"lessons(where:{name:\"Mathematics\", type:\"practice\"}){recurring}"
-"When does the lecture of Introduction to Economics recurr?";"lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){recurring}"
-"When does the practice of Introduction to Economics recurr?";"lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){recurring}"
-"When does the lecture of Management Basics recurr?";"lessons(where:{name:\"Management Basics\", type:\"lecture\"}){recurring}"
-"Where is the lecture of Software Engineering?";"lessons(where:{name:\"Software Engineering\", type:\"lecture\"}){isIn{name}}"
-"Where is the practice of Software Engineering?";"lessons(where:{name:\"Software Engineering\", type:\"practice\"}){isIn{name}}"
-"Where is the laboratory of Software Engineering?";"lessons(where:{name:\"Software Engineering\", type:\"laboratory\"}){isIn{name}}"
-"Where is the lecture of Software Testing?";"lessons(where:{name:\"Software Testing\", type:\"lecture\"}){isIn{name}}"
-"Where is the practice of Software Testing?";"lessons(where:{name:\"Software Testing\", type:\"practice\"}){isIn{name}}"
-"Where is the lecture of Software Project Management?";"lessons(where:{name:\"Software Project Management\", type:\"lecture\"}){isIn{name}}"
-"Where is the practice of Software Project Management?";"lessons(where:{name:\"Software Project Management\", type:\"practice\"}){isIn{name}}"
-"Where will the lecture of Physics be?";"lessons(where:{name:\"Physics\", type:\"lecture\"}){isIn{name}}"
-"Where will the practice of Physics be?";"lessons(where:{name:\"Physics\", type:\"practice\"}){isIn{name}}"
-"Where will the lecture of Chemistry be?";"lessons(where:{name:\"Chemistry\", type:\"lecture\"}){isIn{name}}"
-"Where will the practice of Chemistry be?";"lessons(where:{name:\"Chemistry\", type:\"practice\"}){isIn{name}}"
-"Where will the lecture of Mathematics be?";"lessons(where:{name:\"Mathematics\", type:\"lecture\"}){isIn{name}}"
-"Where will the practice of Mathematics be?";"lessons(where:{name:\"Mathematics\", type:\"practice\"}){isIn{name}}"
-"Where will the lecture of Introduction to Economics be?";"lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){isIn{name}}"
-"Where will the practice of Introduction to Economics be?";"lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){isIn{name}}"
-"Where will the lecture of Management Basics be?";"lessons(where:{name:\"Management Basics\", type:\"lecture\"}){isIn{name}}"
-"Where will the lecture of Marketing be?";"lessons(where:{name:\"Marketing\", type:\"lecture\"}){isIn{name}}"
-"Where will the lecture of Accounting be?";"lessons(where:{name:\"Accounting\", type:\"lecture\"}){isIn{name}}"
-"Where will the practice of Accounting be?";"lessons(where:{name:\"Accounting\", type:\"practice\"}){isIn{name}}"
-"What room is the lecture of Finance in?";"lessons(where:{name:\"Finance\", type:\"lecture\"}){isIn{name}}"
-"What room is the practice of Finance in?";"lessons(where:{name:\"Finance\", type:\"practice\"}){isIn{name}}"
-"What room is the lecture of Sociology in?";"lessons(where:{name:\"Sociology\", type:\"lecture\"}){isIn{name}}"
-"What room is the lecture of Fluid Mechanics in?";"lessons(where:{name:\"Fluid Mechanics\", type:\"lecture\"}){isIn{name}}"
-"What room is the practice of Fluid Mechanics in?";"lessons(where:{name:\"Fluid Mechanics\", type:\"practice\"}){isIn{name}}"
-"What room is the lecture of Thermodynamics in?";"lessons(where:{name:\"Thermodynamics\", type:\"lecture\"}){isIn{name}}"
-"What room is the practice of Thermodynamics in?";"lessons(where:{name:\"Thermodynamics\", type:\"practice\"}){isIn{name}}"
-"What room is the lecture of Mechanics in?";"lessons(where:{name:\"Mechanics\", type:\"lecture\"}){isIn{name}}"
-"What room is the lecture of Materials Science in?";"lessons(where:{name:\"Materials Science\", type:\"lecture\"}){isIn{name}}"
-"What room is the laboratory of Materials Science in?";"lessons(where:{name:\"Materials Science\", type:\"laboratory\"}){isIn{name}}"
-"What room is the lecture of Electrical Engineering in?";"lessons(where:{name:\"Electrical Engineering\", type:\"lecture\"}){isIn{name}}"
-"What room is the practice of Electrical Engineering in?";"lessons(where:{name:\"Electrical Engineering\", type:\"practice\"}){isIn{name}}"
-"What room is the lecture of Electronics in?";"lessons(where:{name:\"Electronics\", type:\"lecture\"}){isIn{name}}"
-"What room is the lecture of Electrical Power Engineering in?";"lessons(where:{name:\"Electrical Power Engineering\", type:\"lecture\"}){isIn{name}}"
-"What room is the practice of Electrical Power Engineering in?";"lessons(where:{name:\"Electrical Power Engineering\", type:\"practice\"}){isIn{name}}"
-"What room is the lecture of Automation and Control Engineering in?";"lessons(where:{name:\"Automation and Control Engineering\", type:\"lecture\"}){isIn{name}}"
-"What room is the lecture of Mechatronics in?";"lessons(where:{name:\"Mechatronics\", type:\"lecture\"}){isIn{name}}"
-"What room is the practice of Mechatronics in?";"lessons(where:{name:\"Mechatronics\", type:\"practice\"}){isIn{name}}"
-"What room is the lecture of Networks and Services in?";"lessons(where:{name:\"Networks and Services\", type:\"lecture\"}){isIn{name}}"
-"Where will the exam of Introduction to Programming be?";"courses(where:{name:\"Introduction to Programming\"}){hasExam{isIn{name}}}"
-"Where will the exam of Introduction to C++ be?";"courses(where:{name:\"Introduction to C++\"}){hasExam{isIn{name}}}"
-"Where will the exam of Software Engineering be?";"courses(where:{name:\"Software Engineering\"}){hasExam{isIn{name}}}"
-"Where will the exam of Software Project Management be?";"courses(where:{name:\"Software Project Management\"}){hasExam{isIn{name}}}"
-"Where will the exam of Management Basics be?";"courses(where:{name:\"Management Basics\"}){hasExam{isIn{name}}}"
-"Where will the exam of Marketing be?";"courses(where:{name:\"Marketing\"}){hasExam{isIn{name}}}"
-"Where will the exam of Materials Science be?";"courses(where:{name:\"Materials Science\"}){hasExam{isIn{name}}}"
-"Where will the exam of Automation and Control Engineering be?";"courses(where:{name:\"Automation and Control Engineering\"}){hasExam{isIn{name}}}"
-"Where will the exam of Mechatronics be?";"courses(where:{name:\"Mechatronics\"}){hasExam{isIn{name}}}"
-"Where will the exam of Networks and Services be?";"courses(where:{name:\"Networks and Services\"}){hasExam{isIn{name}}}"
-"Where will the exam of Computing Theory be?";"courses(where:{name:\"Computing Theory\"}){hasExam{isIn{name}}}"
-"Where will the exam of Physics be?";"courses(where:{name:\"Physics\"}){hasExam{isIn{name}}}"
-"Where will the exam of Chemistry be?";"courses(where:{name:\"Chemistry\"}){hasExam{isIn{name}}}"
-"Where will the exam of Mathematics be?";"courses(where:{name:\"Mathematics\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Electrical Engineering be?";"courses(where:{name:\"Electrical Engineering\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Electronics be?";"courses(where:{name:\"Electronics\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Electrical Power Engineering be?";"courses(where:{name:\"Electrical Power Engineering\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Accounting be?";"courses(where:{name:\"Accounting\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Finance be?";"courses(where:{name:\"Finance\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Sociology be?";"courses(where:{name:\"Sociology\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Fluid Mechanics be?";"courses(where:{name:\"Fluid Mechanics\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Thermodynamics be?";"courses(where:{name:\"Thermodynamics\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Mechanics be?";"courses(where:{name:\"Mechanics\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Introduction to Programming be?";"courses(where:{name:\"Introduction to Programming\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Introduction to C++ be?";"courses(where:{name:\"Introduction to C++\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Software Engineering be?";"courses(where:{name:\"Software Engineering\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Software Project Management be?";"courses(where:{name:\"Software Project Management\"}){hasExam{isIn{name}}}"
-"In which room will the exam of Management Basics be?";"courses(where:{name:\"Management Basics\"}){hasExam{isIn{name}}}"
-"When will the exam of Introduction to Programming be?";"courses(where:{name:\"Introduction to Programming\"}){hasExam{date}}"
-"When will the exam of Introduction to C++ be?";"courses(where:{name:\"Introduction to C++\"}){hasExam{date}}"
-"When will the exam of Software Engineering be?";"courses(where:{name:\"Software Engineering\"}){hasExam{date}}"
-"When will the exam of Software Project Management be?";"courses(where:{name:\"Software Project Management\"}){hasExam{date}}"
-"When will the exam of Management Basics be?";"courses(where:{name:\"Management Basics\"}){hasExam{date}}"
-"When will the exam of Marketing be?";"courses(where:{name:\"Marketing\"}){hasExam{date}}"
-"When will the exam of Materials Science be?";"courses(where:{name:\"Materials Science\"}){hasExam{date}}"
-"When will the exam of Automation and Control Engineering be?";"courses(where:{name:\"Automation and Control Engineering\"}){hasExam{date}}"
-"When will the exam of Mechatronics be?";"courses(where:{name:\"Mechatronics\"}){hasExam{date}}"
-"When will the exam of Networks and Services be?";"courses(where:{name:\"Networks and Services\"}){hasExam{date}}"
-"When will the exam of Computing Theory be?";"courses(where:{name:\"Computing Theory\"}){hasExam{date}}"
-"When will the exam of Physics be?";"courses(where:{name:\"Physics\"}){hasExam{date}}"
-"When will the exam of Chemistry be?";"courses(where:{name:\"Chemistry\"}){hasExam{date}}"
-"When will the exam of Mathematics be?";"courses(where:{name:\"Mathematics\"}){hasExam{date}}"
-"When will the exam of Electrical Engineering be?";"courses(where:{name:\"Electrical Engineering\"}){hasExam{date}}"
-"When will the exam of Electronics be?";"courses(where:{name:\"Electronics\"}){hasExam{date}}"
-"When will the exam of Electrical Power Engineering be?";"courses(where:{name:\"Electrical Power Engineering\"}){hasExam{date}}"
-"When will the exam of Accounting be?";"courses(where:{name:\"Accounting\"}){hasExam{date}}"
-"When will the exam of Finance be?";"courses(where:{name:\"Finance\"}){hasExam{date}}"
-"When will the exam of Sociology be?";"courses(where:{name:\"Sociology\"}){hasExam{date}}"
-"When will the exam of Fluid Mechanics be?";"courses(where:{name:\"Fluid Mechanics\"}){hasExam{date}}"
-"When will the exam of Thermodynamics be?";"courses(where:{name:\"Thermodynamics\"}){hasExam{date}}"
-"What courses are there in the Computer Engineering degree?";"degrees(where:{name:\"Computer Engineering\"}){hasCourse{name}}"
-"What courses are there in the Electrical Engineering degree?";"degrees(where:{name:\"Electrical Engineering\"}){hasCourse{name}}"
-"What courses are there in the Mechanical Engineering degree?";"degrees(where:{name:\"Mechanical Engineering\"}){hasCourse{name}}"
-"What courses are there in the Economics and Management degree?";"degrees(where:{name:\"Economics and Management\"}){hasCourse{name}}"
-"What courses are there in the Mathematics degree?";"degrees(where:{name:\"Mathematics\"}){hasCourse{name}}"
-"What courses are there in the Physics degree?";"degrees(where:{name:\"Physics\"}){hasCourse{name}}"
-"What courses are there in the Chemistry degree?";"degrees(where:{name:\"Chemistry\"}){hasCourse{name}}"
-"What courses are there in the Biotechnology degree?";"degrees(where:{name:\"Biotechnology\"}){hasCourse{name}}"
+What faculties are there?;faculties{name}
+What departments are there?;departments{name}
+What degrees are there?;degrees{name}
+Which specializations are there?;specializations{name}
+What specializations are there?;specializations{name}
+What rooms are there?;rooms{name}
+What courses are there?;courses{name}
+What buildings are there?;buildings{name}
+What are the departments of the faculty of Electrical Engineering and Informatics?;faculties(where:{name:"Electrical Engineering and Informatics"}){hasDepartment{name}}
+What are the departments of the faculty of Mechanical Engineering?;faculties(where:{name:"Mechanical Engineering"}){hasDepartment{name}}
+What are the departments of the faculty of Economic and Social Sciences?;faculties(where:{name:"Economic and Social Sciences"}){hasDepartment{name}}
+What are the departments of the faculty of Natural Sciences?;faculties(where:{name:"Natural Sciences"}){hasDepartment{name}}
+What is Alice's neptun code?;people(where:{name:"Alice"}){neptun}
+What is Bob's neptun code?;people(where:{name:"Bob"}){neptun}
+What is Charlie's neptun code?;people(where:{name:"Charlie"}){neptun}
+What is David's neptun code?;people(where:{name:"David"}){neptun}
+What is Eve's neptun code?;people(where:{name:"Eve"}){neptun}
+What is Frank's neptun code?;people(where:{name:"Frank"}){neptun}
+What is Grace's neptun code?;people(where:{name:"Grace"}){neptun}
+What is Heidi's neptun code?;people(where:{name:"Heidi"}){neptun}
+What is Ivan's neptun code?;people(where:{name:"Ivan"}){neptun}
+What is Judy's neptun code?;people(where:{name:"Judy"}){neptun}
+What is Alice's email address?;people(where:{name:"Alice"}){email}
+What is Bob's email address?;people(where:{name:"Bob"}){email}
+What is Charlie's email address?;people(where:{name:"Charlie"}){email}
+What is David's email address?;people(where:{name:"David"}){email}
+What is Eve's email address?;people(where:{name:"Eve"}){email}
+What is Frank's email address?;people(where:{name:"Frank"}){email}
+What is Grace's email address?;people(where:{name:"Grace"}){email}
+What is Heidi's email address?;people(where:{name:"Heidi"}){email}
+What is Ivan's email address?;people(where:{name:"Ivan"}){email}
+What is Judy's email address?;people(where:{name:"Judy"}){email}
+When is Alice's birthday?;people(where:{name:"Alice"}){birthday}
+When is Bob's birthday?;people(where:{name:"Bob"}){birthday}
+When is Charlie's birthday?;people(where:{name:"Charlie"}){birthday}
+When is David's birthday?;people(where:{name:"David"}){birthday}
+When is Eve's birthday?;people(where:{name:"Eve"}){birthday}
+When is Frank's birthday?;people(where:{name:"Frank"}){birthday}
+When is Grace's birthday?;people(where:{name:"Grace"}){birthday}
+When is Heidi's birthday?;people(where:{name:"Heidi"}){birthday}
+When is Ivan's birthday?;people(where:{name:"Ivan"}){birthday}
+When is Judy's birthday?;people(where:{name:"Judy"}){birthday}
+What is Alice studying?;people(where:{name:"Alice"}){studies{name}}
+What is Bob studying?;people(where:{name:"Bob"}){studies{name}}
+What is Charlie studying?;people(where:{name:"Charlie"}){studies{name}}
+What is David studying?;people(where:{name:"David"}){studies{name}}
+What is Eve studying?;people(where:{name:"Eve"}){studies{name}}
+What is Frank studying?;people(where:{name:"Frank"}){studies{name}}
+What is Grace studying?;people(where:{name:"Grace"}){studies{name}}
+What is Heidi studying?;people(where:{name:"Heidi"}){studies{name}}
+What is Ivan studying?;people(where:{name:"Ivan"}){studies{name}}
+What is Judy studying?;people(where:{name:"Judy"}){studies{name}}
+What is Alice's degree?;people(where:{name:"Alice"}){studies{name}}
+What is Bob's degree?;people(where:{name:"Bob"}){studies{name}}
+What is Charlie's degree?;people(where:{name:"Charlie"}){studies{name}}
+What is David's degree?;people(where:{name:"David"}){studies{name}}
+What is Eve's degree?;people(where:{name:"Eve"}){studies{name}}
+What is Frank's degree?;people(where:{name:"Frank"}){studies{name}}
+What is Grace's degree?;people(where:{name:"Grace"}){studies{name}}
+What is Heidi's degree?;people(where:{name:"Heidi"}){studies{name}}
+What is Ivan's degree?;people(where:{name:"Ivan"}){studies{name}}
+What is Judy's degree?;people(where:{name:"Judy"}){studies{name}}
+What is Alice's specialization?;people(where:{name:"Alice"}){specializesIn{name}}
+What is Bob's specialization?;people(where:{name:"Bob"}){specializesIn{name}}
+What is Charlie's specialization?;people(where:{name:"Charlie"}){specializesIn{name}}
+What is David's specialization?;people(where:{name:"David"}){specializesIn{name}}
+What is Eve's specialization?;people(where:{name:"Eve"}){specializesIn{name}}
+What is Frank's specialization?;people(where:{name:"Frank"}){specializesIn{name}}
+What is Grace's specialization?;people(where:{name:"Grace"}){specializesIn{name}}
+What is Heidi's specialization?;people(where:{name:"Heidi"}){specializesIn{name}}
+What is Ivan's specialization?;people(where:{name:"Ivan"}){specializesIn{name}}
+What is Judy's specialization?;people(where:{name:"Judy"}){specializesIn{name}}
+What does Alice specialize in?;people(where:{name:"Alice"}){specializesIn{name}}
+What does Bob specialize in?;people(where:{name:"Bob"}){specializesIn{name}}
+What does Charlie specialize in?;people(where:{name:"Charlie"}){specializesIn{name}}
+What does David specialize in?;people(where:{name:"David"}){specializesIn{name}}
+What does Eve specialize in?;people(where:{name:"Eve"}){specializesIn{name}}
+What does Frank specialize in?;people(where:{name:"Frank"}){specializesIn{name}}
+What does Grace specialize in?;people(where:{name:"Grace"}){specializesIn{name}}
+What does Heidi specialize in?;people(where:{name:"Heidi"}){specializesIn{name}}
+What does Ivan specialize in?;people(where:{name:"Ivan"}){specializesIn{name}}
+What does Judy specialize in?;people(where:{name:"Judy"}){specializesIn{name}}
+What specializations are available for the degree of Computer Engineering?;degrees(where:{name:"Computer Engineering"}){hasSpecialization{name}}
+What specializations are available for the degree of Electrical Engineering?;degrees(where:{name:"Electrical Engineering"}){hasSpecialization{name}}
+What specializations are available for the degree of Mechanical Engineering?;degrees(where:{name:"Mechanical Engineering"}){hasSpecialization{name}}
+What specializations are available for the degree of Economics and Management?;degrees(where:{name:"Economics and Management"}){hasSpecialization{name}}
+What specializations are available for the degree of Mathematics?;degrees(where:{name:"Mathematics"}){hasSpecialization{name}}
+What degrees are available at the faculty of Electrical Engineering and Informatics?;faculties(where:{name:"Electrical Engineering and Informatics"}){hasDegree{name}}
+What degrees are available at the faculty of Mechanical Engineering?;faculties(where:{name:"Mechanical Engineering"}){hasDegree{name}}
+What degrees are available at the faculty of Economic and Social Sciences?;faculties(where:{name:"Economic and Social Sciences"}){hasDegree{name}}
+What degrees are available at the faculty of Natural Sciences?;faculties(where:{name:"Natural Sciences"}){hasDegree{name}}
+Which departments are there at the faculty of Electrical Engineering and Informatics?;faculties(where:{name:"Electrical Engineering and Informatics"}){hasDepartment{name}}
+Which departments are there at the faculty of Mechanical Engineering?;faculties(where:{name:"Mechanical Engineering"}){hasDepartment{name}}
+Which departments are there at the faculty of Economic and Social Sciences?;faculties(where:{name:"Economic and Social Sciences"}){hasDepartment{name}}
+Which departments are there at the faculty of Natural Sciences?;faculties(where:{name:"Natural Sciences"}){hasDepartment{name}}
+What departments are there at the faculty of Electrical Engineering and Informatics?;faculties(where:{name:"Electrical Engineering and Informatics"}){hasDepartment{name}}
+What departments are there at the faculty of Mechanical Engineering?;faculties(where:{name:"Mechanical Engineering"}){hasDepartment{name}}
+What departments are there at the faculty of Economic and Social Sciences?;faculties(where:{name:"Economic and Social Sciences"}){hasDepartment{name}}
+What departments are there at the faculty of Natural Sciences?;faculties(where:{name:"Natural Sciences"}){hasDepartment{name}}
+What departments are available at the faculty of Electrical Engineering and Informatics?;faculties(where:{name:"Electrical Engineering and Informatics"}){hasDepartment{name}}
+What departments are available at the faculty of Mechanical Engineering?;faculties(where:{name:"Mechanical Engineering"}){hasDepartment{name}}
+What departments are available at the faculty of Economic and Social Sciences?;faculties(where:{name:"Economic and Social Sciences"}){hasDepartment{name}}
+What departments are available at the faculty of Natural Sciences?;faculties(where:{name:"Natural Sciences"}){hasDepartment{name}}
+What departments does the faculty of Electrical Engineering and Informatics have?;faculties(where:{name:"Electrical Engineering and Informatics"}){hasDepartment{name}}
+What departments does the faculty of Mechanical Engineering have?;faculties(where:{name:"Mechanical Engineering"}){hasDepartment{name}}
+What departments does the faculty of Economic and Social Sciences have?;faculties(where:{name:"Economic and Social Sciences"}){hasDepartment{name}}
+What departments does the faculty of Natural Sciences have?;faculties(where:{name:"Natural Sciences"}){hasDepartment{name}}
+Which specializations are available at the department of Control Engineering and Information Technology?;departments(where:{name:"Control Engineering and Information Technology"}){hasSpecialization{name}}
+Which specializations are available at the department of Measurement and Information Systems?;departments(where:{name:"Measurement and Information Systems"}){hasSpecialization{name}}
+Which specializations are available at the department of Automation and Applied Informatics?;departments(where:{name:"Automation and Applied Informatics"}){hasSpecialization{name}}
+Which specializations are available at the department of Materials Science and Engineering?;departments(where:{name:"Materials Science and Engineering"}){hasSpecialization{name}}
+Which specializations are available at the department of Economics and Management?;departments(where:{name:"Economics and Management"}){hasSpecialization{name}}
+Which specializations are available at the department of Humanities and Social Sciences?;departments(where:{name:"Humanities and Social Sciences"}){hasSpecialization{name}}
+Which specializations are available at the department of Mathematics?;departments(where:{name:"Mathematics"}){hasSpecialization{name}}
+What specializations are there at the department of Control Engineering and Information Technology?;departments(where:{name:"Control Engineering and Information Technology"}){hasSpecialization{name}}
+What specializations are there at the department of Measurement and Information Systems?;departments(where:{name:"Measurement and Information Systems"}){hasSpecialization{name}}
+What specializations are there at the department of Automation and Applied Informatics?;departments(where:{name:"Automation and Applied Informatics"}){hasSpecialization{name}}
+What specializations are there at the department of Materials Science and Engineering?;departments(where:{name:"Materials Science and Engineering"}){hasSpecialization{name}}
+What specializations are there at the department of Economics and Management?;departments(where:{name:"Economics and Management"}){hasSpecialization{name}}
+What specializations are there at the department of Humanities and Social Sciences?;departments(where:{name:"Humanities and Social Sciences"}){hasSpecialization{name}}
+What specializations are there at the department of Mathematics?;departments(where:{name:"Mathematics"}){hasSpecialization{name}}
+What specializations does the department of Control Engineering and Information Technology have?;departments(where:{name:"Control Engineering and Information Technology"}){hasSpecialization{name}}
+What specializations does department of Measurement and Information Systems have?;departments(where:{name:"Measurement and Information Systems"}){hasSpecialization{name}}
+What specializations does the department of Automation and Applied Informatics have?;departments(where:{name:"Automation and Applied Informatics"}){hasSpecialization{name}}
+What specializations does the department of Materials Science and Engineering have?;departments(where:{name:"Materials Science and Engineering"}){hasSpecialization{name}}
+What specializations does the department of Economics and Management have?;departments(where:{name:"Economics and Management"}){hasSpecialization{name}}
+What specializations does the department of Humanities and Social Sciences have?;departments(where:{name:"Humanities and Social Sciences"}){hasSpecialization{name}}
+What specializations does the department of Mathematics have?;departments(where:{name:"Mathematics"}){hasSpecialization{name}}
+Which building is room IB025 in?;rooms(where:{name:"IB025"}){isIn{name}}
+Which building is room IB026 in?;rooms(where:{name:"IB026"}){isIn{name}}
+Which building is room IB027 in?;rooms(where:{name:"IB027"}){isIn{name}}
+Which building is room IB028 in?;rooms(where:{name:"IB028"}){isIn{name}}
+Which building is room IL101 in?;rooms(where:{name:"IL101"}){isIn{name}}
+In which building is room IL202?;rooms(where:{name:"IL202"}){isIn{name}}
+In which building is room IL203?;rooms(where:{name:"IL203"}){isIn{name}}
+In which building is room IL301?;rooms(where:{name:"IL301"}){isIn{name}}
+In which building is room IL302?;rooms(where:{name:"IL302"}){isIn{name}}
+In which building is room IL303?;rooms(where:{name:"IL303"}){isIn{name}}
+Where is room K101?;rooms(where:{name:"K101"}){isIn{name}}
+Where is room K102?;rooms(where:{name:"K102"}){isIn{name}}
+Where is room K103?;rooms(where:{name:"K103"}){isIn{name}}
+Where is room K201?;rooms(where:{name:"K201"}){isIn{name}}
+Where is room K202?;rooms(where:{name:"K202"}){isIn{name}}
+Where is K101?;rooms(where:{name:"K101"}){isIn{name}}
+Where is K102?;rooms(where:{name:"K102"}){isIn{name}}
+Where is K103?;rooms(where:{name:"K103"}){isIn{name}}
+Where is K201?;rooms(where:{name:"K201"}){isIn{name}}
+Where is K202?;rooms(where:{name:"K202"}){isIn{name}}
+In what building is K203?;rooms(where:{name:"K203"}){isIn{name}}
+In what building is F101?;rooms(where:{name:"F101"}){isIn{name}}
+In what building is F103?;rooms(where:{name:"F103"}){isIn{name}}
+In what building is F201?;rooms(where:{name:"F201"}){isIn{name}}
+In what building is F202?;rooms(where:{name:"F202"}){isIn{name}}
+What building is F102 in?;rooms(where:{name:"F102"}){isIn{name}}
+What building is F103 in?;rooms(where:{name:"F103"}){isIn{name}}
+What building is F201 in?;rooms(where:{name:"F201"}){isIn{name}}
+What building is F202 in?;rooms(where:{name:"F202"}){isIn{name}}
+What building is F203 in?;rooms(where:{name:"F203"}){isIn{name}}
+What are the prerequisites of Introduction to C++?;courses(where:{name:"Introduction to C++"}){prerequisites{name}}
+What are the prerequisites of Algorithm Theory?;courses(where:{name:"Algorithm Theory"}){prerequisites{name}}
+What are the prerequisites of Finance?;courses(where:{name:"Finance"}){prerequisites{name}}
+What are the prerequisites of Software Testing?;courses(where:{name:"Software Testing"}){prerequisites{name}}
+What are the prerequisites of Electrical Power Engineering?;courses(where:{name:"Electrical Power Engineering"}){prerequisites{name}}
+What are the prerequisites of Networks and Services?;courses(where:{name:"Networks and Services"}){prerequisites{name}}
+What courses do i need to take Introduction to C++?;courses(where:{name:"Introduction to C++"}){prerequisites{name}}
+What courses do i need to take Algorithm Theory?;courses(where:{name:"Algorithm Theory"}){prerequisites{name}}
+What courses do i need to take Finance?;courses(where:{name:"Finance"}){prerequisites{name}}
+What courses do i need to take Software Testing?;courses(where:{name:"Software Testing"}){prerequisites{name}}
+What courses do i need to take Electrical Power Engineering?;courses(where:{name:"Electrical Power Engineering"}){prerequisites{name}}
+What courses do i need to take Networks and Services?;courses(where:{name:"Networks and Services"}){prerequisites{name}}
+What prerequisites does Introduction to C++ have?;courses(where:{name:"Introduction to C++"}){prerequisites{name}}
+What prerequisites does Algorithm Theory have?;courses(where:{name:"Algorithm Theory"}){prerequisites{name}}
+What prerequisites does Finance have?;courses(where:{name:"Finance"}){prerequisites{name}}
+What prerequisites does Software Testing have?;courses(where:{name:"Software Testing"}){prerequisites{name}}
+What prerequisites does Electrical Power Engineering have?;courses(where:{name:"Electrical Power Engineering"}){prerequisites{name}}
+What prerequisites does Networks and Services have?;courses(where:{name:"Networks and Services"}){prerequisites{name}}
+What do i need to take Introduction to C++?;courses(where:{name:"Introduction to C++"}){prerequisites{name}}
+What do i need to take Algorithm Theory?;courses(where:{name:"Algorithm Theory"}){prerequisites{name}}
+What do i need to take Finance?;courses(where:{name:"Finance"}){prerequisites{name}}
+What do i need to take Software Testing?;courses(where:{name:"Software Testing"}){prerequisites{name}}
+What do i need to take Electrical Power Engineering?;courses(where:{name:"Electrical Power Engineering"}){prerequisites{name}}
+What courses are there in the first semester?;courses(where:{semester:1}){name}
+What courses are there in the second semester?;courses(where:{semester:2}){name}
+What courses are there in the third semester?;courses(where:{semester:3}){name}
+What courses are there in the fourth semester?;courses(where:{semester:4}){name}
+What courses are there in the fifth semester?;courses(where:{semester:5}){name}
+What courses are there in semester 1?;courses(where:{semester:1}){name}
+What courses are there in semester 2?;courses(where:{semester:2}){name}
+What courses are there in semester 3?;courses(where:{semester:3}){name}
+What courses are there in semester 4?;courses(where:{semester:4}){name}
+What courses are there in semester 5?;courses(where:{semester:5}){name}
+What is the code of Introduction to Programming?;courses(where:{name:"Introduction to Programming"}){code}
+What is the code of Introduction to C++?;courses(where:{name:"Introduction to C++"}){code}
+What is the code of Algorithm Theory?;courses(where:{name:"Algorithm Theory"}){code}
+What is the code of Data Structures?;courses(where:{name:"Data Structures"}){code}
+What is the code of Software Engineering?;courses(where:{name:"Software Engineering"}){code}
+What is the code of Software Testing?;courses(where:{name:"Software Testing"}){code}
+What is the code of Software Project Management?;courses(where:{name:"Software Project Management"}){code}
+What is the code of Physics?;courses(where:{name:"Physics"}){code}
+What is the code of Chemistry?;courses(where:{name:"Chemistry"}){code}
+What is the code of Mathematics?;courses(where:{name:"Mathematics"}){code}
+What is the code of Introduction to Economics?;courses(where:{name:"Introduction to Economics"}){code}
+What is the code of Management Basics?;courses(where:{name:"Management Basics"}){code}
+What is the code of Marketing?;courses(where:{name:"Marketing"}){code}
+What is the code of Accounting?;courses(where:{name:"Accounting"}){code}
+How many credits is Introduction to Programming?;courses(where:{name:"Introduction to Programming"}){credit}
+How many credits is Introduction to C++?;courses(where:{name:"Introduction to C++"}){credit}
+How many credits is Algorithm Theory?;courses(where:{name:"Algorithm Theory"}){credit}
+How many credits is Data Structures?;courses(where:{name:"Data Structures"}){credit}
+How many credits is Software Engineering?;courses(where:{name:"Software Engineering"}){credit}
+How many credits is Software Testing?;courses(where:{name:"Software Testing"}){credit}
+How many credits is Software Project Management?;courses(where:{name:"Software Project Management"}){credit}
+How many credits is Physics?;courses(where:{name:"Physics"}){credit}
+How many credits is Chemistry?;courses(where:{name:"Chemistry"}){credit}
+How many credits is Mathematics?;courses(where:{name:"Mathematics"}){credit}
+How many credits is Introduction to Economics?;courses(where:{name:"Introduction to Economics"}){credit}
+How many credits is Management Basics?;courses(where:{name:"Management Basics"}){credit}
+How many credits is Marketing?;courses(where:{name:"Marketing"}){credit}
+How many credits is Accounting?;courses(where:{name:"Accounting"}){credit}
+What is the description of Introduction to Programming?;courses(where:{name:"Introduction to Programming"}){description}
+What is the description of Introduction to C++?;courses(where:{name:"Introduction to C++"}){description}
+What is the description of Algorithm Theory?;courses(where:{name:"Algorithm Theory"}){description}
+What is the description of Data Structures?;courses(where:{name:"Data Structures"}){description}
+What is the description of Software Engineering?;courses(where:{name:"Software Engineering"}){description}
+What is the description of Software Testing?;courses(where:{name:"Software Testing"}){description}
+What is the description of Software Project Management?;courses(where:{name:"Software Project Management"}){description}
+What is the description of Physics?;courses(where:{name:"Physics"}){description}
+What is the description of Chemistry?;courses(where:{name:"Chemistry"}){description}
+What is the description of Mathematics?;courses(where:{name:"Mathematics"}){description}
+What is the description of Introduction to Economics?;courses(where:{name:"Introduction to Economics"}){description}
+What is the description of Management Basics?;courses(where:{name:"Management Basics"}){description}
+What is the description of Marketing?;courses(where:{name:"Marketing"}){description}
+What is the description of Accounting?;courses(where:{name:"Accounting"}){description}
+What is the language of Introduction to Programming?;courses(where:{name:"Introduction to Programming"}){language}
+What is the language of Introduction to C++?;courses(where:{name:"Introduction to C++"}){language}
+What is the language of Algorithm Theory?;courses(where:{name:"Algorithm Theory"}){language}
+What is the language of Data Structures?;courses(where:{name:"Data Structures"}){language}
+What is the language of Software Engineering?;courses(where:{name:"Software Engineering"}){language}
+What is the language of Software Testing?;courses(where:{name:"Software Testing"}){language}
+What is the language of Software Project Management?;courses(where:{name:"Software Project Management"}){language}
+What is the language of Physics?;courses(where:{name:"Physics"}){language}
+What is the language of Chemistry?;courses(where:{name:"Chemistry"}){language}
+What is the language of Mathematics?;courses(where:{name:"Mathematics"}){language}
+Which courses are in English?;courses(where:{language:"English"}){name}
+Which courses are in Hungarian?;courses(where:{language:"Hungarian"}){name}
+Which courses are in German?;courses(where:{language:"German"}){name}
+Which courses are in French?;courses(where:{language:"French"}){name}
+Which language is Marketing taught in?;courses(where:{name:"Marketing"}){language}
+Which language is Accounting taught in?;courses(where:{name:"Accounting"}){language}
+Which language is Management Basics taught in?;courses(where:{name:"Management Basics"}){language}
+Which language is Introduction to Economics taught in?;courses(where:{name:"Introduction to Economics"}){language}
+Which language is Mathematics taught in?;courses(where:{name:"Mathematics"}){language}
+Which language is Chemistry taught in?;courses(where:{name:"Chemistry"}){language}
+Which language is Physics taught in?;courses(where:{name:"Physics"}){language}
+Which language is Software Project Management taught in?;courses(where:{name:"Software Project Management"}){language}
+Which language is Software Testing taught in?;courses(where:{name:"Software Testing"}){language}
+When is the lecture of Mathematics?;lessons(where:{name:"Mathematics", type:"lecture"}){day, start, end}
+When is the practice of Mathematics?;lessons(where:{name:"Mathematics", type:"practice"}){day, start, end}
+When is the lecture of Introduction to Economics?;lessons(where:{name:"Introduction to Economics", type:"lecture"}){day, start, end}
+When is the practice of Introduction to Economics?;lessons(where:{name:"Introduction to Economics", type:"practice"}){day, start, end}
+When is the lecture of Management Basics?;lessons(where:{name:"Management Basics", type:"lecture"}){day, start, end}
+When is the lecture of Marketing?;lessons(where:{name:"Marketing", type:"lecture"}){day, start, end}
+When is the lecture of Accounting?;lessons(where:{name:"Accounting", type:"lecture"}){day, start, end}
+When is the practice of Accounting?;lessons(where:{name:"Accounting", type:"practice"}){day, start, end}
+When is the lecture of Finance?;lessons(where:{name:"Finance", type:"lecture"}){day, start, end}
+When is the practice of Finance?;lessons(where:{name:"Finance", type:"practice"}){day, start, end}
+When is the lecture of Sociology?;lessons(where:{name:"Sociology", type:"lecture"}){day, start, end}
+When is the lecture of Fluid Mechanics?;lessons(where:{name:"Fluid Mechanics", type:"lecture"}){day, start, end}
+When is the practice of Fluid Mechanics?;lessons(where:{name:"Fluid Mechanics", type:"practice"}){day, start, end}
+When is the lecture of Thermodynamics?;lessons(where:{name:"Thermodynamics", type:"lecture"}){day, start, end}
+When is the practice of Thermodynamics?;lessons(where:{name:"Thermodynamics", type:"practice"}){day, start, end}
+When is the lecture of Mechanics?;lessons(where:{name:"Mechanics", type:"lecture"}){day, start, end}
+When is the lecture of Materials Science?;lessons(where:{name:"Materials Science", type:"lecture"}){day, start, end}
+When is the laboratory of Materials Science?;lessons(where:{name:"Materials Science", type:"laboratory"}){day, start, end}
+When is the lecture of Electrical Engineering?;lessons(where:{name:"Electrical Engineering", type:"lecture"}){day, start, end}
+When is the practice of Electrical Engineering?;lessons(where:{name:"Electrical Engineering", type:"practice"}){day, start, end}
+When is the lecture of Electronics?;lessons(where:{name:"Electronics", type:"lecture"}){day, start, end}
+When is the lecture of Electrical Power Engineering?;lessons(where:{name:"Electrical Power Engineering", type:"lecture"}){day, start, end}
+When is the practice of Electrical Power Engineering?;lessons(where:{name:"Electrical Power Engineering", type:"practice"}){day, start, end}
+When is the lecture of Automation and Control Engineering?;lessons(where:{name:"Automation and Control Engineering", type:"lecture"}){day, start, end}
+When is the lecture of Mechatronics?;lessons(where:{name:"Mechatronics", type:"lecture"}){day, start, end}
+When is the practice of Mechatronics?;lessons(where:{name:"Mechatronics", type:"practice"}){day, start, end}
+When is the lecture of Networks and Services?;lessons(where:{name:"Networks and Services", type:"lecture"}){day, start, end}
+When is the laboratory of Networks and Services?;lessons(where:{name:"Networks and Services", type:"laboratory"}){day, start, end}
+When is the lecture of Computing Theory?;lessons(where:{name:"Computing Theory", type:"lecture"}){day, start, end}
+How often is the lecture of Mathematics?;lessons(where:{name:"Mathematics", type:"lecture"}){recurring}
+How often is the practice of Mathematics?;lessons(where:{name:"Mathematics", type:"practice"}){recurring}
+How often is the lecture of Introduction to Economics?;lessons(where:{name:"Introduction to Economics", type:"lecture"}){recurring}
+How often is the practice of Introduction to Economics?;lessons(where:{name:"Introduction to Economics", type:"practice"}){recurring}
+How often is the lecture of Management Basics?;lessons(where:{name:"Management Basics", type:"lecture"}){recurring}
+How often is the lecture of Marketing?;lessons(where:{name:"Marketing", type:"lecture"}){recurring}
+How often is the laboratory of Networks and Services?;lessons(where:{name:"Networks and Services", type:"laboratory"}){recurring}
+When does the lecture of Mathematics start?;lessons(where:{name:"Mathematics", type:"lecture"}){start}
+When does the practice of Mathematics start?;lessons(where:{name:"Mathematics", type:"practice"}){start}
+When does the lecture of Introduction to Economics start?;lessons(where:{name:"Introduction to Economics", type:"lecture"}){start}
+When does the practice of Introduction to Economics start?;lessons(where:{name:"Introduction to Economics", type:"practice"}){start}
+When does the lecture of Management Basics start?;lessons(where:{name:"Management Basics", type:"lecture"}){start}
+When does the lecture of Marketing start?;lessons(where:{name:"Marketing", type:"lecture"}){start}
+When does the laboratory of Networks and Services start?;lessons(where:{name:"Networks and Services", type:"laboratory"}){start}
+When does the lecture of Mathematics end?;lessons(where:{name:"Mathematics", type:"lecture"}){end}
+When does the practice of Mathematics end?;lessons(where:{name:"Mathematics", type:"practice"}){end}
+When does the lecture of Introduction to Economics end?;lessons(where:{name:"Introduction to Economics", type:"lecture"}){end}
+When does the practice of Introduction to Economics end?;lessons(where:{name:"Introduction to Economics", type:"practice"}){end}
+When does the lecture of Management Basics end?;lessons(where:{name:"Management Basics", type:"lecture"}){end}
+When does the lecture of Marketing recurr?;lessons(where:{name:"Marketing", type:"lecture"}){recurring}
+When does the laboratory of Networks and Services recurr?;lessons(where:{name:"Networks and Services", type:"laboratory"}){recurring}
+When does the lecture of Mathematics recurr?;lessons(where:{name:"Mathematics", type:"lecture"}){recurring}
+When does the practice of Mathematics recurr?;lessons(where:{name:"Mathematics", type:"practice"}){recurring}
+When does the lecture of Introduction to Economics recurr?;lessons(where:{name:"Introduction to Economics", type:"lecture"}){recurring}
+When does the practice of Introduction to Economics recurr?;lessons(where:{name:"Introduction to Economics", type:"practice"}){recurring}
+When does the lecture of Management Basics recurr?;lessons(where:{name:"Management Basics", type:"lecture"}){recurring}
+Where is the lecture of Software Engineering?;lessons(where:{name:"Software Engineering", type:"lecture"}){isIn{name}}
+Where is the practice of Software Engineering?;lessons(where:{name:"Software Engineering", type:"practice"}){isIn{name}}
+Where is the laboratory of Software Engineering?;lessons(where:{name:"Software Engineering", type:"laboratory"}){isIn{name}}
+Where is the lecture of Software Testing?;lessons(where:{name:"Software Testing", type:"lecture"}){isIn{name}}
+Where is the practice of Software Testing?;lessons(where:{name:"Software Testing", type:"practice"}){isIn{name}}
+Where is the lecture of Software Project Management?;lessons(where:{name:"Software Project Management", type:"lecture"}){isIn{name}}
+Where is the practice of Software Project Management?;lessons(where:{name:"Software Project Management", type:"practice"}){isIn{name}}
+Where will the lecture of Physics be?;lessons(where:{name:"Physics", type:"lecture"}){isIn{name}}
+Where will the practice of Physics be?;lessons(where:{name:"Physics", type:"practice"}){isIn{name}}
+Where will the lecture of Chemistry be?;lessons(where:{name:"Chemistry", type:"lecture"}){isIn{name}}
+Where will the practice of Chemistry be?;lessons(where:{name:"Chemistry", type:"practice"}){isIn{name}}
+Where will the lecture of Mathematics be?;lessons(where:{name:"Mathematics", type:"lecture"}){isIn{name}}
+Where will the practice of Mathematics be?;lessons(where:{name:"Mathematics", type:"practice"}){isIn{name}}
+Where will the lecture of Introduction to Economics be?;lessons(where:{name:"Introduction to Economics", type:"lecture"}){isIn{name}}
+Where will the practice of Introduction to Economics be?;lessons(where:{name:"Introduction to Economics", type:"practice"}){isIn{name}}
+Where will the lecture of Management Basics be?;lessons(where:{name:"Management Basics", type:"lecture"}){isIn{name}}
+Where will the lecture of Marketing be?;lessons(where:{name:"Marketing", type:"lecture"}){isIn{name}}
+Where will the lecture of Accounting be?;lessons(where:{name:"Accounting", type:"lecture"}){isIn{name}}
+Where will the practice of Accounting be?;lessons(where:{name:"Accounting", type:"practice"}){isIn{name}}
+What room is the lecture of Finance in?;lessons(where:{name:"Finance", type:"lecture"}){isIn{name}}
+What room is the practice of Finance in?;lessons(where:{name:"Finance", type:"practice"}){isIn{name}}
+What room is the lecture of Sociology in?;lessons(where:{name:"Sociology", type:"lecture"}){isIn{name}}
+What room is the lecture of Fluid Mechanics in?;lessons(where:{name:"Fluid Mechanics", type:"lecture"}){isIn{name}}
+What room is the practice of Fluid Mechanics in?;lessons(where:{name:"Fluid Mechanics", type:"practice"}){isIn{name}}
+What room is the lecture of Thermodynamics in?;lessons(where:{name:"Thermodynamics", type:"lecture"}){isIn{name}}
+What room is the practice of Thermodynamics in?;lessons(where:{name:"Thermodynamics", type:"practice"}){isIn{name}}
+What room is the lecture of Mechanics in?;lessons(where:{name:"Mechanics", type:"lecture"}){isIn{name}}
+What room is the lecture of Materials Science in?;lessons(where:{name:"Materials Science", type:"lecture"}){isIn{name}}
+What room is the laboratory of Materials Science in?;lessons(where:{name:"Materials Science", type:"laboratory"}){isIn{name}}
+What room is the lecture of Electrical Engineering in?;lessons(where:{name:"Electrical Engineering", type:"lecture"}){isIn{name}}
+What room is the practice of Electrical Engineering in?;lessons(where:{name:"Electrical Engineering", type:"practice"}){isIn{name}}
+What room is the lecture of Electronics in?;lessons(where:{name:"Electronics", type:"lecture"}){isIn{name}}
+What room is the lecture of Electrical Power Engineering in?;lessons(where:{name:"Electrical Power Engineering", type:"lecture"}){isIn{name}}
+What room is the practice of Electrical Power Engineering in?;lessons(where:{name:"Electrical Power Engineering", type:"practice"}){isIn{name}}
+What room is the lecture of Automation and Control Engineering in?;lessons(where:{name:"Automation and Control Engineering", type:"lecture"}){isIn{name}}
+What room is the lecture of Mechatronics in?;lessons(where:{name:"Mechatronics", type:"lecture"}){isIn{name}}
+What room is the practice of Mechatronics in?;lessons(where:{name:"Mechatronics", type:"practice"}){isIn{name}}
+What room is the lecture of Networks and Services in?;lessons(where:{name:"Networks and Services", type:"lecture"}){isIn{name}}
+Where will the exam of Introduction to Programming be?;courses(where:{name:"Introduction to Programming"}){hasExam{isIn{name}}}
+Where will the exam of Introduction to C++ be?;courses(where:{name:"Introduction to C++"}){hasExam{isIn{name}}}
+Where will the exam of Software Engineering be?;courses(where:{name:"Software Engineering"}){hasExam{isIn{name}}}
+Where will the exam of Software Project Management be?;courses(where:{name:"Software Project Management"}){hasExam{isIn{name}}}
+Where will the exam of Management Basics be?;courses(where:{name:"Management Basics"}){hasExam{isIn{name}}}
+Where will the exam of Marketing be?;courses(where:{name:"Marketing"}){hasExam{isIn{name}}}
+Where will the exam of Materials Science be?;courses(where:{name:"Materials Science"}){hasExam{isIn{name}}}
+Where will the exam of Automation and Control Engineering be?;courses(where:{name:"Automation and Control Engineering"}){hasExam{isIn{name}}}
+Where will the exam of Mechatronics be?;courses(where:{name:"Mechatronics"}){hasExam{isIn{name}}}
+Where will the exam of Networks and Services be?;courses(where:{name:"Networks and Services"}){hasExam{isIn{name}}}
+Where will the exam of Computing Theory be?;courses(where:{name:"Computing Theory"}){hasExam{isIn{name}}}
+Where will the exam of Physics be?;courses(where:{name:"Physics"}){hasExam{isIn{name}}}
+Where will the exam of Chemistry be?;courses(where:{name:"Chemistry"}){hasExam{isIn{name}}}
+Where will the exam of Mathematics be?;courses(where:{name:"Mathematics"}){hasExam{isIn{name}}}
+In which room will the exam of Electrical Engineering be?;courses(where:{name:"Electrical Engineering"}){hasExam{isIn{name}}}
+In which room will the exam of Electronics be?;courses(where:{name:"Electronics"}){hasExam{isIn{name}}}
+In which room will the exam of Electrical Power Engineering be?;courses(where:{name:"Electrical Power Engineering"}){hasExam{isIn{name}}}
+In which room will the exam of Accounting be?;courses(where:{name:"Accounting"}){hasExam{isIn{name}}}
+In which room will the exam of Finance be?;courses(where:{name:"Finance"}){hasExam{isIn{name}}}
+In which room will the exam of Sociology be?;courses(where:{name:"Sociology"}){hasExam{isIn{name}}}
+In which room will the exam of Fluid Mechanics be?;courses(where:{name:"Fluid Mechanics"}){hasExam{isIn{name}}}
+In which room will the exam of Thermodynamics be?;courses(where:{name:"Thermodynamics"}){hasExam{isIn{name}}}
+In which room will the exam of Mechanics be?;courses(where:{name:"Mechanics"}){hasExam{isIn{name}}}
+In which room will the exam of Introduction to Programming be?;courses(where:{name:"Introduction to Programming"}){hasExam{isIn{name}}}
+In which room will the exam of Introduction to C++ be?;courses(where:{name:"Introduction to C++"}){hasExam{isIn{name}}}
+In which room will the exam of Software Engineering be?;courses(where:{name:"Software Engineering"}){hasExam{isIn{name}}}
+In which room will the exam of Software Project Management be?;courses(where:{name:"Software Project Management"}){hasExam{isIn{name}}}
+In which room will the exam of Management Basics be?;courses(where:{name:"Management Basics"}){hasExam{isIn{name}}}
+When will the exam of Introduction to Programming be?;courses(where:{name:"Introduction to Programming"}){hasExam{date}}
+When will the exam of Introduction to C++ be?;courses(where:{name:"Introduction to C++"}){hasExam{date}}
+When will the exam of Software Engineering be?;courses(where:{name:"Software Engineering"}){hasExam{date}}
+When will the exam of Software Project Management be?;courses(where:{name:"Software Project Management"}){hasExam{date}}
+When will the exam of Management Basics be?;courses(where:{name:"Management Basics"}){hasExam{date}}
+When will the exam of Marketing be?;courses(where:{name:"Marketing"}){hasExam{date}}
+When will the exam of Materials Science be?;courses(where:{name:"Materials Science"}){hasExam{date}}
+When will the exam of Automation and Control Engineering be?;courses(where:{name:"Automation and Control Engineering"}){hasExam{date}}
+When will the exam of Mechatronics be?;courses(where:{name:"Mechatronics"}){hasExam{date}}
+When will the exam of Networks and Services be?;courses(where:{name:"Networks and Services"}){hasExam{date}}
+When will the exam of Computing Theory be?;courses(where:{name:"Computing Theory"}){hasExam{date}}
+When will the exam of Physics be?;courses(where:{name:"Physics"}){hasExam{date}}
+When will the exam of Chemistry be?;courses(where:{name:"Chemistry"}){hasExam{date}}
+When will the exam of Mathematics be?;courses(where:{name:"Mathematics"}){hasExam{date}}
+When will the exam of Electrical Engineering be?;courses(where:{name:"Electrical Engineering"}){hasExam{date}}
+When will the exam of Electronics be?;courses(where:{name:"Electronics"}){hasExam{date}}
+When will the exam of Electrical Power Engineering be?;courses(where:{name:"Electrical Power Engineering"}){hasExam{date}}
+When will the exam of Accounting be?;courses(where:{name:"Accounting"}){hasExam{date}}
+When will the exam of Finance be?;courses(where:{name:"Finance"}){hasExam{date}}
+When will the exam of Sociology be?;courses(where:{name:"Sociology"}){hasExam{date}}
+When will the exam of Fluid Mechanics be?;courses(where:{name:"Fluid Mechanics"}){hasExam{date}}
+When will the exam of Thermodynamics be?;courses(where:{name:"Thermodynamics"}){hasExam{date}}
+What courses are there in the Computer Engineering degree?;degrees(where:{name:"Computer Engineering"}){hasCourse{name}}
+What courses are there in the Electrical Engineering degree?;degrees(where:{name:"Electrical Engineering"}){hasCourse{name}}
+What courses are there in the Mechanical Engineering degree?;degrees(where:{name:"Mechanical Engineering"}){hasCourse{name}}
+What courses are there in the Economics and Management degree?;degrees(where:{name:"Economics and Management"}){hasCourse{name}}
+What courses are there in the Mathematics degree?;degrees(where:{name:"Mathematics"}){hasCourse{name}}
+What courses are there in the Physics degree?;degrees(where:{name:"Physics"}){hasCourse{name}}
+What courses are there in the Chemistry degree?;degrees(where:{name:"Chemistry"}){hasCourse{name}}
+What courses are there in the Biotechnology degree?;degrees(where:{name:"Biotechnology"}){hasCourse{name}}

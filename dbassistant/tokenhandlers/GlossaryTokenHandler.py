@@ -33,6 +33,10 @@ class GlossaryTokenHandler(ITokenHandler):
         return self.size
     
     @property
+    def keyCount(self):
+        return len(self.keyMap.keys())
+    
+    @property
     def mutable(self):
         return False
     

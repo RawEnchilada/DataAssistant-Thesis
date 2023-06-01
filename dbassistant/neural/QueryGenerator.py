@@ -24,9 +24,9 @@ class QueryGenerator:
 
         self.model = None
         self.inputLayerSize = memorySize + promptSize
-        self.outputLayerSize = tokenizer.maxSize
+        self.outputLayerSize = tokenizer.labelCount
 
-    def evaluate(self, input):
+    def evaluate(self, input:TokenSeries):
         if len(input.tokens) > self.promptSize:
             raise Exception("Prompt size is too large for the network; Input should've been fixed to an acceptable size!")
 
@@ -39,8 +39,8 @@ class QueryGenerator:
         while True:
             output = TokenSeries(outData)
             lastNTokens = output.lastN(self.memorySize, emptyTokenId)
-            lastN = [t / self.tokenizer.maxSize for t in lastNTokens.tokens]
-            prompt = [t / self.tokenizer.maxSize for t in input.normalizeTokens(self.tokenizer.maxSize)]
+            lastN = lastNTokens.normalizeTokens(self.tokenizer.maxSize)
+            prompt = input.normalizeTokens(self.tokenizer.maxSize)
             inData = np.array(lastN + prompt).reshape(1, self.inputLayerSize)
 
             prediction = self.model.predict(inData)[0]
@@ -117,7 +117,6 @@ class QueryGenerator:
         self.model = keras.Sequential([
             layers.Dense(150, activation='relu', input_shape=(self.inputLayerSize,)),
             layers.Dense(250, activation='relu'),
-            layers.Dense(label_count, activation='relu'),
             layers.Dense(label_count, activation='softmax')
         ])
 
@@ -134,7 +133,7 @@ class QueryGenerator:
 
         print(f'Training started, you can follow the progress with Tensorboard by running \"tensorboard --logdir {current_path}/logs/tensorboard\"')
         # Train the model with TensorBoard callback
-        self.model.fit(inputs, labels, epochs=100, batch_size=64, callbacks=[tensorboard_callback])
+        self.model.fit(inputs, labels, epochs=500, batch_size=64, callbacks=[tensorboard_callback])
 
         # Evaluate the model
         _, accuracy = self.model.evaluate(inputs, labels)
