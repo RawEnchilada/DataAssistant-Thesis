@@ -1,2 +1,0 @@
-class MishandledTokenException(Exception):
-    pass

@@ -14,7 +14,7 @@
         {
             "label":"Run Neo4j",
             "type": "shell",
-            "command": "neo4j console"
+            "command": "sudo neo4j console"
         },
         {
             "label": "Run Apollo Server",
