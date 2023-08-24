@@ -42,7 +42,9 @@ queryGenerator = QueryGenerator(prompt_size, memory_size, optimizer, loss, token
 
 dbassistant = DBAssistant(queryGenerator, tokenizer, prompt_size)
 
-
+if not os.path.exists(current_path + "/model"):
+    os.makedirs(current_path + "/model")
+    
 #load model if exists
 if os.path.exists(current_path + "/model/model.h5"):
     dbassistant.load_model(current_path + "/model/model.h5")

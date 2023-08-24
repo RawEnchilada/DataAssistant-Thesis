@@ -33,13 +33,14 @@ To run the example, you need to have the following installed:
 
 After installing the required software, you need to install the required python packages using your preferred method:
 
-- Tensorflow
-- Tensorboard
-- Keras
-- Pandas
-- Numpy
-- Flask
-- Flask-Cors
+- tensorflow
+- tensorboard
+- keras
+- pandas
+- numpy
+- flask
+- flask-cors
+- focal_loss
 
 #### Neo4j
 

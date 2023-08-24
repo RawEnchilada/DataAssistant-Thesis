@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense, Activation
-from keras.utils import np_utils
 from keras.models import model_from_json
 from keras.models import load_model
 from tensorflow import keras
