@@ -79,3 +79,7 @@ You can find the training data used for the example in the `example/training_dat
 - [ ] Implement a simple natural language generation model that can create a natural response with the results of a query.
 - [ ] Add error tolerance to the prompt parser, so that the user can make mistakes in the prompt and the library can still generate the correct query.
 - [ ] Create documentation for the library.
+
+## Documentation
+
+[Thesis and technical documentation](https://coal-tang-4cf.notion.site/DataAssistant-1329c395c7bc475b8e06fd1268aa3da7)
