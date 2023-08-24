@@ -1,6 +1,6 @@
-# Database Assistant
+# DataAssistant
 
-DBAssistant is an artificial intelligence library that can generate database queries from natural language prompts, with the help of a specifically trained neural network.
+DataAssistant is an artificial intelligence library that can generate database queries from natural language prompts, with the help of a specifically trained neural network.
 
 ## Why?
 
