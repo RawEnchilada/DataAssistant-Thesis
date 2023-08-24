@@ -24,12 +24,14 @@ Included in the repository is a simple example of a GUI that uses the library to
 
 ### Setup
 
+#### Preparation
+
 To run the example, you need to have the following installed:
 - [Neo4j](https://neo4j.com/download/)
 - [Node.js](https://nodejs.org/en/download/)
 - [Python](https://www.python.org/downloads/)
 
-After installing the required software, you need to install the required python packages:
+After installing the required software, you need to install the required python packages using your preferred method:
 
 - Tensorflow
 - Tensorboard
@@ -39,14 +41,37 @@ After installing the required software, you need to install the required python 
 - Flask
 - Flask-Cors
 
-Run Neo4j, then you need to run the `example/school.cypher` script to create the database schema and insert the example data.
+#### Neo4j
+
+*Make sure that your neo4j executables are included in your PATH environment variable!*
+
+Run Neo4j server: 
+```bash
+neo4j console
+```
+
+Visit http://localhost:7474 and set up your database using <b>username=neo4j</b> and <b>password=password</b>.
+
+Initiate the database by running 
+```bash
+cat example/school.cypher | cypher-shell -u neo4j -p password
+```
+*Or copy the content of school.cypher into the ui*
+
+#### Apollo Server
 
 After that, you need to start the apollo server by running the following commands in the `apollo` directory:
 
 ```bash
+cd apollo
 npm install
 npm start
 ```
+
+Configurations can be found in the following file: `apollo/.env`
+
+
+#### DataAssistant
 
 Then, you need to start the python server by running the following commands in the `python` directory:
 
@@ -62,7 +87,13 @@ You can follow the training progress at localhost:6006 in Tensorboard after star
 tensorboard --logdir=logs/tensorboard
 ```
 
-### UI
+That's it. You can now fully use the project.
+
+Create your own DataAssistant based on the files given in the example directory.
+
+Please credit this project if you use it in production! :)
+
+### Example UI
 
 ![GUI Example](.docs/gui_example.png)
 
