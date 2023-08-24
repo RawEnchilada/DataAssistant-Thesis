@@ -15,7 +15,7 @@ class GlossaryConversionLayer(ILayer):
         
         looking_for = self.tokenizer.glossaryTokenHandler.keyMap.keys()
         for key in looking_for:
-            input_string = re.sub(r'\b' + key + r'\b', key.replace(" ", "_"), input_string)
+            input_string = re.sub('\\b' + key + '\\b', key.replace(" ", "_"), input_string)
 
         cargo.put(input_string)
         return cargo
