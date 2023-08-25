@@ -1,4 +1,4 @@
-export enum TokenType{
+enum TokenType{
     END = 1,
     EMPTY = 2,
     GENERIC = 3,
@@ -6,3 +6,5 @@ export enum TokenType{
     CLASS = 5,
     KEY = 6
 }
+
+export default TokenType;

@@ -1,10 +1,10 @@
-import { ITokenHandler } from "../interfaces/ITokenHandler";
-import { TokenEncodeException } from "../exceptions/TokenEncodeException";
-import { TokenDecodeException } from "../exceptions/TokenDecodeException";
-import { ArgumentHandlerFullException } from "../exceptions/ArgumentHandlerFullException";
-import { Token } from "../tokens/Token";
-import { TokenType } from "../tokens/TokenType";
-import { ITokenHandlerDeserializer } from "../interfaces/ITokenHandlerDeserializer";
+import ITokenHandler from "../interfaces/ITokenHandler";
+import TokenEncodeException from "../exceptions/TokenEncodeException";
+import TokenDecodeException from "../exceptions/TokenDecodeException";
+import ArgumentHandlerFullException from "../exceptions/ArgumentHandlerFullException";
+import Token from "../tokens/Token";
+import TokenType from "../tokens/TokenType";
+import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 
 export class ArgumentTokenHandler implements ITokenHandler {
 

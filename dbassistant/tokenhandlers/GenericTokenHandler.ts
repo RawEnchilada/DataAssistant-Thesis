@@ -1,12 +1,12 @@
-import { ITokenHandler } from "../interfaces/ITokenHandler";
-import { TokenEncodeException } from "../exceptions/TokenEncodeException";
-import { TokenDecodeException } from "../exceptions/TokenDecodeException";
-import { ArgumentHandlerFullException } from "../exceptions/ArgumentHandlerFullException";
-import { GenericHandlerFullException } from "../exceptions/GenericHandlerFullException";
-import { ImmutableHandlerException } from "../exceptions/ImmutableHandlerException";
-import { Token } from "../tokens/Token";
-import { TokenType } from "../tokens/TokenType";
-import { ITokenHandlerDeserializer } from "../interfaces/ITokenHandlerDeserializer";
+import ITokenHandler from "../interfaces/ITokenHandler";
+import TokenEncodeException from "../exceptions/TokenEncodeException";
+import TokenDecodeException from "../exceptions/TokenDecodeException";
+import ArgumentHandlerFullException from "../exceptions/ArgumentHandlerFullException";
+import GenericHandlerFullException from "../exceptions/GenericHandlerFullException";
+import ImmutableHandlerException from "../exceptions/ImmutableHandlerException";
+import Token from "../tokens/Token";
+import TokenType from "../tokens/TokenType";
+import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 
 export class GenericTokenHandler implements ITokenHandler {
 

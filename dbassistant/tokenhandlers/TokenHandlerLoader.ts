@@ -1,10 +1,10 @@
-import { ITokenHandler } from "../interfaces/ITokenHandler";
-import { ITokenHandlerDeserializer } from "../interfaces/ITokenHandlerDeserializer";
+import ITokenHandler from "../interfaces/ITokenHandler";
+import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 
 /**
  * Deserializes a string into an ITokenHandler.
  */
-export class TokenHandlerLoader{
+class TokenHandlerLoader{
     constructor(private _supportedHandlers:ITokenHandlerDeserializer[]){}
 
     load(serialized:string):ITokenHandler{
@@ -16,3 +16,5 @@ export class TokenHandlerLoader{
         throw new Error(`Failed to deserialize \"${serialized}\". Is the handler type supported?`);
     }
 }
+
+export default TokenHandlerLoader;

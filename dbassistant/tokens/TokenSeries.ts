@@ -1,4 +1,4 @@
-export class TokenSeries{
+class TokenSeries{
     constructor(public tokens: number[]){}
 
     normalizeTokens(maxId:number): TokenSeries{
@@ -26,3 +26,5 @@ export class TokenSeries{
     }
 
 }
+
+export default TokenSeries;

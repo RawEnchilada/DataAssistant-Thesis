@@ -1,6 +1,6 @@
-import { Token } from "../tokens/Token";
+import Token from "../tokens/Token";
 
-export interface ITokenHandler {
+export default interface ITokenHandler {
 
     /**
      * Determines the order of which handlers get to encode the given token.
