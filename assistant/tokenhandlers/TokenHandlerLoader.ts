@@ -7,7 +7,7 @@ import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 class TokenHandlerLoader{
     constructor(private _supportedHandlers:ITokenHandlerDeserializer[]){}
 
-    load(serialized:string):ITokenHandler{
+    load(serialized:string):any{
         for(const loader of this._supportedHandlers){
             if(loader.canDeserialize(serialized)){
                 return loader.deserialize(serialized);

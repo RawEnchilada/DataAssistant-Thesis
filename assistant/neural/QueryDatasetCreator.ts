@@ -6,7 +6,7 @@ import { LayerCargo } from '.../layers/LayerCargo';
 import { PromptPreparationLayer } from '.../layers/PromptPreparationLayer';
 import { Tokenizer } from './path_to_tokenizer'; // Import your Tokenizer class path here
 
-class QueryDatasetCreator {
+export default class QueryDatasetCreator {
     private prompt_size: number;
     private memory_size: number;
     private tokenizer: Tokenizer;

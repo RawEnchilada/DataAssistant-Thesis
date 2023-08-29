@@ -1,8 +1,11 @@
 import ILayer from '../interfaces/ILayer';
 import QueryGenerator from '../neural/QueryGenerator';
 import TokenSeries from '../tokens/TokenSeries';
-import LayerCargo from './LayerCargo';
 
+/**
+ * @input TokenSeries
+ * @output TokenSeries
+ */
 export default class EvaluationLayer implements ILayer {
     private query_generator: QueryGenerator;
 
@@ -10,14 +13,8 @@ export default class EvaluationLayer implements ILayer {
         this.query_generator = query_generator;
     }
 
-    process(cargo: LayerCargo): LayerCargo {
-        const input = cargo.take();
-        if (!(input instanceof TokenSeries)) {
-            throw new Error('Input must be an instance of TokenSeries');
-        }
-
+    process(input: TokenSeries): TokenSeries {
         const output = this.query_generator.evaluate(input);
-        cargo.put(output);
-        return cargo;
+        return output;
     }
 }
