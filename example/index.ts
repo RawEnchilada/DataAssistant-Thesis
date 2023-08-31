@@ -24,7 +24,7 @@ const epochs = 500;
 
 const optimizer = tf.train.momentum(0.01,0.9,true); // Nesterovs momentum optimizer
 
-const loss = "softmaxCrossentropy";//assistant.extras.focalLoss(2.0,0.25);
+const loss = "categoricalCrossentropy";//assistant.extras.focalLoss(2.0,0.25);
 
 const tokenizer = new assistant.Tokenizer(new ApolloGlossaryHandlerFactory(new Apollo()),promptSize, argumentSize, wordSize);
 await tokenizer.initialize();
