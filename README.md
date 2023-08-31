@@ -24,18 +24,41 @@ Included in the repository is a simple example of a GUI that uses the library to
 
 ### Setup
 
+#### Preparation
+
 To run the example, you need to have the following installed:
 - [Neo4j](https://neo4j.com/download/)
 - [Node.js](https://nodejs.org/en/download/)
 - [Python](https://www.python.org/downloads/) (if you want to use tensorboard as well).
 
-Run Neo4j, then you need to run the `example/school.cypher` script to create the database schema and insert the example data.
+#### Neo4j
+
+*Make sure that your neo4j executables are included in your PATH environment variable!*
+
+Run Neo4j server: 
+```bash
+neo4j console
+```
+
+Visit http://localhost:7474 and set up your database using <b>username=neo4j</b> and <b>password=password</b>.
+
+Initiate the database by running 
+```bash
+cat example/school.cypher | cypher-shell -u neo4j -p password
+```
+*Or copy the content of school.cypher into the ui*
+
+#### Apollo Server
 
 After that, you need to start the apollo server by running the following commands in the `apollo` directory:
 
 ```bash
-npm install;npm start
+cd apollo
+npm install
+npm start
 ```
+
+Configurations can be found in the following file: `apollo/.env`
 
 Then, you need to start the example server by running the following commands:
 
@@ -55,7 +78,13 @@ Start it with the following command in the base directory:
 tensorboard --logdir=logs/tensorboard
 ```
 
-### UI
+That's it. You can now fully use the project.
+
+Create your own DataAssistant based on the files given in the example directory.
+
+Please credit this project if you use it in production! :)
+
+### Example UI
 
 ![GUI Example](.docs/gui_example.png)
 
@@ -72,3 +101,7 @@ You can find the training data used for the example in the `example/training_dat
 - [ ] Implement a simple natural language generation model that can create a natural response with the results of a query.
 - [ ] Add error tolerance to the prompt parser, so that the user can make mistakes in the prompt and the library can still generate the correct query.
 - [ ] Create documentation for the library.
+
+## Documentation
+
+[Thesis and technical documentation](https://coal-tang-4cf.notion.site/DataAssistant-1329c395c7bc475b8e06fd1268aa3da7)
