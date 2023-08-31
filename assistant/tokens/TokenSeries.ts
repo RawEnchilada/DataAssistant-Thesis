@@ -13,8 +13,11 @@ class TokenSeries{
         return new TokenSeries(this.tokens.concat(tokens.tokens));
     }
 
-    lastN(n:number, pad:number = 0): TokenSeries{
-        return new TokenSeries(this.tokens.slice(-n).concat(Array(pad).fill(0)));
+    lastN(n:number, pad:number): TokenSeries{
+        const lastN = this.tokens.slice(-n);
+        const missing = n - lastN.length;
+        const arr = new Array(missing).fill(pad);
+        return new TokenSeries(arr.concat(lastN));
     }
 
     toString(): string{

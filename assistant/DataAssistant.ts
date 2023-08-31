@@ -29,8 +29,8 @@ export default class DataAssistant {
         return this.pipeline.process(text);
     }
     
-    train(train_file: string): void {
-        this.queryGenerator.train(train_file);
+    async train(train_file: string): Promise<void> {
+        await this.queryGenerator.train(train_file);
     }
 
     loadModel(path: string): void {
@@ -49,12 +49,12 @@ export default class DataAssistant {
         this.queryGenerator.saveLayers(path);
     }
 
-    convertData(from_path: string, to_path: string): void {
+    async convertData(from_path: string, to_path: string): Promise<void> {
         const creator = new QueryDatasetCreator(
             this.queryGenerator.promptSize,
             this.queryGenerator.memorySize,
             this.queryGenerator.tokenizer
         );
-        creator.load(from_path, to_path);
+        await creator.load(from_path, to_path);
     }
 }

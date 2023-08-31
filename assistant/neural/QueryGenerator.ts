@@ -1,26 +1,53 @@
 import * as tf from '@tensorflow/tfjs-node';
 import TokenSeries from '../tokens/TokenSeries'; // Make sure to import TokenSeries and Tokenizer classes
 import Tokenizer from '../tokens/Tokenizer'; // Adjust the paths according to your project structure
+import { LossOrMetricFn } from '@tensorflow/tfjs-layers/dist/types';
 
 class QueryGenerator {
     private _promptSize: number;  public get promptSize(): number { return this._promptSize; }
     private _memorySize: number;  public get memorySize(): number { return this._memorySize; }
     private _tokenizer: Tokenizer;  public get tokenizer(): Tokenizer { return this._tokenizer; }
-    private _optimizer: tf.Optimizer;
-    private _loss: string;
-    private _model: tf.LayersModel | null = null;
+    private _optimizer: string|tf.Optimizer;
+    private _loss: string|LossOrMetricFn;
+    private _model: tf.Sequential | null = null;
+    private _epochs: number;
     private _inputLayerSize: number;
     private _outputLayerSize: number;
-
-    constructor(promptSize: number, memorySize: number, optimizer: tf.Optimizer, loss: string, tokenizer: Tokenizer) {
+    private _initializeModel: (model: tf.Sequential, inputSize: number, outputSize: number)=>tf.Sequential;
+    
+    
+    /**
+     * Initializes the model with the given parameters and layers.
+     * 
+     * @param {number} promptSize The size of the largest possible prompt.
+     * @param {number} memorySize The memory size of the model. See the documentation for more.
+     * @param {tf.Optimizer} optimizer The optimizer to use for training.
+     * @param {string} loss The loss function to use.
+     * @param {Tokenizer} tokenizer The tokenizer to use
+     * @param {(model: tf.Sequential, inputSize: number, outputSize: number)=>tf.Sequential} initializeModel The function to call when the model is initialized.
+     * 
+     * 
+     * initializeModel example:
+     * ```ts
+     * (model,inputSize,outputSize) => {
+     *   model.add(tf.layers.dense({ units: 150, activation: 'relu', inputShape: [inputSize] }));
+     *   model.add(tf.layers.dense({ units: 250, activation: 'relu' }));
+     *   model.add(tf.layers.dense({ units: outputSize, activation: 'softmax' }));
+     *   return model;
+     * }
+     * ```
+     */
+    constructor(promptSize: number, memorySize: number, epochs:number, optimizer: string|tf.Optimizer, loss: string|LossOrMetricFn, tokenizer: Tokenizer, initializeModel: (model: tf.Sequential, inputSize: number, outputSize: number)=>tf.Sequential) {
         this._promptSize = promptSize;
         this._memorySize = memorySize;
         this._tokenizer = tokenizer;
         this._optimizer = optimizer;
         this._loss = loss;
+        this._epochs = epochs;
 
         this._inputLayerSize = memorySize + promptSize;
         this._outputLayerSize = tokenizer.labelCount;
+        this._initializeModel = initializeModel;
     }
 
     evaluate(input: TokenSeries): TokenSeries {
@@ -39,7 +66,7 @@ class QueryGenerator {
             const lastNTokens = output.lastN(this._memorySize, emptyTokenId);
             const lastN = lastNTokens.normalizeTokens(this._tokenizer.maxSize);
             const prompt = input.normalizeTokens(this._tokenizer.maxSize);
-            const inData = tf.tensor2d([...lastN, ...prompt], [1, this._inputLayerSize]);
+            const inData = tf.tensor2d([...(lastN.tokens), ...(prompt.tokens)], [1, this._inputLayerSize]);
 
             const prediction = this._model!.predict(inData) as tf.Tensor<tf.Rank.R1>;
             const predictionData = prediction.dataSync();
@@ -59,8 +86,8 @@ class QueryGenerator {
         return result;
     }
 
-    loadModel(_modelFilePath: string): void {
-        this._model = tf.loadLayersModel(`file://${_modelFilePath}`);
+    async loadModel(_modelFilePath: string): Promise<void> {
+        this._model = await tf.loadLayersModel(`file://${_modelFilePath}`) as tf.Sequential;
         console.log('Model loaded!');
     }
 
@@ -79,69 +106,56 @@ class QueryGenerator {
 
     async train(trainFile: string): Promise<void> {
         // Load the data from the CSV file, separator is ;
-        const data = await tf.data.csv(trainFile, { delimiter: ';' });
+        const data = tf.data.csv(`file://${trainFile}`, { delimiter: ';' });
 
         // Extract the input values and labels
-        const inputArrays = await data.column(0).toArray() as string[];
-        const inputs: number[][] = inputArrays.map(inputArrayString => {
-            const inputArray = inputArrayString.slice(1, -1).split(',').map(Number);
-            return inputArray;
-        });
+        const inputs: number[][] = [];
+        await (data.forEachAsync((row) => {
+            const inputRow = row['tokens'];
+            const inputNumbers: number[] = JSON.parse(inputRow);
+            inputs.push(inputNumbers);
+        }));
 
-        const labelArrays = await data.column(1).toArray() as string[];
-        const labels: number[] = labelArrays.map(labelArrayString => {
-            const labelArray = labelArrayString.slice(1, -1).split(',').map(Number);
-            const label = labelArray.findIndex(val => val === Math.max(...labelArray));
-            return label;
-        });
+        const labels: number[][] = [];
+        await (data.forEachAsync(row => {
+            const labelRow = row['labels'];
+            const labelNumbers: number[] = JSON.parse(labelRow); // Convert to numbers
+            labels.push(labelNumbers);
+        }));
 
         const rowCount = inputs.length;
         const inputSize = inputs[0].length;
         if (inputSize !== this._inputLayerSize) {
-            throw new Error('Input size is not equal to the input layer size!');
+            throw new Error(`Data input size ${inputSize} is not equal to the ${this._inputLayerSize} input layer size!`);
         }
 
         const inputsTensor = tf.tensor2d(inputs);
-        const labelsTensor = tf.tensor1d(labels, 'int32');
+        const labelsTensor = tf.tensor2d(labels);
 
-        console.log(`Inputs shape: ${inputsTensor.shape}`);
-        console.log(`Labels shape: ${labelsTensor.shape}`);
-        console.log(`Output size: ${this._outputLayerSize}`);
+        console.log(`Input data shape: ${inputsTensor.shape}, input layer size: ${this._inputLayerSize}`);
+        console.log(`Labels data shape: ${labelsTensor.shape}, output layer size: ${this._outputLayerSize}`);
 
         // Define the _model architecture
         this._model = tf.sequential();
-        this._model.add(tf.layers.dense({ units: 150, activation: 'relu', inputShape: [this._inputLayerSize] }));
-        this._model.add(tf.layers.dense({ units: 250, activation: 'relu' }));
-        this._model.add(tf.layers.dense({ units: this._outputLayerSize, activation: 'softmax' }));
+        this._model = this._initializeModel(this._model, this._inputLayerSize, this._outputLayerSize);
 
         // Compile the _model
         this._model.compile({
-            _optimizer: this._optimizer,
-            _loss: this._loss,
+            optimizer: this._optimizer,
+            loss: this._loss,
             metrics: ['accuracy']
         });
 
-        const currentPath = '.'; // Set your desired path here
-
         // Train the _model
-        console.log(`Training started, you can follow the progress.`);
+        console.log('Training started, you can follow the progress via Tensorboard in the logs directory!');
         await this._model.fit(inputsTensor, labelsTensor, {
-            epochs: 500,
-            batchSize: 64,
-            callbacks: tf.node.tensorBoard({
-                logDir: `${currentPath}/logs/tensorboard`,
-                histogramFreq: 1,
-                writeGraph: true
-            })
+            epochs: this._epochs,
+            callbacks: tf.node.tensorBoard('../logs/tensorboard')
         });
 
         // Evaluate the _model
-        const evaluation = await this._model.evaluate(inputsTensor, labelsTensor);
+        const evaluation = this._model.evaluate(inputsTensor, labelsTensor);
         console.log(`Accuracy: ${evaluation[1] * 100}%`);
-    }
-
-    toString(): string {
-        return 'QueryGenerator Model';
     }
 }
 

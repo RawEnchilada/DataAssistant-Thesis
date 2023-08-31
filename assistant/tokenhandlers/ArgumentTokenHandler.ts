@@ -8,10 +8,10 @@ import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 
 export class ArgumentTokenHandler implements ITokenHandler {
 
-    public arguments: string[];
+    public arguments: Array<string>;
 
     constructor(private _priority:number,maxArgumentCount:number) {
-        this.arguments = new Array<string>(maxArgumentCount);
+        this.arguments = new Array<string>(maxArgumentCount).fill("");
     }
 
     get priority(): number {
@@ -49,18 +49,18 @@ export class ArgumentTokenHandler implements ITokenHandler {
         }
     }
 
-    store(arg:string): number{
+    store(word:string): number{
         let firstFreeIndex = this.arguments.indexOf("");
         if (firstFreeIndex === -1) {
             throw new ArgumentHandlerFullException();
         } else {
-            this.arguments[firstFreeIndex] = arg;
+            this.arguments[firstFreeIndex] = word;
             return firstFreeIndex;
         }
     }
 
     resetState(): void {
-        this.arguments = new Array<string>(this.arguments.length);
+        this.arguments = new Array<string>(this.arguments.length).fill("");
     }
 
     serialize(): string {

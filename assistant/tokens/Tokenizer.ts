@@ -23,6 +23,8 @@ class Tokenizer {
     private _handlers: ITokenHandler[];
     private _tokenHandlerLoader: TokenHandlerLoader;
 
+    private _initialized: boolean = false;
+
     constructor(
         glossaryHandlerFactory: IGlossaryHandlerFactory,
         promptSize: number,
@@ -33,30 +35,33 @@ class Tokenizer {
         this._promptSize = promptSize;
         this._maxArgumentCount = maxArgumentCount;
         this._maxGenericTokenCount = maxGenericTokenCount;
+    }
 
+    public async initialize(){
         //encode order by priority
         this._endTokenHandler = new EndTokenHandler(0);
         this._emptyTokenHandler = new EmptyTokenHandler(1);
-        this._glossaryTokenHandler = glossaryHandlerFactory.build(2);
-        this._genericTokenHandler = new GenericTokenHandler(3, maxGenericTokenCount);
-        this._argumentTokenHandler = new ArgumentTokenHandler(4, maxArgumentCount);
+        this._glossaryTokenHandler = await this._glossaryHandlerFactory.build(2);
+        this._genericTokenHandler = new GenericTokenHandler(3, this._maxGenericTokenCount);
+        this._argumentTokenHandler = new ArgumentTokenHandler(10, this._maxArgumentCount);
 
-        //decode order is given by the array's order, by default it should be reverse priority
+        //The order of handlers is very specific. Handler offset function uses it, and decoding uses it.
         this._handlers = [
             this._endTokenHandler,
             this._emptyTokenHandler,
             this._argumentTokenHandler,
             this._genericTokenHandler,
             this._glossaryTokenHandler,
-        ].sort((a, b) => b.priority - a.priority);
+        ];
 
         this._tokenHandlerLoader = new TokenHandlerLoader([
             new EndTokenHandlerDeserializer(),
             new EmptyTokenHandlerDeserializer(),
-            new GlossaryTokenHandlerDeserializer(),
+            new ArgumentTokenHandlerDeserializer(),
             new GenericTokenHandlerDeserializer(),
-            new ArgumentTokenHandlerDeserializer()
+            new GlossaryTokenHandlerDeserializer()
         ]);
+        this._initialized = true;
     }
 
     get maxSize(): number {
@@ -72,6 +77,9 @@ class Tokenizer {
     }
 
     encode(input: string[]): TokenSeries {
+        if (!this._initialized) {
+            throw new Error("Tokenizer not initialized, please run initialize() first.");
+        }
         const tokens: number[] = [];
 
         for (let index = 0; index < input.length; index++) {
@@ -81,6 +89,9 @@ class Tokenizer {
                 if (handler.canEncode(word)) {
                     const offset = this.handlerOffset(handler);
                     const token = handler.encode(word);
+                    if((offset+token.value) > this.labelCount){
+                        throw new Error(`Token value is bigger than the maximum token size.Is the order of handlers correct?\nWord: ${word}, Token: (${token.value}+offset:${offset}), Max size: ${this.labelCount}\n    Handler: ${handler.serialize()}\n------------------`);
+                    }
                     tokens.push(offset + token.value);
 
                     if (token.type === TokenType.KEY) {
@@ -96,13 +107,16 @@ class Tokenizer {
 
         // Possible exception: generated tokens are longer than the input words
         for (let index = tokens.length; index < this._promptSize; index++) {
-            tokens.push(this.handlerOffset(this._emptyTokenHandler));
+            tokens.push(this._emptyTokenHandler.emptyToken);
         }
 
         return new TokenSeries(tokens);
     }
 
     decode(input: TokenSeries): string[] {
+        if (!this._initialized) {
+            throw new Error("Tokenizer not initialized, please run initialize() first.");
+        }
         const words: string[] = [];
 
         for (const token of input.tokens) {
@@ -128,6 +142,9 @@ class Tokenizer {
     }
 
     serialize(path: string): void {
+        if (!this._initialized) {
+            throw new Error("Tokenizer not initialized, please run initialize() first.");
+        }
         let data: string = "";
         for (const handler of this._handlers) {
             const serialized = handler.serialize();
@@ -148,7 +165,14 @@ class Tokenizer {
     }
 
     handlerOffset(handler: any): number {
-        return this._handlers.slice(0, this._handlers.indexOf(handler)).reduce((acc, h) => acc + h.size, 0);
+        let offset = 0;
+        for(const handler of this._handlers){
+            if(handler === handler){
+                return offset;
+            }
+            offset += handler.size;
+        }
+        throw new Error("Could not find handler during offset calculation.");
     }
 
     copyUntrained(): Tokenizer {

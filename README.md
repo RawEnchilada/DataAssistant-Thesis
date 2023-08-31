@@ -1,6 +1,6 @@
-# Database Assistant
+# DataAssistant
 
-DBAssistant is an artificial intelligence library that can generate database queries from natural language prompts, with the help of a specifically trained neural network.
+DataAssistant is an artificial intelligence library that can generate database queries from natural language prompts, with the help of a specifically trained neural network.
 
 ## Why?
 
@@ -27,36 +27,29 @@ Included in the repository is a simple example of a GUI that uses the library to
 To run the example, you need to have the following installed:
 - [Neo4j](https://neo4j.com/download/)
 - [Node.js](https://nodejs.org/en/download/)
-- [Python](https://www.python.org/downloads/)
-
-After installing the required software, you need to install the required python packages:
-
-- Tensorflow
-- Tensorboard
-- Keras
-- Pandas
-- Numpy
-- Flask
-- Flask-Cors
+- [Python](https://www.python.org/downloads/) (if you want to use tensorboard as well).
 
 Run Neo4j, then you need to run the `example/school.cypher` script to create the database schema and insert the example data.
 
 After that, you need to start the apollo server by running the following commands in the `apollo` directory:
 
 ```bash
-npm install
-npm start
+npm install;npm start
 ```
 
-Then, you need to start the python server by running the following commands in the `python` directory:
+Then, you need to start the example server by running the following commands:
 
 ```bash
-cd example/gui;python3 app.py
+cd assistant;npm install;npm run pack;
+cd ../example;npm install ../assistant/dist/data-assistant-0.0.1.tgz;npm start
 ```
 
 On the web ui, you can train the model or evaluate a prompt. You should train the model before evaluating a prompt, otherwise the model will not be able to generate a query.
 
-You can follow the training progress at localhost:6006 in Tensorboard after starting it with the following command base directory:
+You can follow the training progress at `localhost:6006` in Tensorboard if it's installed.
+Install it with your preferred python package manager.
+
+Start it with the following command in the base directory:
 
 ```bash
 tensorboard --logdir=logs/tensorboard

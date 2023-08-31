@@ -10,11 +10,11 @@ import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 
 export class GenericTokenHandler implements ITokenHandler {
 
-    private _mutable = true;
+    public mutable = true;
     public words: string[];
 
     constructor(private _priority:number,maxTokenCount:number) {
-        this.words = new Array<string>(maxTokenCount);
+        this.words = new Array<string>(maxTokenCount).fill("");
     }
 
     get priority(): number {
@@ -31,10 +31,6 @@ export class GenericTokenHandler implements ITokenHandler {
 
     get utilizedSize(): number {
         return this.words.filter(w => w !== "").length;
-    }
-
-    get mutable(): boolean {
-        return this._mutable;
     }
 
     canEncode(word: string): boolean {

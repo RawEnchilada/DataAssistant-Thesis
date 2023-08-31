@@ -1,5 +1,5 @@
 import {GlossaryTokenHandler} from '../tokenhandlers/GlossaryTokenHandler';
 
 export default interface IGlossaryHandlerFactory {
-    build(priority: number): GlossaryTokenHandler;
+    build(priority: number): Promise<GlossaryTokenHandler>;
 }

@@ -1,3 +1,4 @@
+question;query
 What faculties are there?;faculties{name}
 What departments are there?;departments{name}
 What degrees are there?;degrees{name}

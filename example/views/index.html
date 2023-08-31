@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DBAssistant GUI</title>
+    <title>DataAssistant GUI</title>
     <style>
         html,body {
             margin: 0;
@@ -85,7 +85,7 @@
 </head>
 <body>
     <div id="content">
-        <h1>DBAssistant GUI</h1>
+        <h1>DataAssistant GUI</h1>
         <div id="controls">
             <div>
                 <h2>Train</h2>
@@ -114,8 +114,8 @@
         </div>
     </div>
     <script>
-        let trainURL = ()=>'http://localhost:5000/train';
-        let evaluateURL = (text)=>`http://localhost:5000/evaluate/${text}`;
+        let trainURL = ()=>'http://localhost:3000/train';
+        let evaluateURL = (text)=>`http://localhost:3000/evaluate/${text}`;
 
         let content = document.getElementById('content');
 

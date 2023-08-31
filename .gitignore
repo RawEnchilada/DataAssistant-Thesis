@@ -13,8 +13,7 @@
 **/package-lock.json
 **/dist
 
-model/training_data_converted.csv
-model/**.layer
-model/model.h5
+example/model/
+example/model/**
 logs/tensorboard/*
 logs/*
