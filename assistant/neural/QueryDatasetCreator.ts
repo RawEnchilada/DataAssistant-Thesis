@@ -28,6 +28,8 @@ export default class QueryDatasetCreator {
 
         if(!data_source_path.includes("file://")) data_source_path = "file://" + data_source_path; 
         const data = tf.data.csv(data_source_path, {delimiter: ';'});
+
+        try{
         await (data.forEachAsync((row)=>{
             this.tokenizer.resetState();
             const prompt: string = row['question'];
@@ -69,6 +71,9 @@ export default class QueryDatasetCreator {
                 outputs.push(output_array);
             }
         }));
+        }catch(e){
+            throw e;
+        }
         
         let csv = "tokens;labels\n";
         if(inputs.length !== outputs.length) {

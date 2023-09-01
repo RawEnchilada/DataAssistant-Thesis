@@ -76,23 +76,27 @@ class Tokenizer {
         return this._handlers.reduce((acc, h) => acc + h.utilizedSize, 0);
     }
 
-    encode(input: string[]): TokenSeries {
+    encode(input: string[],includeType:boolean = true): TokenSeries {
         if (!this._initialized) {
             throw new Error("Tokenizer not initialized, please run initialize() first.");
         }
         const tokens: number[] = [];
+        const handlersSorted = [...this._handlers].sort((a, b) => a.priority - b.priority);
 
         for (let index = 0; index < input.length; index++) {
             const word = input[index];
 
-            for (const handler of this._handlers.sort((a, b) => a.priority - b.priority)) {
+            for (const handler of handlersSorted) {
                 if (handler.canEncode(word)) {
                     const offset = this.handlerOffset(handler);
                     const token = handler.encode(word);
                     if((offset+token.value) > this.labelCount){
                         throw new Error(`Token value is bigger than the maximum token size.Is the order of handlers correct?\nWord: ${word}, Token: (${token.value}+offset:${offset}), Max size: ${this.labelCount}\n    Handler: ${handler.serialize()}\n------------------`);
                     }
-                    tokens.push(offset + token.value);
+
+                    if(!(token.type === TokenType.KEY && includeType === false)){
+                        tokens.push(offset + token.value);
+                    }
 
                     if (token.type === TokenType.KEY) {
                         const argOffset = this.handlerOffset(this._argumentTokenHandler);
@@ -159,18 +163,18 @@ class Tokenizer {
         for (const data of handlerStrings){
             let handler = this._tokenHandlerLoader.load(data);
             this._handlers.push(handler);
-            this._handlers.sort((a, b) => b.priority - a.priority);
+            [...this._handlers].sort((a, b) => b.priority - a.priority);
         }
 
     }
 
     handlerOffset(handler: any): number {
         let offset = 0;
-        for(const handler of this._handlers){
-            if(handler === handler){
+        for(const h of this._handlers){
+            if(h === handler){
                 return offset;
             }
-            offset += handler.size;
+            offset += h.size;
         }
         throw new Error("Could not find handler during offset calculation.");
     }
@@ -182,6 +186,10 @@ class Tokenizer {
             this._maxArgumentCount,
             this._maxGenericTokenCount
         );
+    }
+
+    toString():string{
+        return this._handlers.map(h => h.serialize()).join("\n");
     }
 }
 

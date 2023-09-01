@@ -9,9 +9,11 @@ import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 export class ArgumentTokenHandler implements ITokenHandler {
 
     public arguments: Array<string>;
+    private _priority:number;
 
-    constructor(private _priority:number,maxArgumentCount:number) {
+    constructor(priority:number,maxArgumentCount:number) {
         this.arguments = new Array<string>(maxArgumentCount).fill("");
+        this._priority = priority;
     }
 
     get priority(): number {

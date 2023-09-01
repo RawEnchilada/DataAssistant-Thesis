@@ -26,10 +26,6 @@ export class GlossaryTokenHandler implements ITokenHandler {
         return this._priority;
     }
 
-    set priority(value: number) {
-        this._priority = value;
-    }
-
     get size(): number {
         return this._classList.size + Object.keys(this._keyMap).length;
     }

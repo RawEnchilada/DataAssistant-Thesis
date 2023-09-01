@@ -20,7 +20,7 @@ const memorySize = 10;
 const argumentSize = 5;
 const wordSize = 150;
 
-const epochs = 500;
+const epochs = 250;
 
 const optimizer = tf.train.momentum(0.01,0.9,true); // Nesterovs momentum optimizer
 

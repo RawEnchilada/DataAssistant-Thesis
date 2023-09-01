@@ -8,8 +8,11 @@ import ITokenHandlerDeserializer from "../interfaces/ITokenHandlerDeserializer";
 export class EndTokenHandler implements ITokenHandler {
 
     public endToken = 0;
+    private _priority:number;
 
-    constructor(private _priority:number) {}
+    constructor(priority:number) {
+        this._priority = priority;
+    }
 
     get priority(): number {
         return this._priority;

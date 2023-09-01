@@ -12,9 +12,13 @@ export class GenericTokenHandler implements ITokenHandler {
 
     public mutable = true;
     public words: string[];
+    private _maxTokenCount: number;
+    private _priority:number;
 
-    constructor(private _priority:number,maxTokenCount:number) {
+    constructor(priority:number,maxTokenCount:number) {
         this.words = new Array<string>(maxTokenCount).fill("");
+        this._maxTokenCount = maxTokenCount;
+        this._priority = priority;
     }
 
     get priority(): number {
@@ -26,7 +30,7 @@ export class GenericTokenHandler implements ITokenHandler {
     }
 
     get size(): number {
-        return this.words.length;
+        return this._maxTokenCount;
     }
 
     get utilizedSize(): number {
