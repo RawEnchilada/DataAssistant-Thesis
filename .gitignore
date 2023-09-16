@@ -14,6 +14,8 @@
 **/dist
 
 example/model/
+model/
 example/model/**
+model/**
 logs/tensorboard/*
 logs/*

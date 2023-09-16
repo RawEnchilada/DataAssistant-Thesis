@@ -26,7 +26,7 @@ const optimizer = tf.train.momentum(0.01,0.9,true); // Nesterovs momentum optimi
 
 const loss = "categoricalCrossentropy";//assistant.extras.focalLoss(2.0,0.25);
 
-const tokenizer = new assistant.Tokenizer(new ApolloGlossaryHandlerFactory(new Apollo()),promptSize, argumentSize, wordSize);
+const tokenizer = new assistant.Tokenizer(new ApolloGlossaryHandlerFactory(new Apollo()),promptSize, argumentSize, wordSize, "./model/tokenizer_graph.html");
 await tokenizer.initialize();
 
 const modelInitializer = (model:tf.Sequential,inputSize:number,outputSize:number) => {

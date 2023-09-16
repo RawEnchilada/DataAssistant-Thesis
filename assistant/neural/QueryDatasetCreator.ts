@@ -74,6 +74,9 @@ export default class QueryDatasetCreator {
         }catch(e){
             throw e;
         }
+        if(this.tokenizer.logToGraph){
+            this.tokenizer.printGraph();
+        }
         
         let csv = "tokens;labels\n";
         if(inputs.length !== outputs.length) {

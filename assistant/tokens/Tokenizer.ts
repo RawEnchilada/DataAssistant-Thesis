@@ -9,6 +9,8 @@ import {GlossaryTokenHandler,GlossaryTokenHandlerDeserializer} from '../tokenhan
 import TokenHandlerLoader from '../tokenhandlers/TokenHandlerLoader';
 import TokenSeries from './TokenSeries';
 import TokenType from './TokenType';
+import TokenGraphFactory from '../analysis/TokenGraphFactory';
+import Token from './Token';
 
 class Tokenizer {
     private _glossaryHandlerFactory: IGlossaryHandlerFactory;
@@ -22,6 +24,9 @@ class Tokenizer {
     private _argumentTokenHandler: ArgumentTokenHandler; public get argumentTokenHandler(): ArgumentTokenHandler { return this._argumentTokenHandler; }
     private _handlers: ITokenHandler[];
     private _tokenHandlerLoader: TokenHandlerLoader;
+    private _graph: TokenGraphFactory|null = null;
+    private _logToGraph: boolean = false; public get logToGraph(){return this._logToGraph};
+    private _graphPath: string; 
 
     private _initialized: boolean = false;
 
@@ -29,12 +34,18 @@ class Tokenizer {
         glossaryHandlerFactory: IGlossaryHandlerFactory,
         promptSize: number,
         maxArgumentCount: number,
-        maxGenericTokenCount: number
+        maxGenericTokenCount: number,
+        graphPath:string = ""
     ) {
         this._glossaryHandlerFactory = glossaryHandlerFactory;
         this._promptSize = promptSize;
         this._maxArgumentCount = maxArgumentCount;
         this._maxGenericTokenCount = maxGenericTokenCount;
+        this._graphPath = graphPath;
+        if(graphPath.length > 0){
+            this._logToGraph = true;
+            this._graph = new TokenGraphFactory();
+        }
     }
 
     public async initialize(){
@@ -96,12 +107,14 @@ class Tokenizer {
 
                     if(!(token.type === TokenType.KEY && includeType === false)){
                         tokens.push(offset + token.value);
+                        if(this._logToGraph)this._graph!.push(word,new Token(offset+token.value,token.type));
                     }
-
+                    
                     if (token.type === TokenType.KEY) {
                         const argOffset = this.handlerOffset(this._argumentTokenHandler);
                         const argToken = this._argumentTokenHandler.encode(word);
                         tokens.push(argOffset + argToken.value);
+                        if(this._logToGraph)this._graph!.push(word,new Token(argOffset+argToken.value,TokenType.ARGUMENT));
                     }
 
                     break;
@@ -190,6 +203,16 @@ class Tokenizer {
 
     toString():string{
         return this._handlers.map(h => h.serialize()).join("\n");
+    }
+
+    printGraph(){
+        if(this._graph !== null){
+            this._graph.print(this._graphPath);
+            this._graph = new TokenGraphFactory();
+            console.log(`Tokenizer graph exported to ${this._graphPath}.`);
+        } else {
+            throw new Error("This Tokenizer instance was not configured to create a graph!");
+        }
     }
 }
 
