@@ -14,11 +14,14 @@
 **/dist
 
 example/model/
-model/
 example/model/**
+model/
 model/**
 logs/tensorboard/*
 logs/*
 
 **/.cache
 **/.cache/*
+
+model_view.html
+head_view.html

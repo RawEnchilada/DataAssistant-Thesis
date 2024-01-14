@@ -1,0 +1,79 @@
+[
+  {
+    "label": "Trained with questions and queries",
+    "datasetSize": 407,
+    "modelName": "PY007/TinyLlama-1.1B-Chat-v0.3",
+    "distanceEvaluation": 34.3,
+    "shuffled": false,
+    "date": "2023-10-10"
+  },
+  {
+    "label": "Trained with context as system prompt, questions and queries",
+    "datasetSize": 407,
+    "modelName": "PY007/TinyLlama-1.1B-Chat-v0.3",
+    "distanceEvaluation": 49.7,
+    "shuffled": false,
+    "date": "2023-10-13"
+  },
+  {
+    "label": "Trained with context as user prompt, questions and queries",
+    "datasetSize": 407,
+    "modelName": "PY007/TinyLlama-1.1B-Chat-v0.3",
+    "distanceEvaluation": 24.4,
+    "shuffled": false,
+    "date": "2023-10-14"
+  },
+  {
+    "label": "Trained with typed context as user prompt, questions and queries",
+    "datasetSize": 407,
+    "modelName": "PY007/TinyLlama-1.1B-Chat-v0.3",
+    "distanceEvaluation": 13.9,
+    "shuffled": false,
+    "date": "2023-10-15"
+  },
+  {
+    "label": "Trained with typed context as user prompt, questions and queries, supports lt gt queries",
+    "datasetSize": 426,
+    "modelName": "PY007/TinyLlama-1.1B-Chat-v0.3",
+    "distanceEvaluation": 12.1,
+    "shuffled": false,
+    "date": "2023-11-03"
+  },
+  {
+    "label": "Trained with typed context as user prompt, questions and queries, supports lt gt queries",
+    "datasetSize": 523,
+    "modelName": "PY007/TinyLlama-1.1B-Chat-v0.3",
+    "distanceEvaluation": 13.1,
+    "shuffled": false,
+    "date": "2023-11-15"
+  },
+  {
+    "label": "Trained with typed context as user prompt, questions and queries, supports lt gt queries, shuffled",
+    "datasetSize": 523,
+    "modelName": "PY007/TinyLlama-1.1B-Chat-v0.3",
+    "distanceEvaluation": 7.9,
+    "shuffled": true,
+    "date": "2023-11-16"
+  },
+  {
+    "label": "Trained with typed context as user prompt, questions and queries, supports lt gt queries, shuffled",
+    "datasetSize": 523,
+    "modelName": "TinyLlama/TinyLlama-1.1B-Chat-v0.5",
+    "distanceEvaluation": 38.2,
+    "date": "2023-11-20"
+  },
+  {
+    "label": "Trained with typed context as user prompt, questions and queries, supports lt gt queries, shuffled, with end token",
+    "datasetSize": 523,
+    "modelName": "TinyLlama/TinyLlama-1.1B-Chat-v0.5",
+    "distanceEvaluation": 4.2,
+    "date": "2023-11-21"
+  },
+  {
+    "label": "",
+    "datasetSize": 524,
+    "modelName": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "distanceEvaluation": 52.8,
+    "date": "2024-01-04"
+  }
+]
