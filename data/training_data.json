@@ -1,0 +1,2622 @@
+[
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What faculties are there?",
+        "output": "faculties{name}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What departments are there?",
+        "output": "departments{name}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course}",
+        "input": "What degrees are there?",
+        "output": "degrees{name}"
+    },
+    {
+        "context": "specialization{name:string}",
+        "input": "Which specializations are there?",
+        "output": "specializations{name}"
+    },
+    {
+        "context": "specialization{name:string}",
+        "input": "What specializations are there?",
+        "output": "specializations{name}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "What rooms are there?",
+        "output": "rooms{name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there?",
+        "output": "courses{name}"
+    },
+    {
+        "context": "building{name}",
+        "input": "What buildings are there?",
+        "output": "buildings{name}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What are the departments of the faculty of Electrical Engineering and Informatics?",
+        "output": "faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What are the departments of the faculty of Mechanical Engineering?",
+        "output": "faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What are the departments of the faculty of Economic and Social Sciences?",
+        "output": "faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What are the departments of the faculty of Natural Sciences?",
+        "output": "faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Alice's neptun code?",
+        "output": "people(where:{name:\"Alice\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Bob's neptun code?",
+        "output": "people(where:{name:Bob\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Charlie's neptun code?",
+        "output": "people(where:{name:\"Charlie\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is David's neptun code?",
+        "output": "people(where:{name:\"David\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Eve's neptun code?",
+        "output": "people(where:{name:\"Eve\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Frank's neptun code?",
+        "output": "people(where:{name:\"Frank\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Grace's neptun code?",
+        "output": "people(where:{name:\"Grace\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Heidi's neptun code?",
+        "output": "people(where:{name:\"Heidi\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Ivan's neptun code?",
+        "output": "people(where:{name:\"Ivan\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Judy's neptun code?",
+        "output": "people(where:{name:\"Judy\"}){neptun}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Alice's email address?",
+        "output": "people(where:{name:\"Alice\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Bob's email address?",
+        "output": "people(where:{name:\"Bob\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Charlie's email address?",
+        "output": "people(where:{name:\"Charlie\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is David's email address?",
+        "output": "people(where:{name:\"David\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Eve's email address?",
+        "output": "people(where:{name:\"Eve\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Frank's email address?",
+        "output": "people(where:{name:\"Frank\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Grace's email address?",
+        "output": "people(where:{name:\"Grace\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Heidi's email address?",
+        "output": "people(where:{name:\"Heidi\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Ivan's email address?",
+        "output": "people(where:{name:\"Ivan\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Judy's email address?",
+        "output": "people(where:{name:\"Judy\"}){email}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Alice's birthday?",
+        "output": "people(where:{name:\"Alice\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Bob's birthday?",
+        "output": "people(where:{name:\"Bob\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Charlie's birthday?",
+        "output": "people(where:{name:\"Charlie\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is David's birthday?",
+        "output": "people(where:{name:\"David\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Eve's birthday?",
+        "output": "people(where:{name:\"Eve\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Frank's birthday?",
+        "output": "people(where:{name:\"Frank\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Grace's birthday?",
+        "output": "people(where:{name:\"Grace\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Heidi's birthday?",
+        "output": "people(where:{name:\"Heidi\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Ivan's birthday?",
+        "output": "people(where:{name:\"Ivan\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "When is Judy's birthday?",
+        "output": "people(where:{name:\"Judy\"}){birthday}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Alice studying?",
+        "output": "people(where:{name:\"Alice\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Bob studying?",
+        "output": "people(where:{name:\"Bob\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Charlie studying?",
+        "output": "people(where:{name:\"Charlie\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is David studying?",
+        "output": "people(where:{name:\"David\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Eve studying?",
+        "output": "people(where:{name:\"Eve\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Frank studying?",
+        "output": "people(where:{name:\"Frank\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Grace studying?",
+        "output": "people(where:{name:\"Grace\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Heidi studying?",
+        "output": "people(where:{name:\"Heidi\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Ivan studying?",
+        "output": "people(where:{name:\"Ivan\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Judy studying?",
+        "output": "people(where:{name:\"Judy\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Alice's degree?",
+        "output": "people(where:{name:\"Alice\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Bob's degree?",
+        "output": "people(where:{name:\"Bob\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Charlie's degree?",
+        "output": "people(where:{name:\"Charlie\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is David's degree?",
+        "output": "people(where:{name:\"David\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Eve's degree?",
+        "output": "people(where:{name:\"Eve\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Frank's degree?",
+        "output": "people(where:{name:\"Frank\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Grace's degree?",
+        "output": "people(where:{name:\"Grace\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Heidi's degree?",
+        "output": "people(where:{name:\"Heidi\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Ivan's degree?",
+        "output": "people(where:{name:\"Ivan\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Judy's degree?",
+        "output": "people(where:{name:\"Judy\"}){studies{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Alice's specialization?",
+        "output": "people(where:{name:\"Alice\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Bob's specialization?",
+        "output": "people(where:{name:\"Bob\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Charlie's specialization?",
+        "output": "people(where:{name:\"Charlie\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is David's specialization?",
+        "output": "people(where:{name:\"David\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Eve's specialization?",
+        "output": "people(where:{name:\"Eve\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Frank's specialization?",
+        "output": "people(where:{name:\"Frank\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Grace's specialization?",
+        "output": "people(where:{name:\"Grace\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Heidi's specialization?",
+        "output": "people(where:{name:\"Heidi\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Ivan's specialization?",
+        "output": "people(where:{name:\"Ivan\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What is Judy's specialization?",
+        "output": "people(where:{name:\"Judy\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Alice specialize in?",
+        "output": "people(where:{name:\"Alice\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Bob specialize in?",
+        "output": "people(where:{name:\"Bob\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Charlie specialize in?",
+        "output": "people(where:{name:\"Charlie\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does David specialize in?",
+        "output": "people(where:{name:\"David\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Eve specialize in?",
+        "output": "people(where:{name:\"Eve\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Frank specialize in?",
+        "output": "people(where:{name:\"Frank\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Grace specialize in?",
+        "output": "people(where:{name:\"Grace\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Heidi specialize in?",
+        "output": "people(where:{name:\"Heidi\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Ivan specialize in?",
+        "output": "people(where:{name:\"Ivan\"}){specializesIn{name}}"
+    },
+    {
+        "context": "person{name:string,birthday:string,neptun:string,email:string,specialisesIn:specialization,studies:degree}",
+        "input": "What does Judy specialize in?",
+        "output": "people(where:{name:\"Judy\"}){specializesIn{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course}",
+        "input": "What specializations are available for the degree of Computer Engineering?",
+        "output": "degrees(where:{name:\"Computer Engineering\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course}",
+        "input": "What specializations are available for the degree of Electrical Engineering?",
+        "output": "degrees(where:{name:\"Electrical Engineering\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course}",
+        "input": "What specializations are available for the degree of Mechanical Engineering?",
+        "output": "degrees(where:{name:\"Mechanical Engineering\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course}",
+        "input": "What specializations are available for the degree of Economics and Management?",
+        "output": "degrees(where:{name:\"Economics and Management\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course}",
+        "input": "What specializations are available for the degree of Mathematics?",
+        "output": "degrees(where:{name:\"Mathematics\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What degrees are available at the faculty of Electrical Engineering and Informatics?",
+        "output": "faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDegree{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What degrees are available at the faculty of Mechanical Engineering?",
+        "output": "faculties(where:{name:\"Mechanical Engineering\"}){hasDegree{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What degrees are available at the faculty of Economic and Social Sciences?",
+        "output": "faculties(where:{name:\"Economic and Social Sciences\"}){hasDegree{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What degrees are available at the faculty of Natural Sciences?",
+        "output": "faculties(where:{name:\"Natural Sciences\"}){hasDegree{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "Which departments are there at the faculty of Electrical Engineering and Informatics?",
+        "output": "faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "Which departments are there at the faculty of Mechanical Engineering?",
+        "output": "faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "Which departments are there at the faculty of Economic and Social Sciences?",
+        "output": "faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "Which departments are there at the faculty of Natural Sciences?",
+        "output": "faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are there at the faculty of Electrical Engineering and Informatics?",
+        "output": "faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are there at the faculty of Mechanical Engineering?",
+        "output": "faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are there at the faculty of Economic and Social Sciences?",
+        "output": "faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are there at the faculty of Natural Sciences?",
+        "output": "faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are available at the faculty of Electrical Engineering and Informatics?",
+        "output": "faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are available at the faculty of Mechanical Engineering?",
+        "output": "faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are available at the faculty of Economic and Social Sciences?",
+        "output": "faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments are available at the faculty of Natural Sciences?",
+        "output": "faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments does the faculty of Electrical Engineering and Informatics have?",
+        "output": "faculties(where:{name:\"Electrical Engineering and Informatics\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments does the faculty of Mechanical Engineering have?",
+        "output": "faculties(where:{name:\"Mechanical Engineering\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments does the faculty of Economic and Social Sciences have?",
+        "output": "faculties(where:{name:\"Economic and Social Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "faculty{name:string,hasDegree:degree,hasDepartment:department}",
+        "input": "What departments does the faculty of Natural Sciences have?",
+        "output": "faculties(where:{name:\"Natural Sciences\"}){hasDepartment{name}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "Which specializations are available at the department of Control Engineering and Information Technology?",
+        "output": "departments(where:{name:\"Control Engineering and Information Technology\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "Which specializations are available at the department of Measurement and Information Systems?",
+        "output": "departments(where:{name:\"Measurement and Information Systems\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "Which specializations are available at the department of Automation and Applied Informatics?",
+        "output": "departments(where:{name:\"Automation and Applied Informatics\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "Which specializations are available at the department of Materials Science and Engineering?",
+        "output": "departments(where:{name:\"Materials Science and Engineering\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "Which specializations are available at the department of Economics and Management?",
+        "output": "departments(where:{name:\"Economics and Management\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "Which specializations are available at the department of Humanities and Social Sciences?",
+        "output": "departments(where:{name:\"Humanities and Social Sciences\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "Which specializations are available at the department of Mathematics?",
+        "output": "departments(where:{name:\"Mathematics\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations are there at the department of Control Engineering and Information Technology?",
+        "output": "departments(where:{name:\"Control Engineering and Information Technology\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations are there at the department of Measurement and Information Systems?",
+        "output": "departments(where:{name:\"Measurement and Information Systems\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations are there at the department of Automation and Applied Informatics?",
+        "output": "departments(where:{name:\"Automation and Applied Informatics\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations are there at the department of Materials Science and Engineering?",
+        "output": "departments(where:{name:\"Materials Science and Engineering\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations are there at the department of Economics and Management?",
+        "output": "departments(where:{name:\"Economics and Management\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations are there at the department of Humanities and Social Sciences?",
+        "output": "departments(where:{name:\"Humanities and Social Sciences\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations are there at the department of Mathematics?",
+        "output": "departments(where:{name:\"Mathematics\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations does the department of Control Engineering and Information Technology have?",
+        "output": "departments(where:{name:\"Control Engineering and Information Technology\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations does department of Measurement and Information Systems have?",
+        "output": "departments(where:{name:\"Measurement and Information Systems\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations does the department of Automation and Applied Informatics have?",
+        "output": "departments(where:{name:\"Automation and Applied Informatics\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations does the department of Materials Science and Engineering have?",
+        "output": "departments(where:{name:\"Materials Science and Engineering\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations does the department of Economics and Management have?",
+        "output": "departments(where:{name:\"Economics and Management\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations does the department of Humanities and Social Sciences have?",
+        "output": "departments(where:{name:\"Humanities and Social Sciences\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "department{name:string,hasSpecialization:specialization}",
+        "input": "What specializations does the department of Mathematics have?",
+        "output": "departments(where:{name:\"Mathematics\"}){hasspecialization{name:string}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Which building is room IB025 in?",
+        "output": "rooms(where:{name:\"IB025\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Which building is room IB026 in?",
+        "output": "rooms(where:{name:\"IB026\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Which building is room IB027 in?",
+        "output": "rooms(where:{name:\"IB027\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Which building is room IB028 in?",
+        "output": "rooms(where:{name:\"IB028\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Which building is room IL101 in?",
+        "output": "rooms(where:{name:\"IL101\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In which building is room IL202?",
+        "output": "rooms(where:{name:\"IL202\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In which building is room IL203?",
+        "output": "rooms(where:{name:\"IL203\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In which building is room IL301?",
+        "output": "rooms(where:{name:\"IL301\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In which building is room IL302?",
+        "output": "rooms(where:{name:\"IL302\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In which building is room IL303?",
+        "output": "rooms(where:{name:\"IL303\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is room K101?",
+        "output": "rooms(where:{name:\"K101\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is room K102?",
+        "output": "rooms(where:{name:\"K102\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is room K103?",
+        "output": "rooms(where:{name:\"K103\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is room K201?",
+        "output": "rooms(where:{name:\"K201\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is room K202?",
+        "output": "rooms(where:{name:\"K202\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is K101?",
+        "output": "rooms(where:{name:\"K101\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is K102?",
+        "output": "rooms(where:{name:\"K102\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is K103?",
+        "output": "rooms(where:{name:\"K103\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is K201?",
+        "output": "rooms(where:{name:\"K201\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "Where is K202?",
+        "output": "rooms(where:{name:\"K202\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In what building is K203?",
+        "output": "rooms(where:{name:\"K203\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In what building is F101?",
+        "output": "rooms(where:{name:\"F101\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In what building is F103?",
+        "output": "rooms(where:{name:\"F103\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In what building is F201?",
+        "output": "rooms(where:{name:\"F201\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "In what building is F202?",
+        "output": "rooms(where:{name:\"F202\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "What building is F102 in?",
+        "output": "rooms(where:{name:\"F102\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "What building is F103 in?",
+        "output": "rooms(where:{name:\"F103\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "What building is F201 in?",
+        "output": "rooms(where:{name:\"F201\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "What building is F202 in?",
+        "output": "rooms(where:{name:\"F202\"}){isIn{name}}"
+    },
+    {
+        "context": "room{name:string,isIn:building}",
+        "input": "What building is F203 in?",
+        "output": "rooms(where:{name:\"F203\"}){isIn{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What are the prerequisites of Introduction to C++?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What are the prerequisites of Algorithm Theory?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What are the prerequisites of Finance?",
+        "output": "courses(where:{name:\"Finance\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What are the prerequisites of Software Testing?",
+        "output": "courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What are the prerequisites of Electrical Power Engineering?",
+        "output": "courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What are the prerequisites of Networks and Services?",
+        "output": "courses(where:{name:\"Networks and Services\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses do i need to take Introduction to C++?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses do i need to take Algorithm Theory?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses do i need to take Finance?",
+        "output": "courses(where:{name:\"Finance\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses do i need to take Software Testing?",
+        "output": "courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses do i need to take Electrical Power Engineering?",
+        "output": "courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses do i need to take Networks and Services?",
+        "output": "courses(where:{name:\"Networks and Services\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What prerequisites does Introduction to C++ have?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What prerequisites does Algorithm Theory have?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What prerequisites does Finance have?",
+        "output": "courses(where:{name:\"Finance\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What prerequisites does Software Testing have?",
+        "output": "courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What prerequisites does Electrical Power Engineering have?",
+        "output": "courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What prerequisites does Networks and Services have?",
+        "output": "courses(where:{name:\"Networks and Services\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What do i need to take Introduction to C++?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What do i need to take Algorithm Theory?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What do i need to take Finance?",
+        "output": "courses(where:{name:\"Finance\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What do i need to take Software Testing?",
+        "output": "courses(where:{name:\"Software Testing\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What do i need to take Electrical Power Engineering?",
+        "output": "courses(where:{name:\"Electrical Power Engineering\"}){prerequisites{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the first semester?",
+        "output": "courses(where:{semester:1}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the second semester?",
+        "output": "courses(where:{semester:2}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the third semester?",
+        "output": "courses(where:{semester:3}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the fourth semester?",
+        "output": "courses(where:{semester:4}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the fifth semester?",
+        "output": "courses(where:{semester:5}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in semester 1?",
+        "output": "courses(where:{semester:1}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in semester 2?",
+        "output": "courses(where:{semester:2}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in semester 3?",
+        "output": "courses(where:{semester:3}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in semester 4?",
+        "output": "courses(where:{semester:4}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in semester 5?",
+        "output": "courses(where:{semester:5}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Introduction to Programming?",
+        "output": "courses(where:{name:\"Introduction to Programming\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Introduction to C++?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Algorithm Theory?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Data Structures?",
+        "output": "courses(where:{name:\"Data Structures\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Software Engineering?",
+        "output": "courses(where:{name:\"Software Engineering\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Software Testing?",
+        "output": "courses(where:{name:\"Software Testing\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Software Project Management?",
+        "output": "courses(where:{name:\"Software Project Management\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Physics?",
+        "output": "courses(where:{name:\"Physics\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Chemistry?",
+        "output": "courses(where:{name:\"Chemistry\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Mathematics?",
+        "output": "courses(where:{name:\"Mathematics\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Introduction to Economics?",
+        "output": "courses(where:{name:\"Introduction to Economics\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Management Basics?",
+        "output": "courses(where:{name:\"Management Basics\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Marketing?",
+        "output": "courses(where:{name:\"Marketing\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the code of Accounting?",
+        "output": "courses(where:{name:\"Accounting\"}){code}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Introduction to Programming?",
+        "output": "courses(where:{name:\"Introduction to Programming\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Introduction to C++?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Algorithm Theory?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Data Structures?",
+        "output": "courses(where:{name:\"Data Structures\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Software Engineering?",
+        "output": "courses(where:{name:\"Software Engineering\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Software Testing?",
+        "output": "courses(where:{name:\"Software Testing\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Software Project Management?",
+        "output": "courses(where:{name:\"Software Project Management\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Physics?",
+        "output": "courses(where:{name:\"Physics\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Chemistry?",
+        "output": "courses(where:{name:\"Chemistry\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Mathematics?",
+        "output": "courses(where:{name:\"Mathematics\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Introduction to Economics?",
+        "output": "courses(where:{name:\"Introduction to Economics\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Management Basics?",
+        "output": "courses(where:{name:\"Management Basics\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Marketing?",
+        "output": "courses(where:{name:\"Marketing\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "How many credits is Accounting?",
+        "output": "courses(where:{name:\"Accounting\"}){credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Introduction to Programming?",
+        "output": "courses(where:{name:\"Introduction to Programming\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Introduction to C++?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Algorithm Theory?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Data Structures?",
+        "output": "courses(where:{name:\"Data Structures\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Software Engineering?",
+        "output": "courses(where:{name:\"Software Engineering\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Software Testing?",
+        "output": "courses(where:{name:\"Software Testing\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Software Project Management?",
+        "output": "courses(where:{name:\"Software Project Management\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Physics?",
+        "output": "courses(where:{name:\"Physics\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Chemistry?",
+        "output": "courses(where:{name:\"Chemistry\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Mathematics?",
+        "output": "courses(where:{name:\"Mathematics\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Introduction to Economics?",
+        "output": "courses(where:{name:\"Introduction to Economics\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Management Basics?",
+        "output": "courses(where:{name:\"Management Basics\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Marketing?",
+        "output": "courses(where:{name:\"Marketing\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the description of Accounting?",
+        "output": "courses(where:{name:\"Accounting\"}){description}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Introduction to Programming?",
+        "output": "courses(where:{name:\"Introduction to Programming\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Introduction to C++?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Algorithm Theory?",
+        "output": "courses(where:{name:\"Algorithm Theory\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Data Structures?",
+        "output": "courses(where:{name:\"Data Structures\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Software Engineering?",
+        "output": "courses(where:{name:\"Software Engineering\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Software Testing?",
+        "output": "courses(where:{name:\"Software Testing\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Software Project Management?",
+        "output": "courses(where:{name:\"Software Project Management\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Physics?",
+        "output": "courses(where:{name:\"Physics\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Chemistry?",
+        "output": "courses(where:{name:\"Chemistry\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What is the language of Mathematics?",
+        "output": "courses(where:{name:\"Mathematics\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which courses are in English?",
+        "output": "courses(where:{language:\"English\"}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which courses are in Hungarian?",
+        "output": "courses(where:{language:\"Hungarian\"}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which courses are in German?",
+        "output": "courses(where:{language:\"German\"}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which courses are in French?",
+        "output": "courses(where:{language:\"French\"}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Marketing taught in?",
+        "output": "courses(where:{name:\"Marketing\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Accounting taught in?",
+        "output": "courses(where:{name:\"Accounting\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Management Basics taught in?",
+        "output": "courses(where:{name:\"Management Basics\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Introduction to Economics taught in?",
+        "output": "courses(where:{name:\"Introduction to Economics\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Mathematics taught in?",
+        "output": "courses(where:{name:\"Mathematics\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Chemistry taught in?",
+        "output": "courses(where:{name:\"Chemistry\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Physics taught in?",
+        "output": "courses(where:{name:\"Physics\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Software Project Management taught in?",
+        "output": "courses(where:{name:\"Software Project Management\"}){language}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "Which language is Software Testing taught in?",
+        "output": "courses(where:{name:\"Software Testing\"}){language}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Mathematics?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Mathematics?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Introduction to Economics?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Introduction to Economics?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Management Basics?",
+        "output": "lessons(where:{name:\"Management Basics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Marketing?",
+        "output": "lessons(where:{name:\"Marketing\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Accounting?",
+        "output": "lessons(where:{name:\"Accounting\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Accounting?",
+        "output": "lessons(where:{name:\"Accounting\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Finance?",
+        "output": "lessons(where:{name:\"Finance\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Finance?",
+        "output": "lessons(where:{name:\"Finance\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Sociology?",
+        "output": "lessons(where:{name:\"Sociology\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Fluid Mechanics?",
+        "output": "lessons(where:{name:\"Fluid Mechanics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Fluid Mechanics?",
+        "output": "lessons(where:{name:\"Fluid Mechanics\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Thermodynamics?",
+        "output": "lessons(where:{name:\"Thermodynamics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Thermodynamics?",
+        "output": "lessons(where:{name:\"Thermodynamics\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Mechanics?",
+        "output": "lessons(where:{name:\"Mechanics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Materials Science?",
+        "output": "lessons(where:{name:\"Materials Science\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the laboratory of Materials Science?",
+        "output": "lessons(where:{name:\"Materials Science\", type:\"laboratory\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Electrical Engineering?",
+        "output": "lessons(where:{name:\"Electrical Engineering\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Electrical Engineering?",
+        "output": "lessons(where:{name:\"Electrical Engineering\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Electronics?",
+        "output": "lessons(where:{name:\"Electronics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Electrical Power Engineering?",
+        "output": "lessons(where:{name:\"Electrical Power Engineering\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Electrical Power Engineering?",
+        "output": "lessons(where:{name:\"Electrical Power Engineering\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Automation and Control Engineering?",
+        "output": "lessons(where:{name:\"Automation and Control Engineering\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Mechatronics?",
+        "output": "lessons(where:{name:\"Mechatronics\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the practice of Mechatronics?",
+        "output": "lessons(where:{name:\"Mechatronics\", type:\"practice\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Networks and Services?",
+        "output": "lessons(where:{name:\"Networks and Services\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the laboratory of Networks and Services?",
+        "output": "lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When is the lecture of Computing Theory?",
+        "output": "lessons(where:{name:\"Computing Theory\", type:\"lecture\"}){day, start, end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "How often is the lecture of Mathematics?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "How often is the practice of Mathematics?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"practice\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "How often is the lecture of Introduction to Economics?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "How often is the practice of Introduction to Economics?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "How often is the lecture of Management Basics?",
+        "output": "lessons(where:{name:\"Management Basics\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "How often is the lecture of Marketing?",
+        "output": "lessons(where:{name:\"Marketing\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "How often is the laboratory of Networks and Services?",
+        "output": "lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Mathematics start?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"lecture\"}){start}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the practice of Mathematics start?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"practice\"}){start}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Introduction to Economics start?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){start}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the practice of Introduction to Economics start?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){start}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Management Basics start?",
+        "output": "lessons(where:{name:\"Management Basics\", type:\"lecture\"}){start}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Marketing start?",
+        "output": "lessons(where:{name:\"Marketing\", type:\"lecture\"}){start}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the laboratory of Networks and Services start?",
+        "output": "lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){start}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Mathematics end?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"lecture\"}){end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the practice of Mathematics end?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"practice\"}){end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Introduction to Economics end?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the practice of Introduction to Economics end?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Management Basics end?",
+        "output": "lessons(where:{name:\"Management Basics\", type:\"lecture\"}){end}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Marketing recurr?",
+        "output": "lessons(where:{name:\"Marketing\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the laboratory of Networks and Services recurr?",
+        "output": "lessons(where:{name:\"Networks and Services\", type:\"laboratory\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Mathematics recurr?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the practice of Mathematics recurr?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"practice\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Introduction to Economics recurr?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the practice of Introduction to Economics recurr?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room}",
+        "input": "When does the lecture of Management Basics recurr?",
+        "output": "lessons(where:{name:\"Management Basics\", type:\"lecture\"}){recurring}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where is the lecture of Software Engineering?",
+        "output": "lessons(where:{name:\"Software Engineering\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where is the practice of Software Engineering?",
+        "output": "lessons(where:{name:\"Software Engineering\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where is the laboratory of Software Engineering?",
+        "output": "lessons(where:{name:\"Software Engineering\", type:\"laboratory\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where is the lecture of Software Testing?",
+        "output": "lessons(where:{name:\"Software Testing\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where is the practice of Software Testing?",
+        "output": "lessons(where:{name:\"Software Testing\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where is the lecture of Software Project Management?",
+        "output": "lessons(where:{name:\"Software Project Management\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where is the practice of Software Project Management?",
+        "output": "lessons(where:{name:\"Software Project Management\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the lecture of Physics be?",
+        "output": "lessons(where:{name:\"Physics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the practice of Physics be?",
+        "output": "lessons(where:{name:\"Physics\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the lecture of Chemistry be?",
+        "output": "lessons(where:{name:\"Chemistry\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the practice of Chemistry be?",
+        "output": "lessons(where:{name:\"Chemistry\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the lecture of Mathematics be?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the practice of Mathematics be?",
+        "output": "lessons(where:{name:\"Mathematics\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the lecture of Introduction to Economics be?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the practice of Introduction to Economics be?",
+        "output": "lessons(where:{name:\"Introduction to Economics\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the lecture of Management Basics be?",
+        "output": "lessons(where:{name:\"Management Basics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the lecture of Marketing be?",
+        "output": "lessons(where:{name:\"Marketing\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the lecture of Accounting be?",
+        "output": "lessons(where:{name:\"Accounting\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the practice of Accounting be?",
+        "output": "lessons(where:{name:\"Accounting\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Finance in?",
+        "output": "lessons(where:{name:\"Finance\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the practice of Finance in?",
+        "output": "lessons(where:{name:\"Finance\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Sociology in?",
+        "output": "lessons(where:{name:\"Sociology\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Fluid Mechanics in?",
+        "output": "lessons(where:{name:\"Fluid Mechanics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the practice of Fluid Mechanics in?",
+        "output": "lessons(where:{name:\"Fluid Mechanics\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Thermodynamics in?",
+        "output": "lessons(where:{name:\"Thermodynamics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the practice of Thermodynamics in?",
+        "output": "lessons(where:{name:\"Thermodynamics\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Mechanics in?",
+        "output": "lessons(where:{name:\"Mechanics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Materials Science in?",
+        "output": "lessons(where:{name:\"Materials Science\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the laboratory of Materials Science in?",
+        "output": "lessons(where:{name:\"Materials Science\", type:\"laboratory\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Electrical Engineering in?",
+        "output": "lessons(where:{name:\"Electrical Engineering\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the practice of Electrical Engineering in?",
+        "output": "lessons(where:{name:\"Electrical Engineering\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Electronics in?",
+        "output": "lessons(where:{name:\"Electronics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Electrical Power Engineering in?",
+        "output": "lessons(where:{name:\"Electrical Power Engineering\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the practice of Electrical Power Engineering in?",
+        "output": "lessons(where:{name:\"Electrical Power Engineering\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Automation and Control Engineering in?",
+        "output": "lessons(where:{name:\"Automation and Control Engineering\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Mechatronics in?",
+        "output": "lessons(where:{name:\"Mechatronics\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the practice of Mechatronics in?",
+        "output": "lessons(where:{name:\"Mechatronics\", type:\"practice\"}){isIn{name}}"
+    },
+    {
+        "context": "lesson{name:string,type:string,day:string,start:string,end:string,recurring:string,isIn:room},room{name:string,isIn:building}",
+        "input": "What room is the lecture of Networks and Services in?",
+        "output": "lessons(where:{name:\"Networks and Services\", type:\"lecture\"}){isIn{name}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Introduction to Programming be?",
+        "output": "courses(where:{name:\"Introduction to Programming\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Introduction to C++ be?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Software Engineering be?",
+        "output": "courses(where:{name:\"Software Engineering\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Software Project Management be?",
+        "output": "courses(where:{name:\"Software Project Management\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Management Basics be?",
+        "output": "courses(where:{name:\"Management Basics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Marketing be?",
+        "output": "courses(where:{name:\"Marketing\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Materials Science be?",
+        "output": "courses(where:{name:\"Materials Science\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Automation and Control Engineering be?",
+        "output": "courses(where:{name:\"Automation and Control Engineering\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Mechatronics be?",
+        "output": "courses(where:{name:\"Mechatronics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Networks and Services be?",
+        "output": "courses(where:{name:\"Networks and Services\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Computing Theory be?",
+        "output": "courses(where:{name:\"Computing Theory\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Physics be?",
+        "output": "courses(where:{name:\"Physics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Chemistry be?",
+        "output": "courses(where:{name:\"Chemistry\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "Where will the exam of Mathematics be?",
+        "output": "courses(where:{name:\"Mathematics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Electrical Engineering be?",
+        "output": "courses(where:{name:\"Electrical Engineering\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Electronics be?",
+        "output": "courses(where:{name:\"Electronics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Electrical Power Engineering be?",
+        "output": "courses(where:{name:\"Electrical Power Engineering\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Accounting be?",
+        "output": "courses(where:{name:\"Accounting\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Finance be?",
+        "output": "courses(where:{name:\"Finance\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Sociology be?",
+        "output": "courses(where:{name:\"Sociology\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Fluid Mechanics be?",
+        "output": "courses(where:{name:\"Fluid Mechanics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Thermodynamics be?",
+        "output": "courses(where:{name:\"Thermodynamics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Mechanics be?",
+        "output": "courses(where:{name:\"Mechanics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Introduction to Programming be?",
+        "output": "courses(where:{name:\"Introduction to Programming\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Introduction to C++ be?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Software Engineering be?",
+        "output": "courses(where:{name:\"Software Engineering\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Software Project Management be?",
+        "output": "courses(where:{name:\"Software Project Management\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room},room{name:string,isIn:building}",
+        "input": "In which room will the exam of Management Basics be?",
+        "output": "courses(where:{name:\"Management Basics\"}){hasExam{isIn{name}}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Introduction to Programming be?",
+        "output": "courses(where:{name:\"Introduction to Programming\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Introduction to C++ be?",
+        "output": "courses(where:{name:\"Introduction to C++\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Software Engineering be?",
+        "output": "courses(where:{name:\"Software Engineering\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Software Project Management be?",
+        "output": "courses(where:{name:\"Software Project Management\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Management Basics be?",
+        "output": "courses(where:{name:\"Management Basics\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Marketing be?",
+        "output": "courses(where:{name:\"Marketing\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Materials Science be?",
+        "output": "courses(where:{name:\"Materials Science\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Automation and Control Engineering be?",
+        "output": "courses(where:{name:\"Automation and Control Engineering\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Mechatronics be?",
+        "output": "courses(where:{name:\"Mechatronics\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Networks and Services be?",
+        "output": "courses(where:{name:\"Networks and Services\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Computing Theory be?",
+        "output": "courses(where:{name:\"Computing Theory\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Physics be?",
+        "output": "courses(where:{name:\"Physics\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Chemistry be?",
+        "output": "courses(where:{name:\"Chemistry\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Mathematics be?",
+        "output": "courses(where:{name:\"Mathematics\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Electrical Engineering be?",
+        "output": "courses(where:{name:\"Electrical Engineering\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Electronics be?",
+        "output": "courses(where:{name:\"Electronics\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Electrical Power Engineering be?",
+        "output": "courses(where:{name:\"Electrical Power Engineering\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Accounting be?",
+        "output": "courses(where:{name:\"Accounting\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Finance be?",
+        "output": "courses(where:{name:\"Finance\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Sociology be?",
+        "output": "courses(where:{name:\"Sociology\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Fluid Mechanics be?",
+        "output": "courses(where:{name:\"Fluid Mechanics\"}){hasExam{date}}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam},exam{name:string,date:string,type:string,duration:string,isIn:room}",
+        "input": "When will the exam of Thermodynamics be?",
+        "output": "courses(where:{name:\"Thermodynamics\"}){hasExam{date}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Computer Engineering degree?",
+        "output": "degrees(where:{name:\"Computer Engineering\"}){hasCourse{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Electrical Engineering degree?",
+        "output": "degrees(where:{name:\"Electrical Engineering\"}){hasCourse{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Mechanical Engineering degree?",
+        "output": "degrees(where:{name:\"Mechanical Engineering\"}){hasCourse{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Economics and Management degree?",
+        "output": "degrees(where:{name:\"Economics and Management\"}){hasCourse{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Mathematics degree?",
+        "output": "degrees(where:{name:\"Mathematics\"}){hasCourse{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Physics degree?",
+        "output": "degrees(where:{name:\"Physics\"}){hasCourse{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Chemistry degree?",
+        "output": "degrees(where:{name:\"Chemistry\"}){hasCourse{name}}"
+    },
+    {
+        "context": "degree{name:string,level:string,hasSpecialization:specialization,hasCourse:course},course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "What courses are there in the Biotechnology degree?",
+        "output": "degrees(where:{name:\"Biotechnology\"}){hasCourse{name}}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "What is the population of Tokyo, Japan?",
+        "output": "cities(where:{name:\"Tokyo\", country:\"Japan\"}){population}"
+    },
+    {
+        "context": "movie{title:string,director:string,releaseYear:number,genre:string}",
+        "input": "List movies released in 2020 with the 'Action' genre.",
+        "output": "movies(where:{releaseYear:2020, genre:\"Action\"}){title}"
+    },
+    {
+        "context": "book{title:string,author:string,publishedYear:number}",
+        "input": "Who wrote the book 'To Kill a Mockingbird'?",
+        "output": "books(where:{title:\"To Kill a Mockingbird\"}){author}"
+    },
+    {
+        "context": "restaurant{name:string,cuisine:string,location:string,priceRange:string}",
+        "input": "Find a restaurant in Paris that offers vegetarian cuisine.",
+        "output": "restaurants(where:{location:\"Paris\", cuisine:\"Vegetarian\"})"
+    },
+    {
+        "context": "animal{name:string,species:string,habitat:string,lifeSpan:number}",
+        "input": "What is the habitat of lions?",
+        "output": "animals(where:{species:\"Lion\"}){habitat}"
+    },
+    {
+        "context": "song{title:string,artist:string,genre:string,duration:string}",
+        "input": "Give me the genre of the song 'Bohemian Rhapsody'.",
+        "output": "songs(where:{title:\"Bohemian Rhapsody\"}){genre}"
+    },
+    {
+        "context": "car{make:string,model:string,year:number,price:number}",
+        "input": "Find the price of a 2022 Tesla Model 3.",
+        "output": "cars(where:{make:\"Tesla\", model:\"Model 3\", year:2022}){price}"
+    },
+    {
+        "context": "company{name:string,industry:string,revenue:number,employees:number}",
+        "input": "What is the revenue of Apple Inc.?",
+        "output": "companies(where:{name:\"Apple Inc.\"}){revenue}"
+    },
+    {
+        "context": "product{name:string,category:string,price:number,stock:number}",
+        "input": "Show me products in the 'Electronics' category with a price less than $200.",
+        "output": "products(where:{category:\"Electronics\", price_LT: 200})"
+    },
+    {
+        "context": "athlete{name:string,sport:string,country:string,medals:number}",
+        "input": "How many medals has Usain Bolt won?",
+        "output": "athletes(where:{name:\"Usain Bolt\"}){medals}"
+    },
+    {
+        "context": "country{name:string,continent:string,population:number,capital:string}",
+        "input": "What is the capital of Germany?",
+        "output": "countries(where:{name:\"Germany\"}){capital}"
+    },
+    {
+        "context": "tvShow{name:string,genre:string,seasons:number,averageRating:number}",
+        "input": "Name a TV show in the 'Science Fiction' genre with over 5 seasons.",
+        "output": "tvShows(where:{genre:\"Science Fiction\", seasons_GT: 5}){name}"
+    },
+    {
+        "context": "sport{name:string,type:string,teams:number,players:number}",
+        "input": "How many players are there in a basketball team?",
+        "output": "sports(where:{name:\"Basketball\"}){players}"
+    },
+    {
+        "context": "game{title:string,genre:string,platform:string,price:number}",
+        "input": "Find a video game on the 'PC' platform with a price less than $30.",
+        "output": "games(where:{platform:\"PC\", price_LT: 30})"
+    },
+    {
+        "context": "song{title:string,artist:string,genre:string,duration:string}",
+        "input": "Tell me the duration of the song 'Shape of You'.",
+        "output": "songs(where:{title:\"Shape of You\"}){duration}"
+    },
+    {
+        "context": "planet{name:string,distanceFromSun:number,diameter:number,mass:number}",
+        "input": "What is the diameter of Mars?",
+        "output": "planets(where:{name:\"Mars\"}){diameter}"
+    },
+    {
+        "context": "movie{title:string,director:string,releaseYear:number,genre:string}",
+        "input": "Who directed the movie 'The Matrix'?",
+        "output": "movies(where:{title:\"The Matrix\"}){director}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "What is the area of London, UK?",
+        "output": "cities(where:{name:\"London\", country:\"UK\"}){area}"
+    },
+    {
+        "context": "book{title:string,author:string,publishedYear:number}",
+        "input": "Find a book written by J.K. Rowling.",
+        "output": "books(where:{author:\"J.K. Rowling\"}){title}"
+    },
+    {
+        "context": "product{name:string,price:number}",
+        "input": "List the name of products where the price is less than 100",
+        "output": "products(where:{price_LT:100}){name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "List the names of courses in an ascending order by their credit",
+        "output": "courses(options:{sort: {credit: ASC}}) {name,credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "List the names of courses in a descending order by their credit",
+        "output": "courses(options:{sort: {credit: DESC}}) {name,credit}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "List the names of courses in an ascending order",
+        "output": "courses(options:{sort: {name: ASC}}) {name}"
+    },
+    {
+        "context": "course{name:string,code:string,credit:number,semester:number,description:string,language:string,prerequisite:course,hasLesson:lesson,hasHomework:homework,hasExam:exam}",
+        "input": "List the names of courses in a descending order",
+        "output": "courses(options:{sort: {name: DESC}}) {name}"
+    },
+    {
+        "context": "book{title:string,author:string,pages:number,publishedYear:number,genre:string}",
+        "input": "Who is the author of the book 'The Adventure of a Lost World'?",
+        "output": "books(where:{title:\"The Adventure of a Lost World\"}){author}"
+    },
+    {
+        "context": "car{make:string,model:string,year:number,price:number,mileage:number}",
+        "input": "List the models of cars made by 'Tesla' in ascending order of their price.",
+        "output": "cars(where:{make:\"Tesla\"}, options:{sort: {price: ASC}}){model}"
+    },
+    {
+        "context": "restaurant{name:string,cuisine:string,location:string,rating:number}",
+        "input": "Find a restaurant in 'New York' with a rating greater than 4.5.",
+        "output": "restaurants(where:{location:\"New York\", rating_GT: 4.5}){name}"
+    },
+    {
+        "context": "movie{title:string,director:string,genre:string,releaseYear:number,boxOffice:number}",
+        "input": "What is the genre of the movie 'Inception'?",
+        "output": "movies(where:{title:\"Inception\"}){genre}"
+    },
+    {
+        "context": "musicAlbum{title:string,artist:string,genre:string,releaseYear:number,sales:number}",
+        "input": "List music albums released in 2020 in descending order of sales.",
+        "output": "musicAlbums(where:{releaseYear: 2020}, options:{sort: {sales: DESC}}){title}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "What is the population of 'Paris'?",
+        "output": "cities(where:{name:\"Paris\"}){population}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "Provide the cooking time for the recipe 'Spaghetti Carbonara'.",
+        "output": "recipes(where:{name:\"Spaghetti Carbonara\"}){cookingTime}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'San Francisco' with a salary of over $100,000.",
+        "output": "jobs(where:{location:\"San Francisco\", salary_GT: 100000}){title}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'San Francisco' with a salary of over or equal to $100,000.",
+        "output": "jobs(where:{location:\"San Francisco\", salary_GTE: 100000}){title}"
+    },
+    {
+        "context": "book{title:string,author:string,pages:number,publishedYear:number,genre:string}",
+        "input": "What is the author of the book 'The Mystery of the Missing Key'?",
+        "output": "books(where:{title:\"The Mystery of the Missing Key\"}){author}"
+    },
+    {
+        "context": "car{make:string,model:string,year:number,price:number,mileage:number}",
+        "input": "List the models of cars made by 'Ford' in descending order of their year.",
+        "output": "cars(where:{make:\"Ford\"}, options:{sort: {year: DESC}}){model}"
+    },
+    {
+        "context": "restaurant{name:string,cuisine:string,location:string,rating:number}",
+        "input": "Find a restaurant in 'Los Angeles' with a rating greater than 4.0.",
+        "output": "restaurants(where:{location:\"Los Angeles\", rating_GT: 4.0}){name}"
+    },
+    {
+        "context": "movie{title:string,director:string,genre:string,releaseYear:number,boxOffice:number}",
+        "input": "What is the director of the movie 'Avatar'?",
+        "output": "movies(where:{title:\"Avatar\"}){director}"
+    },
+    {
+        "context": "musicAlbum{title:string,artist:string,genre:string,releaseYear:number,sales:number}",
+        "input": "List music albums released in 2019 in ascending order of sales.",
+        "output": "musicAlbums(where:{releaseYear: 2019}, options:{sort: {sales: ASC}}){title}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "What is the population of 'Tokyo'?",
+        "output": "cities(where:{name:\"Tokyo\"}){population}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "Provide the cooking time for the recipe 'Chicken Alfredo'.",
+        "output": "recipes(where:{name:\"Chicken Alfredo\"}){cookingTime}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'New York' with a salary of over $120,000.",
+        "output": "jobs(where:{location:\"New York\", salary_GT: 120000}){title}"
+    },
+    {
+        "context": "product{name:string,category:string,brand:string,price:number,stock:number}",
+        "input": "List products in the 'Electronics' category with a price less than 500.",
+        "output": "products(where:{category:\"Electronics\", price_LT: 500}){name}"
+    },
+    {
+        "context": "dog{name:string,breed:string,age:number,weight:number,color:string}",
+        "input": "What is the breed of the dog named 'Max'?",
+        "output": "dogs(where:{name:\"Max\"}){breed}"
+    },
+    {
+        "context": "athlete{name:string,sport:string,team:string,age:number,rank:number}",
+        "input": "Who is the athlete in the '100m Sprint' sport with the highest rank?",
+        "output": "athletes(where:{sport:\"100m Sprint\"}, options:{sort: {rank: DESC}, limit: 1}){name}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "Find a city in 'Spain' with a population greater than 1 million.",
+        "output": "cities(where:{country:\"Spain\", population_GT: 1000000}){name}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "List recipes that take less than 30 minutes to cook.",
+        "output": "recipes(where:{cookingTime_LT: 30}){name}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'Seattle' with a salary of over $80,000.",
+        "output": "jobs(where:{location:\"Seattle\", salary_GT: 80000}){title}"
+    },
+    {
+        "context": "movie{title:string,director:string,genre:string,releaseYear:number,boxOffice:number}",
+        "input": "List movies in the 'Comedy' genre released after 2015.",
+        "output": "movies(where:{genre:\"Comedy\", releaseYear_GT: 2015}){title}"
+    },
+    {
+        "context": "book{title:string,author:string,pages:number,publishedYear:number,genre:string}",
+        "input": "What is the author of the book 'The Silent Observer'?",
+        "output": "books(where:{title:\"The Silent Observer\"}){author}"
+    },
+    {
+        "context": "car{make:string,model:string,year:number,price:number,mileage:number}",
+        "input": "List the models of cars made by 'Toyota' in ascending order of their year.",
+        "output": "cars(where:{make:\"Toyota\"}, options:{sort: {year: ASC}}){model}"
+    },
+    {
+        "context": "restaurant{name:string,cuisine:string,location:string,rating:number}",
+        "input": "Find a restaurant in 'Chicago' with a rating greater than 4.2.",
+        "output": "restaurants(where:{location:\"Chicago\", rating_GT: 4.2}){name}"
+    },
+    {
+        "context": "musicAlbum{title:string,artist:string,genre:string,releaseYear:number,sales:number}",
+        "input": "List music albums released in 2022 in descending order of sales.",
+        "output": "musicAlbums(where:{releaseYear: 2022}, options:{sort: {sales: DESC}}){title}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "What is the population of 'London'?",
+        "output": "cities(where:{name:\"London\"}){population}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "Provide the cooking time for the recipe 'Pancakes'.",
+        "output": "recipes(where:{name:\"Pancakes\"}){cookingTime}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'San Diego' with a salary of over $110,000.",
+        "output": "jobs(where:{location:\"San Diego\", salary_GT: 110000}){title}"
+    },
+    {
+        "context": "product{name:string,category:string,brand:string,price:number,stock:number}",
+        "input": "List products in the 'Clothing' category with a price less than 50.",
+        "output": "products(where:{category:\"Clothing\", price_LT: 50}){name}"
+    },
+    {
+        "context": "dog{name:string,breed:string,age:number,weight:number,color:string}",
+        "input": "What is the breed of the dog named 'Buddy'?",
+        "output": "dogs(where:{name:\"Buddy\"}){breed}"
+    },
+    {
+        "context": "athlete{name:string,sport:string,team:string,age:number,rank:number}",
+        "input": "Who is the athlete in the 'Swimming' sport with the highest rank?",
+        "output": "athletes(where:{sport:\"Swimming\"}, options:{sort: {rank: DESC}, limit: 1}){name}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "Find a city in 'Brazil' with a population greater than 2 million.",
+        "output": "cities(where:{country:\"Brazil\", population_GT: 2000000}){name}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "List recipes that take less than 45 minutes to cook.",
+        "output": "recipes(where:{cookingTime_LT: 45}){name}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'Boston' with a salary of over $90,000.",
+        "output": "jobs(where:{location:\"Boston\", salary_GT: 90000}){title}"
+    },
+    {
+        "context": "movie{title:string,director:string,genre:string,releaseYear:number,boxOffice:number}",
+        "input": "List movies in the 'Drama' genre released after 2010.",
+        "output": "movies(where:{genre:\"Drama\", releaseYear_GT: 2010}){title}"
+    },
+    {
+        "context": "book{title:string,author:string,pages:number,publishedYear:number,genre:string}",
+        "input": "What is the author of the book 'The Secret Garden'?",
+        "output": "books(where:{title:\"The Secret Garden\"}){author}"
+    },
+    {
+        "context": "car{make:string,model:string,year:number,price:number,mileage:number}",
+        "input": "List the models of cars made by 'Honda' in descending order of their year.",
+        "output": "cars(where:{make:\"Honda\"}, options:{sort: {year: DESC}}){model}"
+    },
+    {
+        "context": "restaurant{name:string,cuisine:string,location:string,rating:number}",
+        "input": "Find a restaurant in 'Miami' with a rating greater than 4.4.",
+        "output": "restaurants(where:{location:\"Miami\", rating_GT: 4.4}){name}"
+    },
+    {
+        "context": "musicAlbum{title:string,artist:string,genre:string,releaseYear:number,sales:number}",
+        "input": "List music albums released in 2021 in ascending order of sales.",
+        "output": "musicAlbums(where:{releaseYear: 2021}, options:{sort: {sales: ASC}}){title}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "What is the population of 'Sydney'?",
+        "output": "cities(where:{name:\"Sydney\"}){population}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "Provide the cooking time for the recipe 'Lasagna'.",
+        "output": "recipes(where:{name:\"Lasagna\"}){cookingTime}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'Chicago' with a salary of over $95,000.",
+        "output": "jobs(where:{location:\"Chicago\", salary_GT: 95000}){title}"
+    },
+    {
+        "context": "product{name:string,category:string,brand:string,price:number,stock:number}",
+        "input": "List products in the 'Electronics' category with a price less than 600.",
+        "output": "products(where:{category:\"Electronics\", price_LT: 600}){name}"
+    },
+    {
+        "context": "dog{name:string,breed:string,age:number,weight:number,color:string}",
+        "input": "What is the breed of the dog named 'Charlie'?",
+        "output": "dogs(where:{name:\"Charlie\"}){breed}"
+    },
+    {
+        "context": "athlete{name:string,sport:string,team:string,age:number,rank:number}",
+        "input": "Who is the athlete in the 'Gymnastics' sport with the highest rank?",
+        "output": "athletes(where:{sport:\"Gymnastics\"}, options:{sort: {rank: DESC}, limit: 1}){name}"
+    },
+    {
+        "context": "city{name:string,country:string,population:number,area:number}",
+        "input": "Find a city in 'India' with a population greater than 5 million.",
+        "output": "cities(where:{country:\"India\", population_GT: 5000000}){name}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "List recipes that take less than or equal to 60 minutes to cook.",
+        "output": "recipes(where:{cookingTime_LTE: 60}){name}"
+    },
+    {
+        "context": "job{title:string,company:string,location:string,salary:number,experienceRequired:number}",
+        "input": "List job titles in 'Austin' with a salary of over or equal to $85,000.",
+        "output": "jobs(where:{location:\"Austin\", salary_GTE: 85000}){title}"
+    },
+    {
+        "context": "movie{title:string,director:string,genre:string,releaseYear:number,boxOffice:number}",
+        "input": "List movies in the 'Action' genre released after 2017.",
+        "output": "movies(where:{genre:\"Action\", releaseYear_GT: 2017}){title}"
+    },
+    {
+        "context": "book{title:string,author:string,pages:number,publishedYear:number,genre:string}",
+        "input": "What is the author of the book 'The Great Gatsby'?",
+        "output": "books(where:{title:\"The Great Gatsby\"}){author}"
+    },
+    {
+        "context": "car{make:string,model:string,year:number,price:number,mileage:number}",
+        "input": "List the models of cars made by 'Chevrolet' in ascending order of their year.",
+        "output": "cars(where:{make:\"Chevrolet\"}, options:{sort: {year: ASC}}){model}"
+    },
+    {
+        "context": "laptop{brand:string,model:string,processor:string,ram:number,storage:number}",
+        "input": "What is the processor of the laptop model 'XYZ123'?",
+        "output": "laptops(where:{model:\"XYZ123\"}){processor}"
+    },
+    {
+        "context": "sport{name:string,players:number,season:string,team:string,winningPercentage:number}",
+        "input": "List sports teams with a winning percentage above 70% in the '2022 Season'.",
+        "output": "sports(where:{season:\"2022 Season\", winningPercentage_GT: 70}){team}"
+    },
+    {
+        "context": "event{name:string,date:string,location:string,attendees:number,organizer:string}",
+        "input": "Who organized the event 'Tech Summit 2023'?",
+        "output": "events(where:{name:\"Tech Summit 2023\"}){organizer}"
+    },
+    {
+        "context": "smartphone{brand:string,model:string,screenSize:number,storage:number,price:number}",
+        "input": "List smartphone models with a screen size greater than 6 inches in ascending order of price.",
+        "output": "smartphones(where:{screenSize_GT: 6}, options:{sort: {price: ASC}}){model}"
+    },
+    {
+        "context": "dog{name:string,breed:string,age:number,weight:number,owner:string}",
+        "input": "How much does the dog 'Buddy' weigh?",
+        "output": "dogs(where:{name:\"Buddy\"}){weight}"
+    },
+    {
+        "context": "travelDestination{name:string,country:string,attractions:string,averageCost:number}",
+        "input": "What are the attractions in the travel destination 'Tokyo'?",
+        "output": "travelDestinations(where:{name:\"Tokyo\"}){attractions}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "Provide the list of ingredients for the recipe 'Chocolate Cake'.",
+        "output": "recipes(where:{name:\"Chocolate Cake\"}){ingredients}"
+    },
+    {
+        "context": "song{title:string,artist:string,genre:string,releaseYear:number,length:number}",
+        "input": "List songs with a length greater than 4 minutes in descending order of release year.",
+        "output": "songs(where:{length_GT: 4}, options:{sort: {releaseYear: DESC}}){title}"
+    },
+    {
+        "context": "hotel{name:string,location:string,starRating:number,amenities:string,pricePerNight:number}",
+        "input": "Find a hotel in 'Paris' with a star rating of 4 or higher.",
+        "output": "hotels(where:{location:\"Paris\", starRating_GTE: 4}){name}"
+    },
+    {
+        "context": "painting{title:string,artist:string,style:string,yearPainted:number,value:number}",
+        "input": "What is the artistic style of the painting 'Starry Night'?",
+        "output": "paintings(where:{title:\"Starry Night\"}){style}"
+    },
+    {
+        "context": "game{title:string,genre:string,platform:string,releaseYear:number,price:number}",
+        "input": "List games released on 'PlayStation 5' with a price less than $60.",
+        "output": "games(where:{platform:\"PlayStation 5\", price_LT: 60}){title}"
+    },
+    {
+        "context": "podcast{name:string,host:string,genre:string,episodeCount:number,averageDuration:number}",
+        "input": "Who is the host of the podcast in the 'Technology' genre with over 50 episodes?",
+        "output": "podcasts(where:{genre:\"Technology\", episodeCount_GT: 50}){host}"
+    },
+    {
+        "context": "planet{name:string,type:string,distanceFromSun:number,moons:number,atmosphere:string}",
+        "input": "How many moons does the planet 'Jupiter' have?",
+        "output": "planets(where:{name:\"Jupiter\"}){moons}"
+    },
+    {
+        "context": "camera{brand:string,model:string,megapixels:number,lens:string,price:number}",
+        "input": "List cameras with more than 20 megapixels in ascending order of price.",
+        "output": "cameras(where:{megapixels_GT: 20}, options:{sort: {price: ASC}}){model}"
+    },
+    {
+        "context": "recipe{name:string,ingredients:string,instructions:string,cookingTime:number}",
+        "input": "How long does it take to cook the recipe 'Grilled Salmon'?",
+        "output": "recipes(where:{name:\"Grilled Salmon\"}){cookingTime}"
+    },
+    {
+        "context":"cat{color:string,name:string}",
+        "input":"List the names of tabby colored cats.",
+        "output":"cats(where:{color:\"tabby\"}){name}"
+    },
+    {
+        "context": "bike{brand:string,model:string,type:string,year:number,price:number}",
+        "input": "List bike models of type 'Mountain Bike' released in the year 2021.",
+        "output": "bikes(where:{type:\"Mountain Bike\", year: 2021}){model}"
+    },
+    {
+        "context": "university{name:string,location:string,rank:number,programsOffered:string,averageTuition:number}",
+        "input": "What programs are offered at the university in 'Los Angeles'?",
+        "output": "universities(where:{location:\"Los Angeles\"}){programsOffered}"
+    },
+    {
+        "context": "watch{brand:string,model:string,caseMaterial:string,bandMaterial:string,price:number}",
+        "input": "List watches with a case material of 'Stainless Steel' in descending order of price.",
+        "output": "watches(where:{caseMaterial:\"Stainless Steel\"}, options:{sort: {price: DESC}}){model}"
+    },
+    {
+        "context": "company{name:string,industry:string,founder:string,yearFounded:number,employees:number}",
+        "input": "Who is the founder of the company 'SpaceX'?",
+        "output": "companies(where:{name:\"SpaceX\"}){founder}"
+    },
+    {
+        "context": "phone{brand:string,model:string,storageGB:number,price:number,releaseYear:number}",
+        "input": "What is the storage capacity of the 'Samsung Galaxy S21'?",
+        "output": "phones(where:{brand:\"Samsung\", model:\"Galaxy S21\"}){storageGB}"
+    },
+    {
+        "context": "hotel{name:string,location:string,rooms:number,rating:number,pricePerNight:number}",
+        "input": "Find hotels in 'Tokyo' with a rating above 4.0.",
+        "output": "hotels(where:{location:\"Tokyo\", rating_GT: 4.0}){name}"
+    },
+    {
+        "context": "flight{airline:string,origin:string,destination:string,departureTime:string,arrivalTime:string}",
+        "input": "What time does the flight from 'New York' to 'London' depart?",
+        "output": "flights(where:{origin:\"New York\", destination:\"London\"}){departureTime}"
+    },
+    {
+        "context": "sport{name:string,teams:string,players:number,season:string,averageAttendance:number}",
+        "input": "List sports with an average attendance above 50,000.",
+        "output": "sports(where:{averageAttendance_GT:50000}){name}"
+    },
+    {
+        "context": "dog{breed:string,color:string,age:number,weight:number,owner:string}",
+        "input": "What is the weight of the 'Golden Retriever' named 'Buddy'?",
+        "output": "dogs(where:{breed:\"Golden Retriever\", name:\"Buddy\"}){weight}"
+    },
+    {
+        "context": "book{title:string,author:string,pages:number,publishedYear:number,genre:string}",
+        "input": "List books in the 'Science Fiction' genre with more than 300 pages.",
+        "output": "books(where:{genre:\"Science Fiction\", pages_GT:300}){title}"
+    },
+    {
+        "context": "videoGame{title:string,platform:string,genre:string,releaseYear:number,price:number}",
+        "input": "Name a video game released on 'PlayStation 5' in the 'Action' genre.",
+        "output": "videoGames(where:{platform:\"PlayStation 5\", genre:\"Action\"}){title}"
+    },
+    {
+        "context": "musicArtist{name:string,genre:string,albums:number,songs:number,active:boolean}",
+        "input": "List music artists in the 'Pop' genre who are currently active.",
+        "output": "musicArtists(where:{genre:\"Pop\", active:true}){name}"
+    },
+    {
+        "context": "college{name:string,location:string,students:number,programs:string,rank:number}",
+        "input": "What is the rank of 'Harvard University'?",
+        "output": "colleges(where:{name:\"Harvard University\"}){rank}"
+    },
+    {
+        "context": "weatherReport{city:string,date:string,temperature:number,humidity:number,windSpeed:number}",
+        "input": "What is the temperature in 'Los Angeles' on 'November 1, 2023'?",
+        "output": "weatherReports(where:{city:\"Los Angeles\", date:\"2023-11-01\"}){temperature}"
+    },
+    {
+        "context": "movie{title:string,director:string,genre:string,releaseYear:number,boxOffice:number}",
+        "input": "List movies directed by 'Christopher Nolan' in descending order of box office earnings.",
+        "output": "movies(where:{director:\"Christopher Nolan\"}, options:{sort: {boxOffice: DESC}}){title}"
+    },
+    {
+        "context": "podcast{name:string,host:string,category:string,episodes:number,averageDuration:number}",
+        "input": "Name a podcast in the 'Technology' category with over 50 episodes.",
+        "output": "podcasts(where:{category:\"Technology\", episodes_GT:50}){name}"
+    },
+    {
+        "context": "currency{name:string,code:string,valueToUSD:number,exchangeRate:number}",
+        "input": "What is the exchange rate of the 'Euro' to 'US Dollar'?",
+        "output": "currencies(where:{name:\"Euro\", code:\"USD\"}){exchangeRate}"
+    },
+    {
+        "context": "bike{brand:string,model:string,type:string,year:number,price:number}",
+        "input": "List the models of 'Mountain Bikes' released in 2022.",
+        "output": "bikes(where:{type:\"Mountain\", year:2022}){model}"
+    },
+    {
+        "context": "boardGame{name:string,designer:string,genre:string,players:number,averagePlaytime:number}",
+        "input": "What is the average playtime of the board game 'Catan'?",
+        "output": "boardGames(where:{name:\"Catan\"}){averagePlaytime}"
+    },
+    {
+        "context": "event{name:string,date:string,location:string,attendees:number,organizer:string}",
+        "input": "List events with over 500 attendees in 'New York' in 2023.",
+        "output": "events(where:{location:\"New York\", attendees_GT:500, date_contains:\"2023\"}){name}"
+    },
+    {
+        "context": "painting{title:string,artist:string,style:string,year:number,value:number}",
+        "input": "What is the artistic style of the painting 'Starry Night'?",
+        "output": "paintings(where:{title:\"Starry Night\"}){style}"
+    },
+    {
+        "context": "fitnessClass{name:string,instructor:string,category:string,duration:number,location:string}",
+        "input": "Find a fitness class in the 'Yoga' category with a duration of 60 minutes.",
+        "output": "fitnessClasses(where:{category:\"Yoga\", duration:60}){name}"
+    },
+    {
+        "context": "smartHomeDevice{name:string,brand:string,type:string,price:number,connectivity:string}",
+        "input": "List smart home devices with 'Wi-Fi' connectivity under $200.",
+        "output": "smartHomeDevices(where:{connectivity:\"Wi-Fi\", price_LT:200}){name}"
+    }
+]

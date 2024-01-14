@@ -13,8 +13,15 @@
 **/package-lock.json
 **/dist
 
-model/training_data_converted.csv
-model/**.layer
-model/model.h5
+example/model/
+example/model/**
+model/
+model/**
 logs/tensorboard/*
 logs/*
+
+**/.cache
+**/.cache/*
+
+model_view.html
+head_view.html
